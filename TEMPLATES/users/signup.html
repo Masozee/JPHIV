@@ -1,0 +1,111 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Jaringan Penelitian HIV Indonesia</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="Themesdesign" name="author" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="{% static 'users/images/favicon.ico">
+
+        <!-- Bootstrap Css -->
+        <link href="{% static 'users/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="{% static 'users/css/icons.min.css' %}" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="{% static 'users/css/app.min.css' %}" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body class="bg-primary bg-pattern">
+        <div class="home-btn d-none d-sm-block">
+            <a href="index.html"><i class="mdi mdi-home-variant h2 text-white"></i></a>
+        </div>
+
+        <div class="account-pages my-5 pt-sm-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center mb-5">
+                            <a href="index.html" class="logo"><img src="{% static 'articles/img/logo/Group12.png' %}" height="24" alt="logo"></a>
+                            <h5 class="font-size-16 text-white-50 mb-4">Jaringan Penelitian HIV Indonesia</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+                <div class="row justify-content-center">
+                    <div class="col-xl-5 col-sm-8">
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <div class="p-2">
+                                    <h5 class="mb-5 text-center">Register Account to JPHI.</h5>
+                                    <form class="form-horizontal" method="post" novalidate>
+                                        {% csrf_token %}
+                                        {{form|crispy}}
+                                        <button type="submit" class="btn btn-success">Sign up</button>
+
+                                        <!--div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group form-group-custom mb-4">
+                                                    <input type="text" class="form-control" id="username" required>
+                                                    <label for="username">Username</label>
+                                                </div>
+                                                <div class="form-group form-group-custom mb-4">
+                                                    <input type="password" class="form-control" id="userpassword" required>
+                                                    <label for="userpassword">Nama</label>
+                                                </div>
+                                                <div class="form-group form-group-custom mb-4">
+                                                    <input type="email" class="form-control" id="useremail" required>
+                                                    <label for="useremail">Email</label> 
+                                                </div>
+                                                <div class="form-group form-group-custom mb-4">
+                                                    <input type="password" class="form-control" id="userpassword" required>
+                                                    <label for="userpassword">Institusi</label>
+                                                </div>
+
+                                                <div class="form-group form-group-custom mb-4">
+                                                    <input type="password" class="form-control" id="userpassword" required>
+                                                    <label for="userpassword">Password</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="term-conditionCheck">
+                                                    <label class="custom-control-label font-weight-normal" for="term-conditionCheck">I accept <a href="#" class="text-primary">Terms and Conditions</a></label>
+                                                </div>
+                                                <div class="mt-4">
+                                                    <button class="btn btn-success btn-block waves-effect waves-light" type="submit">Register</button>
+                                                </div>
+                                                <div class="mt-4 text-center">
+                                                    <a href="auth-login.html" class="text-muted"><i class="mdi mdi-account-circle mr-1"></i> Already have account?</a>
+                                                </div>
+                                            </div>
+                                        </div-->
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+        </div>
+        <!-- end Account pages -->
+
+        <!-- JAVASCRIPT -->
+        <script src="{% static 'users/libs/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'users/libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'users/libs/metismenu/metisMenu.min.js' %}"></script>
+        <script src="{% static 'users/libs/simplebar/simplebar.min.js' %}"></script>
+        <script src="{% static 'users/libs/node-waves/waves.min.js' %}"></script>
+
+        <script src="https://unicons.iconscout.com/release/v2.0.1/script/monochrome/bundle.js"></script>
+
+
+        <script src="{% static 'users/js/app.js' %}"></script>
+
+    </body>
+</html>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="10.347" height="13.796" viewBox="0 0 10.347 13.796">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:#707070}
+        </style>
+    </defs>
+    <g id="prefix__document" transform="translate(-64)">
+        <g id="prefix__Group_142" data-name="Group 142" transform="translate(64)">
+            <g id="prefix__Group_141" data-name="Group 141">
+                <path id="prefix__Path_815" d="M320 12.5v3.112h3.112z" class="prefix__cls-1" data-name="Path 815" transform="translate(-313.102 -12.162)"/>
+                <path id="prefix__Path_816" d="M70.323 4.6a.574.574 0 0 1-.575-.575V0h-5.173A.574.574 0 0 0 64 .575v12.646a.574.574 0 0 0 .575.575h9.2a.574.574 0 0 0 .575-.575V4.6zM66.3 5.748h.575a.575.575 0 0 1 0 1.15H66.3a.575.575 0 0 1 0-1.15zm1.15 5.748H66.3a.575.575 0 0 1 0-1.15h1.15a.575.575 0 0 1 0 1.15zM68.6 9.2h-2.3a.575.575 0 1 1 0-1.15h2.3a.575.575 0 0 1 0 1.15zm3.449 2.3h-2.3a.575.575 0 0 1 0-1.15h2.3a.575.575 0 1 1 0 1.15zm0-2.3H70.9a.575.575 0 1 1 0-1.15h1.15a.575.575 0 1 1 0 1.15zm0-2.3h-2.876a.575.575 0 0 1 0-1.15h2.874a.575.575 0 1 1 0 1.15z" class="prefix__cls-1" data-name="Path 816" transform="translate(-64)"/>
+            </g>
+        </g>
+    </g>
+</svg>

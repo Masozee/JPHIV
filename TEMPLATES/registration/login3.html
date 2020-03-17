@@ -1,0 +1,118 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- FontAwseme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">   
+
+    <!-- tabel -->
+     <link href="{% static 'users/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="{% static 'users/css/icons.min.css' %}" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="{% static 'users/css/app.min.css' %}" rel="stylesheet" type="text/css" />
+          
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet">
+
+    <style>
+      @font-face {
+          font-family: 'silkaregular';
+      src: url('{% static 'km/font/Silka-Complete-Webfont/Silka-Roman-Webfont/silka-regular-webfont.woff' %}') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      }
+  
+      @font-face {
+          font-family: 'silkabold';
+          src: url('{% static 'km/font/Silka-Complete-Webfont/Silka-Roman-Webfont/silka-bold-webfont.woff' %}') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      }
+  
+      @font-face {
+          font-family: 'silkalight';
+          src: url('{% static 'km/font/Silka-Complete-Webfont/Silka-Roman-Webfont/silka-light-webfont.woff' %}') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      }
+  
+      @font-face {
+          font-family: 'silkamedium';
+          src: url('{% static 'km/font/Silka-Complete-Webfont/Silka-Roman-Webfont/silka-medium-webfont.woff' %}') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      }
+  
+      @font-face {
+          font-family: 'silkasemibold';
+          src: url('{% static 'km/font/Silka-Complete-Webfont/Silka-Roman-Webfont/silka-semibold-webfont.woff' %}') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      }
+  
+      @font-face {
+          font-family: 'silkaregular_italic';
+          src: url('{% static 'km/font/Silka-Complete-Webfont/Silka-Italic-Webfont/silka-regularitalic-webfont.woff' %}') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      }
+      </style>
+    
+
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="container">
+    <img src="{% static 'km/img/LOGO@2x.png' %}" alt="logo" srcset="" class="logo-km">
+      <div class="row justify-content-center login ">
+        <div class="col-md-5 form-user shadow ">
+          <h3>Selamat Datang!</h3>
+          <h6>Masukan email terdaftar dan password untuk dapat mengakses pusat data pph unika atma jaya</h6>
+          <form method="post" novalidate>
+            {% csrf_token %}
+             <input type="hidden" name="next" value="{{ next }}">
+            <div id="div_id_username" class="form-group">
+              <span class="fa fa-envelope-o icon-form"></span>
+              <input type="text" name="username" class="form-control" id="id_username" aria-describedby="emailHelp" placeholder="Username">
+            </div>
+            <div class="form-group">
+              <span class="fa fa-unlock-alt icon-form" aria-hidden="true"></span>
+              <input type="password" name="password" class="form-control" id="id_password" placeholder="Password">
+            </div>
+            <div id="" class="forget-pass">
+                <a>Lupa Password</a>
+            </div>
+            <button name="loginbtn" type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <!-- alert -->
+          <!--div class=" alert-user alert alert-danger text-center " role="alert">
+              {% for error in form.non_field_errors %}
+                <p{% if forloop.last %} class="mb-0"{% endif %}>{{ error }}</p>
+              {% endfor %}
+          </div-->
+          <!-- tutup alert -->
+        </div>
+        <div class="col-md-4 form-guest shadow ">
+          <h3>Halo Sobat Peduli!</h3>
+          <h6>Daftarkan data diri kamu untuk dapat mengakses pusat data pph unika atma jaya.</h6>
+
+          <h6></h6>
+          <button  onclick="window.location.href = '{% url 'visitor-signup'%}';" class="btn btn-guest justify-content-center center" style="margin:auto;
+  display:block;">Daftar</button>
+
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

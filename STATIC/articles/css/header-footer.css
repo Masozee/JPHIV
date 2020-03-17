@@ -1,0 +1,125 @@
+/* ################### HEADER ################# */
+.navbar-light .navbar-nav .active>.nav-link{
+    font-family: 'Source Sans Pro';
+    font-size: 10px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: normal;
+    text-align: left;
+    color: #7b7b7b !important;
+    /* border-bottom: 1px solid black; */
+}
+
+.main-nav .nav-link{
+    font-family: 'Source Sans Pro';
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #7b7b7b !important;
+  }
+
+.main-nav .btn-link{
+    font-family: 'Source Sans Pro';
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.42;
+    letter-spacing: 0.24px;
+    text-align: left;
+    color: #707070;
+}
+
+.main-nav .img-profil{
+    width: 50px;
+    border-radius: 50%;
+}
+
+.main-nav .btn-profil{
+    font-family: 'Source Sans Pro';
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.42;
+    letter-spacing: 0.24px;
+    text-align: left;
+    color: #707070;
+}
+
+.main-nav .btn-join-us{
+    font-family: 'Source Sans Pro';
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 1.4;
+    letter-spacing: 0.6px;
+    text-align: left;
+    color: #ffffff;
+}
+
+
+ .main-nav .btn-outline-secondary{
+    padding-right: 23px;
+    padding-left: 23px;
+    font-family: 'Source Sans Pro';
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0.2px;
+    color: #b9b9ba !important;
+    border-color: #dadadb !important;
+    margin-left: 18px;
+ }
+
+ .main-nav .input-group{
+     width: 100%;
+ }
+
+ .main-nav input , .main-nav .input-group-text{
+    font-family: 'Source Sans Pro';
+    font-size: 10px;
+    line-height: 1.4;
+    color: #7b7b7b !important;
+    background-color: #edebeb;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-color: #edebeb; ;
+ }
+
+ .sub-nav .nav-link{
+    font-family: 'Source Sans Pro';
+    font-size: 10px;
+    line-height: 1.4;
+    letter-spacing: 0.2px;
+    text-align: left;
+    color: #9b9b9b !important;
+    
+}
+
+.main-nav .form-control{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+
+
+/* ###################### END HEADER ################################## */
+
+/* FOOTER */
+footer{
+    background-color: #edebeb;
+    height: 110px;
+}
+
+footer h3{
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    font-family: 'Source Sans Pro';
+    font-size: 16px;
+    font-weight: 300;
+    text-align: left;
+    color: #707070 !important;
+    margin-top: 45px;
+}
+/* END FOOTER */

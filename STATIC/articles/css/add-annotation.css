@@ -1,0 +1,44 @@
+.jumbotron{
+    padding: 0;
+    z-index: -1;
+}
+
+.add-annotation{
+    margin-top: -170px;
+}
+
+.add-annotation h3{
+    font-family: 'Source Sans Pro';
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.46;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+}
+
+.add-annotation .form-annotation{
+    background-color: #fcfcfc;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.16);
+    padding-top: 60px;
+    padding-bottom: 77px;
+
+}
+
+.add-annotation label{
+    padding-left: 30px;
+}
+
+.add-annotation .btn-danger{
+    margin-left: 0;
+    padding-left: 120px;
+    padding-right: 120px;
+}
+
+.add-annotation .offset-2{
+    padding-left: 5px;
+}
+

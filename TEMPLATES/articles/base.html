@@ -1,0 +1,171 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- my css -->
+    <link rel="stylesheet" href="{% static 'articles/css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'articles/css/header-footer.css'%}">
+    <!--link href="assets/libs/air-datepicker/css/datepicker.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- jvectormap -->
+    <!--link href="{% static 'users/assets/libs/jqvmap/jqvmap.min.css' %}" rel="stylesheet" />
+
+    <!-- Bootstrap Css -->
+    <!--link href="{% static 'users/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <!--link href="{% static 'users/css/icons.min.css' %}" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <!--link href="{% static 'users/css/app.min.css' %}" rel="stylesheet" type="text/css" /-->
+    {% block css %}
+    {% endblock %}
+
+    <!-- font source Sans pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <title>JPHI</title>
+    <!-- <style>
+      body{
+        font-family: 'Source Sans Pro';
+      }
+    </style> -->
+
+  </head>
+  <body>
+    <!-- header 1 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
+      <a class="navbar-brand" href="{% url 'homepage' %}">
+        <img src="{% static 'articles/img/logo/Group12.png' %}" alt="" srcset="">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'abstract' %}">ABSTRACT <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'anotated' %}">ANNOTATED BIBLIOGRAPHY </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><img src="{% static 'articles/img/Group 13.png' %}" alt="" srcset=""></a>
+          </li>
+          <a href="{% url 'add-anotated' %}"><button type="button" class="btn btn-outline-secondary btn-sm">SUBMIT ANNOTATION</button></a>
+        </ul>
+        <form class="form-inline my-2 my-lg-0 w-50 ">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text "><i><img src="{% static 'articles/img/search-icon.svg'%}" alt=""></i></div>
+            </div>
+            <input type="search" class="form-control "  placeholder="looking for something?">
+          </div>
+        </form>
+        {% if user.is_authenticated %}
+        <div class="dropdown d-inline-block">
+          <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img class="rounded-circle header-profile-user" src="/MEDIA/{{user.avatar}}/" alt="Header Avatar" style="width: 5%; height: auto;">
+              <span class="d-none d-sm-inline-block ml-1">{{user.first_name}}</span>
+              <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+              <!-- item-->
+              <a class="dropdown-item" href="#"><i class="mdi mdi-face-profile font-size-16 align-middle mr-1"></i> Profile</a>
+              <a class="dropdown-item" href="#"><i class="mdi mdi-credit-card-outline font-size-16 align-middle mr-1"></i> Billing</a>
+              <a class="dropdown-item" href="#"><i class="mdi mdi-account-settings font-size-16 align-middle mr-1"></i> Settings</a>
+              <a class="dropdown-item" href="#"><i class="mdi mdi-lock font-size-16 align-middle mr-1"></i> Lock screen</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#"><i class="mdi mdi-logout font-size-16 align-middle mr-1"></i> Logout</a>
+          </div>
+        </div>
+        {% else %}
+        <button type="button" class="btn btn-link ">LOGIN</button>
+        <button type="button" class="btn btn-danger btn-sm btn-join-us">JOIN US</button>
+        {% endif %}
+      </div>
+    </nav>
+    <!-- end header 1 -->
+
+    <!-- header 2 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">ABSTRACT <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Epidemiology.html">Epidemiology</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Biomedicine</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Health Economic</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Policy Study</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Social-behavioral</a>
+          </li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto popular-search">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">POPULAR SEARCH <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Epidemiology</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Biomedicine</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Health Economic</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Policy Study</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Social-behavioral</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- end header 2 -->
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- footer -->
+    <footer>
+      <div class="container">
+        <hr>
+        <div class="row justify-content-md-center ">
+          <div class="col-md-auto align-items-center">
+            <h3>© JPHI.net All rights reserved.</h3>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- end footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

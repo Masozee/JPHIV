@@ -1,0 +1,293 @@
+{% extends 'articles/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+      <!-- TITLE -->
+      <section class="title-searchResult">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2> SEARCH RESULT PAGE</h2>
+                    <h3>Hasil pencarian untuk “HIV”</h3>
+                </div>
+            </div>
+        </div>
+      </section>
+      <!-- END TITLE -->
+
+      
+
+      <!-- FILTER -->
+      <section class="filter-epidemiology " >
+        <div class="container ">
+          <!-- FILTER COLLAPSE -->
+          <div class="d-flex justify-content-end">
+            <button class="btn btn-danger btn-sm d-flex justify-content-end" type="button" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseExample">
+              <i> <img src="img/filter.svg" alt=""></i> FILTER
+            </button>
+          </div>
+          
+          <!-- END FILTER COLLAPSE -->
+          <hr>
+            <div class="row collapse"  id="collapseFilter">
+              <div class="col-md">
+                <form action="">
+                  <div class="form-group">
+                    <label for="sub-cat">sub category</label>
+                    <input type="text" class="form-control form-control-sm" id="sub-cat">
+                  </div>
+                </form>
+              </div>
+              <div class="col-md">
+                <form action="">
+                  <div class="form-group">
+                    <label for="filter1">Filter 1</label>
+                    <input type="text" class="form-control form-control-sm" id="filter1">
+                  </div>
+                </form>
+              </div>
+              <div class="col-md">
+                <form action="">
+                  <div class="form-group">
+                    <label for="filter2">Filter 2</label>
+                    <input type="text" class="form-control form-control-sm" id="filter2">
+                  </div>
+                </form>
+              </div>
+              <div class="col-md">
+                <form action="">
+                  <div class="form-group">
+                    <label for="filter3">Filter 3</label>
+                    <input type="text" class="form-control form-control-sm" id="filter3">
+                  </div>
+                </form>
+              </div>
+              <div class="col-md">
+                <form action="">
+                  <div class="form-group">
+                    <label for="filter4">Filter 4</label>
+                    <input type="text" class="form-control form-control-sm" id="filter4">
+                  </div>
+                </form>
+              </div>
+            </div>
+          <hr>
+        </div>
+      </section>
+      <!-- END FILTER -->
+
+    <!-- new entri -->
+    <section>
+      <div class="container new-entry">
+        <!-- <div class="d-flex justify-content-between">
+          <h3>New Entry</h3>
+          <button type="button" class="btn btn-danger btn-sm">9 Hasil ditampilkan</button>
+        </div> -->
+        <!-- <hr> -->
+        <div class="row row-cols-md-3">
+          <!-- <div class="col-md-3">
+
+          </div> -->
+              <!-- <div class="card-deck">
+              </div> -->
+                  <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <h5 class="card-title">Hubungan Pengetahuan Tentang HIV/AIDS dengan Stigma Orang dengan HIV/AIDS di Kalangan Pelajar SMA</h5>
+                        <h6 class="autor"><i><img src="img/autor.svg" alt="" srcset=""></i> Susandoro</h6>
+                        <h6 class="date"><i><img src="img/date.svg" alt=""></i> 16 Januari 2020</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      </div>
+                      <div class="card-footer">
+                        <ul class="list-inline">
+                          <li class="list-inline-item"><i><img src="img/download.svg" alt=""></i> Unduh</li>
+                          <li class="list-inline-item"><i><img src="img/share.svg" alt=""></i> Bagikan</li>
+                        </ul>
+                        <hr>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <h5 class="card-title">Wajib Skrining Tes HIV Pra-nikah sebagai Upaya Pencegahan Penularan HIV dalam Keluarga</h5>
+                        <h6 class="autor"><i><img src="img/autor.svg" alt="" srcset=""></i> Susandoro</h6>
+                        <h6 class="date"><i><img src="img/date.svg" alt=""></i> 16 Januari 2020</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      </div>
+                      <div class="card-footer">
+                        <ul class="list-inline">
+                          <li class="list-inline-item"><i><img src="img/download.svg" alt=""></i> Unduh</li>
+                          <li class="list-inline-item"><i><img src="img/share.svg" alt=""></i> Bagikan</li>
+                        </ul>
+                        <hr>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <h5 class="card-title">Dukungan Keluarga, Dukungan Petugas Kesehatan, dan Perilaku Ibu HIV dalam Pencegahan Penularan Hiv/aids ke Bayi</h5>
+                        <h6 class="autor"><i><img src="img/autor.svg" alt="" srcset=""></i> Susandoro</h6>
+                        <h6 class="date"><i><img src="img/date.svg" alt=""></i> 16 Januari 2020</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      </div>
+                      <div class="card-footer">
+                        <ul class="list-inline">
+                          <li class="list-inline-item"><i><img src="img/download.svg" alt=""></i> Unduh</li>
+                          <li class="list-inline-item"><i><img src="img/share.svg" alt=""></i> Bagikan</li>
+                        </ul>
+                        <hr>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <h5 class="card-title">Hubungan Pengetahuan Tentang HIV/AIDS dengan Stigma Orang dengan HIV/AIDS di Kalangan Pelajar SMA</h5>
+                        <h6 class="autor"><i><img src="img/autor.svg" alt="" srcset=""></i> Susandoro</h6>
+                        <h6 class="date"><i><img src="img/date.svg" alt=""></i> 16 Januari 2020</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      </div>
+                      <div class="card-footer">
+                        <ul class="list-inline">
+                          <li class="list-inline-item"><i><img src="img/download.svg" alt=""></i> Unduh</li>
+                          <li class="list-inline-item"><i><img src="img/share.svg" alt=""></i> Bagikan</li>
+                        </ul>
+                        <hr>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <h5 class="card-title">Wajib Skrining Tes HIV Pra-nikah sebagai Upaya Pencegahan Penularan HIV dalam Keluarga</h5>
+                        <h6 class="autor"><i><img src="img/autor.svg" alt="" srcset=""></i> Susandoro</h6>
+                        <h6 class="date"><i><img src="img/date.svg" alt=""></i> 16 Januari 2020</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      </div>
+                      <div class="card-footer">
+                        <ul class="list-inline">
+                          <li class="list-inline-item"><i><img src="img/download.svg" alt=""></i> Unduh</li>
+                          <li class="list-inline-item"><i><img src="img/share.svg" alt=""></i> Bagikan</li>
+                        </ul>
+                        <hr>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <h5 class="card-title">Dukungan Keluarga, Dukungan Petugas Kesehatan, dan Perilaku Ibu HIV dalam Pencegahan Penularan Hiv/aids ke Bayi</h5>
+                        <h6 class="autor"><i><img src="img/autor.svg" alt="" srcset=""></i> Susandoro</h6>
+                        <h6 class="date"><i><img src="img/date.svg" alt=""></i> 16 Januari 2020</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      </div>
+                      <div class="card-footer">
+                        <ul class="list-inline">
+                          <li class="list-inline-item"><i><img src="img/download.svg" alt=""></i> Unduh</li>
+                          <li class="list-inline-item"><i><img src="img/share.svg" alt=""></i> Bagikan</li>
+                        </ul>
+                        <hr>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <h5 class="card-title">Hubungan Pengetahuan Tentang HIV/AIDS dengan Stigma Orang dengan HIV/AIDS di Kalangan Pelajar SMA</h5>
+                        <h6 class="autor"><i><img src="img/autor.svg" alt="" srcset=""></i> Susandoro</h6>
+                        <h6 class="date"><i><img src="img/date.svg" alt=""></i> 16 Januari 2020</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      </div>
+                      <div class="card-footer">
+                        <ul class="list-inline">
+                          <li class="list-inline-item"><i><img src="img/download.svg" alt=""></i> Unduh</li>
+                          <li class="list-inline-item"><i><img src="img/share.svg" alt=""></i> Bagikan</li>
+                        </ul>
+                        <hr>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <h5 class="card-title">Wajib Skrining Tes HIV Pra-nikah sebagai Upaya Pencegahan Penularan HIV dalam Keluarga</h5>
+                        <h6 class="autor"><i><img src="img/autor.svg" alt="" srcset=""></i> Susandoro</h6>
+                        <h6 class="date"><i><img src="img/date.svg" alt=""></i> 16 Januari 2020</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      </div>
+                      <div class="card-footer">
+                        <ul class="list-inline">
+                          <li class="list-inline-item"><i><img src="img/download.svg" alt=""></i> Unduh</li>
+                          <li class="list-inline-item"><i><img src="img/share.svg" alt=""></i> Bagikan</li>
+                        </ul>
+                        <hr>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <h5 class="card-title">Dukungan Keluarga, Dukungan Petugas Kesehatan, dan Perilaku Ibu HIV dalam Pencegahan Penularan Hiv/aids ke Bayi</h5>
+                        <h6 class="autor"><i><img src="img/autor.svg" alt="" srcset=""></i> Susandoro</h6>
+                        <h6 class="date"><i><img src="img/date.svg" alt=""></i> 16 Januari 2020</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      </div>
+                      <div class="card-footer">
+                        <ul class="list-inline">
+                          <li class="list-inline-item"><i><img src="img/download.svg" alt=""></i> Unduh</li>
+                          <li class="list-inline-item"><i><img src="img/share.svg" alt=""></i> Bagikan</li>
+                        </ul>
+                        <hr>
+                      </div>
+                    </div>
+                  </div>
+
+                  
+        </div>
+      </div>
+    </section>
+    <!-- end new entry -->
+
+
+          <!-- pagination -->
+    <section class="pagination mt-3">
+      <div class="container">
+       <div class="row justify-content-md-center">
+          <div class="col-md-auto ">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>   
+    </section>
+    <!-- end pagination -->
+{% endblock %}

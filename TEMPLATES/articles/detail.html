@@ -1,0 +1,127 @@
+{% extends 'articles/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{%  static 'articles/css/detail.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    
+    <section class="artikel">
+        <div class="container">
+					<div class="row">
+						<div class="col-md-7 offset-md-1">
+							<hr>
+
+							<!-- Nav -->
+							<nav aria-label="breadcrumb">
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item">ABSTRACT</li>
+									<li class="breadcrumb-item active" aria-current="page">{{abstracts.kategori.Kategori |upper}}</li>
+								</ol>
+							</nav>
+							<!-- END NAV -->
+
+							<h1>{{abstracts.judul}}</h1>
+              <hr class="space-title">
+              <div class="d-flex bd-highlight">
+                <div class="bd-highlight mr-5">
+                  <ul class="list-unstyled ">
+                    <li class="list-item"><i><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i>
+						{% for tag in abstracts.authors.all %}
+                            <a href="/author/{{ tag.name | slugify}}">  {{ tag.name }},</a>
+						{% endfor %}</li>
+                    <li class="list-item"><i><img src="{% static 'articles/img/majalah.svg' %}" alt="" srcset=""></i>{{ abstracts.sumber }}</li>
+                    <li class="list-item"><i><img src="{% static 'articles/img/newspaper.svg' %}" alt="" srcset=""></i>{{ abstracts.volume }}</li>
+                    <li class="list-item"><i><img src="{% static 'articles/img/website.svg' %}" alt="" srcset=""></i>{{ abstracts.url }}</li>
+                  </ul>
+                </div>
+                <div class="bd-highlight">
+                  <ul class="list-unstyled">
+                    <li class="list-item"><i><img src="{% static 'articles/img/date.svg' %}" alt="" srcset=""></i>{{ abstracts.tgl }}</li>
+                    <li class="list-item"><i><img src="{% static 'articles/img/id-card.svg' %}" alt="" srcset=""></i>{{ abstracts.DOI }}</li>
+                    <li class="list-item"><i><img src="{% static 'articles/img/document.svg' %}" alt="" srcset=""></i>{{ abstracts.doctype }}</li>
+                  </ul>
+                </div>
+              </div>
+				<a href="{{abstracts.download}}"><button type="button" class="btn btn-danger btn-sm"><i><img src="{% static 'articles/img/download-light.svg' %}" alt="" srcset=""></i>Unduh</button></a>
+              	<button type="button" class="btn btn-outline-danger btn-sm">SALIN BIBLIOGRAPHY</button>
+              	<h6 class="biblio">BIBLIOGRAPHY</h6>
+              	<span class="p-biblio pl-4">
+					{{abstracts.bibliografi |safe}}
+              	</span>
+				<h6 class="abstrak">ABSTRAK</h6>
+				<span>{{abstracts.abstrak |safe}}</span>
+              <!--section id="user-review">
+                <h4 class="user-review-title">USER REVIEW</h4>
+                 <div class="user-review">
+                   <ul class="list-unstyled list-inline">
+                     <li class="user list-inline-item">John Doe</li>
+                     <li class="date list-inline-item">16 Januari 2020</li>
+                   </ul>
+                   <p>We recommend this for you! <br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatu.</p>
+                    <hr>
+                 </div>
+                 <div class="user-review">
+                  <ul class="list-unstyled list-inline">
+                    <li class="user list-inline-item">John Doe</li>
+                    <li class="date list-inline-item">16 Januari 2020</li>
+                  </ul>
+                  <p>We recommend this for you! <br>
+                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                   minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                   voluptate velit esse cillum dolore eu fugiat nulla pariatu.</p>
+                   <hr>
+                </div>
+                <div class="user-review">
+                  <ul class="list-unstyled list-inline">
+                    <li class="user list-inline-item">John Doe</li>
+                    <li class="date list-inline-item">16 Januari 2020</li>
+                  </ul>
+                  <p>We recommend this for you! <br>
+                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                   minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                   voluptate velit esse cillum dolore eu fugiat nulla pariatu.</p>
+                   <hr>
+                </div>
+              </section-->
+            </div>
+
+
+						<!-- MATRIK -->
+						<div class="col-md-2 offset-md-1 matrik">
+							<hr>
+							<h5 >MATRIX</h5>
+							<i><img src="{% static 'articles/img/download-matrik.svg' %}" alt="" srcset=""></i>
+							<h3>921 kali</h3>
+							<i><img src="{% static 'articles/img/eye.svg' %}" alt=""srcset=""></i>
+							<h3>1.043 kali</h3>
+							<hr>
+							<h5 class="abstrak">ABSTRAK YANG BERHUBUNGAN</h5>
+							<h6>Cuptatem Dit Harum Dollupt 
+								Quam Ut Officiatem Il Ipsam?
+							</h6>
+							<h6>Cuptatem Dit Harum Dollupt 
+								Quam Ut Officiatem Il Ipsam?
+							</h6>
+							<h6>Cuptatem Dit Harum Dollupt 
+								Quam Ut Officiatem Il Ipsam?
+							</h6>
+							<h6>Cuptatem Dit Harum Dollupt 
+								Quam Ut Officiatem Il Ipsam?
+							</h6>
+							<h6>Cuptatem Dit Harum Dollupt 
+								Quam Ut Officiatem Il Ipsam?
+							</h6>
+						</div>
+						<!-- END MATRIK -->
+					</div>
+        </div>
+      </section>
+      
+
+   {% endblock %}
