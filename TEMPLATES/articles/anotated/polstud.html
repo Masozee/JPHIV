@@ -1,0 +1,188 @@
+{% extends 'articles/base.html' %}
+{% load static %}
+
+
+{% block content %}
+ <!-- header 2 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">ANOTATED BIBLIOGRAPHY <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'anot-epidemology' %}">EPIDEMOLOGY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'anot-biomedicine' %}">BIOMEDICINE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'anot-health' %}">HEALTH ECONOMIC</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'anot-policy' %}">POLICY STUDY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'anot-social' %}">SOCIAL-BEHAVIORAL</a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+    <!-- end header 2 -->
+<br>
+      <section class="title-epidemiology">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                  <h5>ANOTATED BIBLIOGRAPHY</h5>
+                    <h3>
+                      POLICY STUDY
+                    </h3>
+                    <p>Studi kebijakan merupakan sub-disiplin dari ilmu politik yang mencakup analisa proses pembuatan kebijakan dan konten dari kebijakan tersebut. Analisa kebijakan meliputi penelitian area substantive, serta evaluasi program dan dampak program dari desain kebijakan.</p>
+                </div>
+            </div>
+        </div>
+      </section>
+      <!-- END TITLE -->
+
+      
+
+      <!-- FILTER -->
+      <section class="filter-epidemiology " >
+        <div class="container ">
+          <!-- FILTER COLLAPSE -->
+          <div class="d-flex justify-content-end">
+            <button class="btn btn-danger btn-sm d-flex justify-content-end" type="button" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseExample">
+              <i> <img src="img/filter.svg" alt=""></i> FILTER
+            </button>
+          </div>
+          
+          <!-- END FILTER COLLAPSE -->
+          <hr>
+            <div class="row collapse"  id="collapseFilter">
+              <div class="col-md">
+                <form action="">
+                  <div class="form-group">
+                    <label for="sub-cat">sub category</label>
+                    <input type="text" class="form-control form-control-sm" id="sub-cat">
+                  </div>
+                </form>
+              </div>
+              <div class="col-md">
+                <form action="">
+                  <div class="form-group">
+                    <label for="filter1">Filter 1</label>
+                    <input type="text" class="form-control form-control-sm" id="filter1">
+                  </div>
+                </form>
+              </div>
+              <div class="col-md">
+                <form action="">
+                  <div class="form-group">
+                    <label for="filter2">Filter 2</label>
+                    <input type="text" class="form-control form-control-sm" id="filter2">
+                  </div>
+                </form>
+              </div>
+              <div class="col-md">
+                <form action="">
+                  <div class="form-group">
+                    <label for="filter3">Filter 3</label>
+                    <input type="text" class="form-control form-control-sm" id="filter3">
+                  </div>
+                </form>
+              </div>
+              <div class="col-md">
+                <form action="">
+                  <div class="form-group">
+                    <label for="filter4">Filter 4</label>
+                    <input type="text" class="form-control form-control-sm" id="filter4">
+                  </div>
+                </form>
+              </div>
+            </div>
+          <hr>
+        </div>
+      </section>
+      <!-- END FILTER -->
+
+    <!-- new entri -->
+    <section>
+      <div class="container new-entry">
+        <div class="row row-cols-md-3">
+          {% for object in abstracts %}
+                  <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <a href="/abstract/{{object.judul | slugify}}/"><h5 class="card-title">{{object.judul}}</h5></a>
+                        <h6 class="autor"><i><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i>
+                          {% for tag in object.authors.all %}
+                            <a href="/author/{{ tag.name | slugify}}">  {{ tag.name }},</a>
+                            {% endfor %}</h6>
+                        <h6 class="date"><i><img src="img/date.svg" alt=""></i> {{object.tgl}}</h6>
+                        <p class="card-text">{{object.abstrak | truncatechars:"200" |safe}}</p>
+                      </div>
+                      <div class="card-footer">
+                        <ul class="list-inline">
+                          <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i> Unduh</li>
+                          <li class="list-inline-item"><i><img src="{% static ' articles/img/share.svg' %}" alt=""></i> Bagikan</li>
+                        </ul>
+                        <hr>
+                      </div>
+                    </div>
+                  </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <!-- end new entry -->
+
+
+   <section class="pagination mt-3">
+      <div class="container">
+       <div class="row justify-content-md-center">
+          <div class="col-md-auto ">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                  {% if abstracts.has_previous %}
+                <li class="page-item">
+                  <a class="page-link" href="?page=1" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                </li>
+                  {% endif %}
+                  {% for n in abstracts.paginator.page_range %}
+                      {% if abstracts.number == n %}
+                        <li class="page-item active">
+                          <span class="page-link">{{ n }}<span class="sr-only">(current)</span></span>
+                        </li>
+                      {% elif n > abstracts.number|add:'-2' and n < abstracts.number|add:'2' %}
+                        <li class="page-item"><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>
+                      {% endif %}
+                    {% endfor %}
+                <!--li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li-->
+                  {% if abstracts.has_next %}
+                  <li class="page-item">
+                  <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </li>
+                  {% endif %}
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>   
+    </section>
+    <!-- end pagination -->
+
+ {% endblock %}

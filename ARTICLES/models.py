@@ -26,6 +26,9 @@ class TaggedAuthor(GenericTaggedItemBase):
         on_delete=models.CASCADE,
         related_name="%(app_label)s_%(class)s_items",
     )
+    class Meta:
+        verbose_name = _("Author")
+        verbose_name_plural = _("Author")
 
 class kategori(models.Model):
     KATEGORI_CHOICES = (
@@ -68,15 +71,18 @@ class AbstractJPHIV(models.Model):
     slug = models.SlugField(default='', editable=False, max_length=140)
     tanggal = models.DateField()
     kategori = models.ForeignKey(kategori, on_delete=models.PROTECT)
+    authors = TaggableManager(through=TaggedAuthor, related_name='abstracts', verbose_name='Author')
     sumber = models.CharField(max_length=120, blank=True)
     volume = models.CharField(max_length=10, blank=True)
-    DOI = models.URLField(blank=True)
+    DOI_number = models.CharField(max_length=20, blank=True)
+    DOI_URL = models.URLField(blank=True)
     doctype = models.CharField(max_length=4, blank=True)
     url = models.URLField(blank=True)
-    download = models.FileField(upload_to='MEDIA/abstract/', blank=True)
+    download = models.FileField(upload_to='abstract/', blank=True)
     bibliografi = RichTextField(blank=True)
     abstrak = RichTextField(blank=True)
-    authors = TaggableManager(through=TaggedAuthor)
+    visit_num = models.PositiveIntegerField(default=0)
+    tags = TaggableManager()
 
 
     objects = abstractManager()
@@ -129,11 +135,19 @@ class AnotatedJPHIV(models.Model):
     added_by = models.ForeignKey(settings.AUTH_USER_MODEL,
         null=True, blank=True, on_delete=models.SET_NULL)
     kategori = models.ForeignKey(kategori, on_delete=models.PROTECT)
+    Author = TaggableManager(through=TaggedAuthor, related_name='+', verbose_name='Author')
+    sumber = models.CharField(max_length=120, blank=True)
+    volume = models.CharField(max_length=10, blank=True)
+    DOI_number = models.CharField(max_length=20, blank=True)
+    DOI_URL = models.URLField(blank=True)
+    doctype = models.CharField(max_length=4, blank=True)
     url = models.URLField(blank=True)
-    download = models.FileField(upload_to='MEDIA/anotated/', blank=True)
+    download = models.FileField(upload_to='anotated/', blank=True)
     bibliografi = RichTextField(blank=True)
     anotated = RichTextField(blank=True)
-    tag = TaggableManager()
+    visit_num = models.PositiveIntegerField(default=0)
+
+    tags = TaggableManager()
 
     objects = anotatedManager()
 
@@ -143,6 +157,9 @@ class AnotatedJPHIV(models.Model):
 
     def __str__(self):
         return self.judul
+
+    def get_absolute_url(self):
+        return reverse('books:detail', args=[self.id])
 
  #  def save_model(self, request, obj, form, change):
   #      obj.added_by = request.user

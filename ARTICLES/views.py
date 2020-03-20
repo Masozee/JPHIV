@@ -1,9 +1,13 @@
 
 from django.shortcuts import render, Http404, get_object_or_404, redirect
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse_lazy
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db import transaction
 from taggit.models import Tag, TaggedItem
-from django.views.generic import DetailView, ListView, TemplateView
+from django.views.generic import DetailView, ListView, TemplateView, CreateView
 from ARTICLES.models import *
+from django.db.models import F
 from .forms import *
 
 # Create your views here.
@@ -19,7 +23,7 @@ def home(request):
     socbehC = socbeh.count()
     epidemo = AbstractJPHIV.objects.filter(kategori__Kategori="epidemology")
     epidemoC = epidemo.count()
-    abstracts = AbstractJPHIV.objects.all().order_by('-tanggal')[:3]
+    abstracts = AbstractJPHIV.objects.all().order_by('-tanggal')[:6]
     abstractC = AbstractJPHIV.objects.all()
     countabs = abstractC.count()
     anotates = AnotatedJPHIV.objects.all().order_by('-tanggal')[:3]
@@ -47,6 +51,14 @@ def home(request):
 
 def abstract(request):
     epidemo = AbstractJPHIV.objects.all().order_by('-tanggal').distinct()
+    paginator = Paginator(epidemo, 9)
+    page = request.GET.get('page')
+    try:
+        epidemo = paginator.page(page)
+    except PageNotAnInteger:
+        epidemo = paginator.page(1)
+    except EmptyPage:
+        epidemo = paginator.page(paginator.num_pages)
 
     context = {
         'abstracts': epidemo
@@ -55,11 +67,19 @@ def abstract(request):
 
 def epidem(request):
     epidemo = AbstractJPHIV.objects.filter(kategori__Kategori="epidemology").order_by('-tanggal').distinct()
+    paginator = Paginator(epidemo, 9)
+    page = request.GET.get('page')
+    try:
+        epidemo = paginator.page(page)
+    except PageNotAnInteger:
+        epidemo = paginator.page(1)
+    except EmptyPage:
+        epidemo = paginator.page(paginator.num_pages)
 
     context = {
         'abstracts':epidemo
     }
-    return render(request, 'articles/Epidemology.html', context)
+    return render(request, 'articles/abstract/Epidemology.html', context)
 
 
 def abstractartikel(request):
@@ -69,26 +89,71 @@ def abstractartikel(request):
     context = {
         'abstracts': Epidem
     }
-    return render(request, 'articles/artikel.html', context)
+    return render(request, 'articles/abstract/artikel.html', context)
 
 def abstractbiomedicine(request):
     Biomed = AbstractJPHIV.objects.filter(kategori__Kategori="biomedicine").order_by('-tanggal').distinct()
-    return render(request, "articles/biomedic.html", {"abstracts":Biomed})
+    paginator = Paginator(Biomed, 1)
+    page = request.GET.get('page')
+    try:
+        Biomed = paginator.page(page)
+    except PageNotAnInteger:
+        Biomed = paginator.page(1)
+    except EmptyPage:
+        Biomed = paginator.page(paginator.num_pages)
+
+    return render(request, "articles/abstract/biomedic.html", {"abstracts":Biomed})
 
 def abstracthealtheconomic(request):
     healeco = AbstractJPHIV.objects.filter(kategori__Kategori="health-economic").order_by('-tanggal').distinct()
-    return render(request, "articles/healthecon.html", {"abstracts":healeco})
+    paginator = Paginator(healeco, 9)
+    page = request.GET.get('page')
+    try:
+        healeco = paginator.page(page)
+    except PageNotAnInteger:
+        healeco = paginator.page(1)
+    except EmptyPage:
+        healeco = paginator.page(paginator.num_pages)
+
+    return render(request, "articles/abstract/healthecon.html", {"abstracts":healeco})
 
 def abstractpolicystudy(request):
     polstud = AbstractJPHIV.objects.filter(kategori__Kategori="policy-study").order_by('-tanggal').distinct()
-    return render(request, "articles/polstud.html", {"abstracts":polstud})
+    paginator = Paginator(polstud, 9)
+    page = request.GET.get('page')
+    try:
+        polstud = paginator.page(page)
+    except PageNotAnInteger:
+        polstud = paginator.page(1)
+    except EmptyPage:
+        polstud = paginator.page(paginator.num_pages)
+
+    return render(request, "articles/abstract/polstud.html", {"abstracts":polstud})
 
 def abstractsocialbehavioral(request):
     socbeh = AbstractJPHIV.objects.filter(kategori__Kategori="social-behavioral").order_by('-tanggal').distinct()
-    return render(request, "articles/socbeh.html", {"abstracts":socbeh})
+    paginator = Paginator(socbeh, 9)
+    page = request.GET.get('page')
+    try:
+        socbeh = paginator.page(page)
+    except PageNotAnInteger:
+        socbeh = paginator.page(1)
+    except EmptyPage:
+        socbeh = paginator.page(paginator.num_pages)
+
+    return render(request, "articles/abstract/socbeh.html", {"abstracts":socbeh})
 
 def anotated(request):
     anot = AnotatedJPHIV.objects.all()
+    paginator = Paginator(anot, 9)
+    page = request.GET.get('page')
+    try:
+        anot = paginator.page(page)
+    except PageNotAnInteger:
+        anot = paginator.page(1)
+    except EmptyPage:
+        anot = paginator.page(paginator.num_pages)
+
     context = {
         'abstracts': anot
     }
@@ -96,36 +161,112 @@ def anotated(request):
 
 def anotatedartikel(request):
     Epidem = AnotatedJPHIV.objects.filter(kategori__Kategori="artikel").order_by('-tanggal').distinct()
+    paginator = Paginator(Epidem, 9)
+    page = request.GET.get('page')
+    try:
+        Epidem = paginator.page(page)
+    except PageNotAnInteger:
+        Epidem = paginator.page(1)
+    except EmptyPage:
+        Epidem = paginator.page(paginator.num_pages)
+
     return render(request, "articles/anotated.html", {"abstracts":Epidem})
+
+def anotatedepidem(request):
+    epidemo = AnotatedJPHIV.objects.filter(kategori__Kategori="epidemology").order_by('-tanggal').distinct()
+    paginator = Paginator(epidemo, 9)
+    page = request.GET.get('page')
+    try:
+        epidemo = paginator.page(page)
+    except PageNotAnInteger:
+        epidemo = paginator.page(1)
+    except EmptyPage:
+        epidemo = paginator.page(paginator.num_pages)
+
+    context = {
+        'abstracts':epidemo
+    }
+    return render(request, 'articles/anotated/Epidemology.html', context)
 
 def anotatedbiomedicine(request):
     Biomed = AnotatedJPHIV.objects.filter(kategori__Kategori="biomedicine").order_by('-tanggal').distinct()
-    return render(request, "articles/anotated.html", {"abstracts":Biomed})
+    paginator = Paginator(Biomed, 9)
+    page = request.GET.get('page')
+    try:
+        Biomed = paginator.page(page)
+    except PageNotAnInteger:
+        Biomed = paginator.page(1)
+    except EmptyPage:
+        Biomed = paginator.page(paginator.num_pages)
+    return render(request, "articles/anotated/biomedic.html", {"abstracts":Biomed})
 
 def anotatedhealtheconomic(request):
     healeco = AnotatedJPHIV.objects.filter(kategori__Kategori="health-economic").order_by('-tanggal').distinct()
-    return render(request, "articles/anotated.html", {"abstracts":healeco})
+    paginator = Paginator(healeco, 9)
+    page = request.GET.get('page')
+    try:
+        healeco = paginator.page(page)
+    except PageNotAnInteger:
+        healeco = paginator.page(1)
+    except EmptyPage:
+        healeco = paginator.page(paginator.num_pages)
+
+    return render(request, "articles/anotated/healthecon.html", {"abstracts":healeco})
 
 def anotatedpolicystudy(request):
     polstud = AnotatedJPHIV.objects.filter(kategori__Kategori="policy-study").order_by('-tanggal').distinct()
-    return render(request, "articles/anotated.html", {"abstracts":polstud})
+    paginator = Paginator(polstud, 9)
+    page = request.GET.get('page')
+    try:
+        polstud = paginator.page(page)
+    except PageNotAnInteger:
+        polstud = paginator.page(1)
+    except EmptyPage:
+        polstud = paginator.page(paginator.num_pages)
+
+    return render(request, "articles/anotated/polstud.html", {"abstracts":polstud})
 
 def anotatedsocialbehavioral(request):
     socbeh = AnotatedJPHIV.objects.filter(kategori__Kategori="social-behavioral").order_by('-tanggal').distinct()
-    return render(request, "articles/anotated.html", {"abstracts":socbeh})
+    paginator = Paginator(socbeh, 9)
+    page = request.GET.get('page')
+    try:
+        socbeh = paginator.page(page)
+    except PageNotAnInteger:
+        socbeh = paginator.page(1)
+    except EmptyPage:
+        socbeh = paginator.page(paginator.num_pages)
+
+    return render(request, "articles/anotated/socbeh.html", {"abstracts":socbeh})
 
 def anotateDetail(request, AnotatedJPHIV_slug):
     anotate = AnotatedJPHIV.objects.get(slug=AnotatedJPHIV_slug)
 
+    anotate.visit_num = F('visit_num') + 1
+    counts = anotate.visit_num
+    anotate.save()
+
+    anotate_related = anotate.tags.similar_objects()[:5]
+
     context = {
         "abstracts": anotate,
+        "related": anotate_related,
     }
-    return render(request, 'articles/detail.html', context)
+    return render(request, 'articles/detailanotated.html', context)
 
 def abstractDetail(request, AbstractJPHIV_slug):
     abstracts = AbstractJPHIV.objects.get(slug=AbstractJPHIV_slug)
+
+    abstracts.visit_num = F('visit_num') + 1
+    counts = abstracts.visit_num
+    abstracts.save()
+
+    abstract_related = abstracts.tags.similar_objects()[:5]
+
     context = {
         "abstracts": abstracts,
+        "related": abstract_related,
+
     }
     return render(request, 'articles/detail.html', context)
 
@@ -144,17 +285,32 @@ def AnotatedAdd(request):
             instance.save()
             users = AnotatedJPHIV.objects.all()
 
-            return render(request, "articles/addanotated.html", {'users': users})
+            return render(request, "articles/addanotated3.html", {'users': users})
     else:
         form = AnotatedForm
 
-    return render(request, "articles/addanotated.html", {'form': form})
+    return render(request, "articles/addanotated3.html", {'form': form})
 
 class authorlist(ListView):
     queryset = AbstractJPHIV.objects.all()
-    template_name = "articles/tag.html"
+    template_name = "articles/tag-result.html"
     paginate_by = 9
     context = "authorlist"
 
     def get_queryset(self):
-        return AbstractJPHIV.objects.filter(authors__slug__in=[self.kwargs['authors']])
+        return AbstractJPHIV.objects.filter(authors__slug__in=[self.kwargs['tag']])
+
+class BookCreateView(CreateView):
+    def get(self, request, *args, **kwargs):
+        context = {'form': AnotForm()}
+        return render(request, 'articles/addanotated3.html', context)
+
+    def post(self, request, *args, **kwargs):
+        form = AnotForm(request.POST)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.added_by = request.user
+            instance.save()
+
+            return HttpResponseRedirect(reverse_lazy('homepage'))
+        return render(request, 'articles/addanotated3.html', {'form': form})

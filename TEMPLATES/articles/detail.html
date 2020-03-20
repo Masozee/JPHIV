@@ -40,12 +40,12 @@
                 <div class="bd-highlight">
                   <ul class="list-unstyled">
                     <li class="list-item"><i><img src="{% static 'articles/img/date.svg' %}" alt="" srcset=""></i>{{ abstracts.tgl }}</li>
-                    <li class="list-item"><i><img src="{% static 'articles/img/id-card.svg' %}" alt="" srcset=""></i>{{ abstracts.DOI }}</li>
+                    <li class="list-item"><i><img src="{% static 'articles/img/id-card.svg' %}" alt="" srcset=""></i><a href="{{ abstracts.DOI_URL }}">{{ abstracts.DOI_number }}</a></li>
                     <li class="list-item"><i><img src="{% static 'articles/img/document.svg' %}" alt="" srcset=""></i>{{ abstracts.doctype }}</li>
                   </ul>
                 </div>
               </div>
-				<a href="{{abstracts.download}}"><button type="button" class="btn btn-danger btn-sm"><i><img src="{% static 'articles/img/download-light.svg' %}" alt="" srcset=""></i>Unduh</button></a>
+				<a href="/MEDIA/abstract/{{abstracts.download}}"><button type="button" class="btn btn-danger btn-sm"><i><img src="{% static 'articles/img/download-light.svg' %}" alt="" srcset=""></i>Unduh</button></a>
               	<button type="button" class="btn btn-outline-danger btn-sm">SALIN BIBLIOGRAPHY</button>
               	<h6 class="biblio">BIBLIOGRAPHY</h6>
               	<span class="p-biblio pl-4">
@@ -97,26 +97,15 @@
 							<hr>
 							<h5 >MATRIX</h5>
 							<i><img src="{% static 'articles/img/download-matrik.svg' %}" alt="" srcset=""></i>
-							<h3>921 kali</h3>
+							<h3>{{abstracts.pk}} kali</h3>
 							<i><img src="{% static 'articles/img/eye.svg' %}" alt=""srcset=""></i>
 							<h3>1.043 kali</h3>
 							<hr>
 							<h5 class="abstrak">ABSTRAK YANG BERHUBUNGAN</h5>
-							<h6>Cuptatem Dit Harum Dollupt 
-								Quam Ut Officiatem Il Ipsam?
-							</h6>
-							<h6>Cuptatem Dit Harum Dollupt 
-								Quam Ut Officiatem Il Ipsam?
-							</h6>
-							<h6>Cuptatem Dit Harum Dollupt 
-								Quam Ut Officiatem Il Ipsam?
-							</h6>
-							<h6>Cuptatem Dit Harum Dollupt 
-								Quam Ut Officiatem Il Ipsam?
-							</h6>
-							<h6>Cuptatem Dit Harum Dollupt 
-								Quam Ut Officiatem Il Ipsam?
-							</h6>
+							{% for a in related %}
+							<a href="/abstract/{{a.judul | slugify | lower}}"><h6>{{a.judul}}
+							</h6></a>
+							{% endfor %}
 						</div>
 						<!-- END MATRIK -->
 					</div>

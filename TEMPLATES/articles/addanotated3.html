@@ -1,0 +1,46 @@
+{% extends 'articles/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'articles/css/add-annotation.css' %}">
+    <link rel="stylesheet" href="{% static 'articles/css/header-footer.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- my css -->
+
+    <!-- jumbotron -->
+    <div class="jumbotron jumbotron-fluid">
+      <img class="img-fluid" src="{% static 'articles/img/landing-add-annotation1.png' %}" alt="" srcset="">
+    </div>
+    <!-- end jumbotron -->
+
+
+    <!-- form annotation -->
+    <section class="add-annotation">
+      <div class="container-fluid">
+        <div class="row justify-content-md-center">
+          <div class="col-md-8">
+            <h3>ADD ANNOTATION</h3>
+          </div>
+        </div>
+        <div class="row justify-content-md-center">
+          <div class="col-md-8 form-annotation">
+            <form action="" method="POST">
+              {% csrf_token %}
+              <div class="form-group row">
+                <div class="col-sm-8">{{form|crispy }}</div>
+                </div>
+              <button type="submit">SUBMIT</button>
+              </div>
+
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end form annotation -->
+{% endblock %}

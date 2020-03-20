@@ -1,0 +1,90 @@
+section img{
+    width: 12%;
+    padding-top: 0.4%;
+    padding-bottom: 3.4%;
+}
+
+.overview p, .privacy-policy p, .term-of-service p{
+    margin-bottom: 0;
+}
+
+.overview, .privacy-policy, .term-of-service{
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+
+.overview{
+    margin-top: 5%;
+}
+
+.overview h5, .privacy-policy h5, .term-of-service h5{
+    font-family: 'Source Sans Pro';
+    font-size: 16px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ef494b;
+}
+
+.overview p{
+    font-family: 'Source Sans Pro';
+    font-size: 24px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2c2b2b;
+}
+
+.overview p span{
+    font-family: 'Source Sans Pro';
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2c2b2b;
+}
+
+.privacy-policy p{
+    font-family: 'Source Sans Pro';
+    font-size: 16px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.63;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2c2b2b;
+}
+
+.term-of-service p{
+    font-family: 'Source Sans Pro';
+    font-size: 16px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.63;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2c2b2b;
+}
+
+.term-of-service ul , .term-of-service ol{
+    font-family: 'Source Sans Pro';
+    font-size: 16px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.63;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2c2b2b;
+}

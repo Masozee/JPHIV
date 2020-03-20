@@ -20,12 +20,11 @@ class VisitorSignUpForm(UserCreationForm):
     last_name = forms.CharField(max_length=100, )
     email = forms.EmailField(max_length=150, )
     Organisasi = forms.CharField(max_length=100,)
-    google_scholar_id = forms.CharField(max_length=50)
 
 
     class Meta(UserCreationForm.Meta):
         model = CustomUser
-        fields = ('username', 'first_name', 'last_name','Organisasi','google_scholar_id',
+        fields = ('username', 'first_name', 'last_name','Organisasi',
                   'email', 'password1', 'password2',)
 
     @transaction.atomic

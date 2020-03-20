@@ -3,16 +3,8 @@ from django.forms import ModelForm
 from .models import *
 from django.db import transaction
 
-
-class AnotatedForm(ModelForm):
-
+class AnotForm(forms.ModelForm):
     class Meta:
         model = AnotatedJPHIV
-        fields = ['judul', 'tanggal', 'added_by', 'kategori', 'url','download', 'bibliografi', 'anotated', 'tag']
+        exclude = ('added_by','visit_num')
 
-    @transaction.atomic
-    def save(self, request):
-        user = super().save(commit=False)
-        user.added_by = request.user.username
-        user.save()
-        return user

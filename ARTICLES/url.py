@@ -14,13 +14,13 @@ urlpatterns = [
     re_path('abstract/(?P<AbstractJPHIV_slug>[\w-]+)/$', artviews.abstractDetail, name='abstract-detail'),
 
     path('anotated-bibliography/', artviews.anotated, name='anotated'),
-    path('anotated-bibliography/epidemology/', artviews.epidem, name='abstract-epidemology'),
-    path('anotated-bibliography/biomedicine/', artviews.anotatedbiomedicine, name='abstract-biomedicine'),
-    path('anotated-bibliography/health-economic/', artviews.anotatedhealtheconomic, name='abstract-health'),
-    path('anotated-bibliography/policy-study/', artviews.anotatedpolicystudy, name='abstract-policy'),
-    path('anotated-bibliography/social-behavioral/', artviews.anotatedsocialbehavioral, name='abstract-social'),
+    path('anotated-bibliography/epidemology/', artviews.anotatedepidem, name='anot-epidemology'),
+    path('anotated-bibliography/biomedicine/', artviews.anotatedbiomedicine, name='anot-biomedicine'),
+    path('anotated-bibliography/health-economic/', artviews.anotatedhealtheconomic, name='anot-health'),
+    path('anotated-bibliography/policy-study/', artviews.anotatedpolicystudy, name='anot-policy'),
+    path('anotated-bibliography/social-behavioral/', artviews.anotatedsocialbehavioral, name='anot-social'),
     re_path('anotated-bibliography/(?P<AnotatedJPHIV_slug>[\w-]+)/$', artviews.anotateDetail, name='anotate-detail'),
-    path('add/anotated-bibliography/', artviews.AnotatedAdd, name='add-anotated'),
+    path('add/', artviews.BookCreateView.as_view(), name='add-anotated'),
     re_path('author/(?P<tag>[\w-]+)/$', artviews.authorlist.as_view(), name='author-tag'),
 
 

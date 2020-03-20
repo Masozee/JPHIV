@@ -1,11 +1,17 @@
 
 body{
-    font-family: 'Source Sans Pro';  
+    font-family: 'Source Sans Pro'; 
+    background-color: #F5F6F7 !important;
 }
+
+#homepage{
+    background-color: #F5F6F7 !important;
+}
+
 
 /* LANDING */
 .jumbotron{
-    background-image: url(/img/jumbotron.png);
+    background-image: url(/img/landing-index.png);
     height: 528px;
 }
 
@@ -16,11 +22,14 @@ body{
 
 .landing .media-body h5{
     font-family: 'Source Sans Pro';
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 600;
-    line-height: 1.3;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.42;
+    letter-spacing: normal;
     text-align: left;
-    color: #e42c1a !important;
+    color: #68b4d0;
 }
 
 .landing .media-body h1{
@@ -117,7 +126,11 @@ body{
     font-weight: bold;
     line-height: 1.46;
     text-align: left;
-    color: #e42c1a !important;
+    color: #32a4ce !important;
+}
+
+.new-entry img{
+    width: 11px;
 }
 
 .new-entry button{
@@ -136,6 +149,57 @@ body{
     font-weight: 600;
     line-height: 1.25;
     color: #707070 !important;
+    margin-bottom: 12px;
+}
+
+.new-entry a:hover{
+    font-family: 'Source Sans Pro';
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #fc695a !important;
+}
+
+.new-entry a{
+    font-family: 'Source Sans Pro';
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #707070 !important;
+    margin-bottom: 12px;
+}
+
+.new-entry .card-footer a:hover{
+    font-family: 'Source Sans Pro';
+    font-size: 13px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ef494b;
+}
+
+.new-entry .card-footer a{
+    font-family: 'Source Sans Pro';
+    font-size: 13px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ef494b;
+    
+}
+
+/* .new-entry ul img{
+    padding-right: 0.6%;
+} */
+
+.new-entry ul a{
+    padding-left: 6.4px
 }
 
 .new-entry .autor{
@@ -177,9 +241,13 @@ body{
 }
 
 .new-entry .card-footer{
-    background-color: white;
+    background-color: #F5F6F7;
     border: 0;
     padding-left: 0;
+}
+
+.new-entry .card{
+    background-color: #F5F6F7;
 }
 
 /* END NEW ENTRY */

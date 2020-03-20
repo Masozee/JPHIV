@@ -58,6 +58,18 @@
     color: #707070;
 }
 
+.artikel li{
+    padding-top: 4px;
+}
+
+.artikel .w-30{
+    width: 33%;
+}
+
+.artikel #autor{
+    padding-top: 0;
+}
+
 .artikel li i{
     padding-right: 6.8px;
 }
@@ -65,6 +77,7 @@
 .artikel .btn-danger, .artikel .btn-outline-danger{
     width: 200px;
     margin-right: 15px;
+    margin-top: 27px;
 }
 
 .artikel button img{
@@ -113,6 +126,10 @@
     margin-top: 12px;
 }
 
+.artikel ul{
+    margin-bottom: 0;
+}
+
 .artikel ul .annotated{
     font-family: 'Source Sans Pro';
     font-size: 16px;
@@ -159,7 +176,7 @@
     font-size: 12px;
     font-weight: 600;
     line-height: 1.25;
-    color: #707070;
+    color: #EF494B;
 }
 
 .matrik h3{
@@ -201,7 +218,7 @@
 }
 
 .user-review {
-    background-color: #edebeb;
+    background-color: #ffffff;
     /* padding: 21px; */
     /* border-top: 1px solid #707070; */
     /* border-bottom: 1px solid #707070; */
@@ -260,6 +277,18 @@
 .user-review p,  .user-review .user{
     padding-left: 21px;
     padding-right: 21px;
+}
+
+.user-review p span {
+    font-family: 'Source Sans Pro';
+    font-size: 12px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    text-align: left;
+    color: #353d5f;
 }
 
 .user-review ul{
