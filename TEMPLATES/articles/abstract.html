@@ -1,6 +1,11 @@
 {% extends 'articles/base.html' %}
 {% load static %}
 
+{% block css %}
+    <link rel="stylesheet" href="{% static 'articles/css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'articles/css/epidemiology.css'%}">
+{% endblock %}
+    <title>JPHI</title>
 
 {% block content %}
     <!-- header 2 -->
@@ -31,32 +36,51 @@
           </li>
 
         </ul>
+        <!--ul class="navbar-nav ml-auto popular-search">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">POPULAR SEARCH <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Epidemiology</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Biomedicine</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Health Economic</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Policy Study</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Social-behavioral</a>
+          </li>
+        </ul-->
       </div>
     </nav>
     <!-- end header 2 -->
 
-<br>
+
+
+      <!-- TITLE -->
       <section class="title-epidemiology">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
                   <h5>ABSTRACT</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam amet aperiam architecto atque beatae, blanditiis earum eius eligendi facilis incidunt ipsa, nulla odit porro quibusdam rerum similique, voluptates voluptatibus.</p>
+                    <p>Health economics atau ekonomi kesehatan adalah cabang dari ilmu ekonomi yang berhubungan dengan isu terkait efisiensi, efektivitas, nilai, serta perilaku dari produksi dan penggunaan layanan kesehatan.</p>
                 </div>
             </div>
         </div>
       </section>
       <!-- END TITLE -->
-
-
-
       <!-- FILTER -->
       <section class="filter-epidemiology " >
         <div class="container ">
           <!-- FILTER COLLAPSE -->
           <div class="d-flex justify-content-end">
             <button class="btn btn-danger btn-sm d-flex justify-content-end" type="button" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseExample">
-              <i> <img src="img/filter.svg" alt=""></i> FILTER
+              <i> <img src="{% static 'articles/img/filter.svg' %}" alt=""></i> FILTER
             </button>
           </div>
 
@@ -113,76 +137,73 @@
     <section>
       <div class="container new-entry">
         <div class="row row-cols-md-3">
-          {% for object in abstracts %}
+               {% for object in abstracts %}
                   <div class="col-md-4 mb-4">
                     <div class="card h-100">
                       <div class="card-body">
                         <a href="/abstract/{{object.judul | slugify}}/"><h5 class="card-title">{{object.judul}}</h5></a>
                         <h6 class="autor"><i><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i>
                           {% for tag in object.authors.all %}
-                            <a href="/author/{{ tag.name | slugify}}">  {{ tag.name }},</a>
-                            {% endfor %}
-                        <h6 class="date"><i><img src="{% static 'articles/img/date.svg' %}" alt=""></i> {{object.tgl}}</h6>
+                            <a href="/author/{{ tag.name | slugify}}" style="font-size: x-small;">{{ tag.name }}</a>
+                          {% endfor %}
+                        </h6>
+                        <h6 class="date"><i><img src="{% static 'articles/img/date.svg' %}" alt=""></i>{{object.tgl}}</h6>
                         <p class="card-text">{{object.abstrak | truncatechars:"200" |safe}}</p>
                       </div>
                       <div class="card-footer">
                         <ul class="list-inline">
                           <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i>
-                              <a href="MEDIA/{{object.download}}">Unduh</a>
-                          </li>
+                            <a href="/MEDIA/{{abstract.download}}">Unduh</a></li>
                           <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i> Bagikan</li>
                         </ul>
                         <hr>
                       </div>
                     </div>
                   </div>
-          {% endfor %}
+                {% endfor %}
         </div>
       </div>
     </section>
     <!-- end new entry -->
 
 
+          <!-- pagination -->
     <section class="pagination mt-3">
       <div class="container">
        <div class="row justify-content-md-center">
           <div class="col-md-auto ">
             <nav aria-label="Page navigation example">
               <ul class="pagination">
-                  {% if abstracts.has_previous %}
+                {% if abstracts.has_previous %}
                 <li class="page-item">
                   <a class="page-link" href="?page=1" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                     <span class="sr-only">Previous</span>
                   </a>
                 </li>
-                  {% endif %}
-                  {% for n in abstracts.paginator.page_range %}
-                      {% if abstracts.number == n %}
-                        <li class="page-item active">
-                          <span class="page-link">{{ n }}<span class="sr-only">(current)</span></span>
-                        </li>
-                      {% elif n > abstracts.number|add:'-2' and n < abstracts.number|add:'2' %}
-                        <li class="page-item"><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>
-                      {% endif %}
-                    {% endfor %}
-                <!--li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li-->
-                  {% if abstracts.has_next %}
+                {% endif %}
+                {% for n in abstracts.paginator.page_range %}
+                    {% if abstracts.number == n %}
+                      <li class="page-item">
+                        <span class="page-link">{{ n }}<span class="sr-only">(current)</span></span>
+                      </li>
+                    {% elif n > abstracts.number|add:'-2' and n < abstracts.number|add:'2' %}
+                      <li class="page-item"><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if abstracts.has_next %}
                   <li class="page-item">
-                  <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </li>
-                  {% endif %}
+                    <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </li>
+                {% endif %}
               </ul>
             </nav>
           </div>
         </div>
-      </div>   
+      </div>
     </section>
     <!-- end pagination -->
-
- {% endblock %}
+{% endblock %}

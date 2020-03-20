@@ -9,10 +9,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    
     <!-- my css -->
-   {% block css %}
-   {% endblock %}
+    <link rel="stylesheet" href="{% static 'articles/css/index.css' %}">
     <link rel="stylesheet" href="{% static 'articles/css/header-footer.css'%}">
 
     <!-- font source Sans pro -->
@@ -29,16 +28,16 @@
     <!-- header 1 -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
       <a class="navbar-brand" href="{% url 'homepage' %}">
-        <img src="{% static 'articles/img/logo/Logojphiv.png' %}" alt="" srcset="" style="height:50px;">
+        <img src="{% static 'articles/img/logo/JPHIV-INA_LOGO.svg' %}" alt="" srcset="">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
+    
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="{% url 'abstract' %}">ABSTRACT <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{% static 'articles/img/logo/Group12.png' %}">ABSTRACT <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'anotated' %}">ANNOTATED BIBLIOGRAPHY </a>

@@ -11,7 +11,6 @@ body{
 
 /* LANDING */
 .jumbotron{
-    background-image: url(/img/landing-index.png);
     height: 528px;
 }
 

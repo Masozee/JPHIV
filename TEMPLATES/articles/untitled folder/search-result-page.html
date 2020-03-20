@@ -1,122 +1,74 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% extends 'articles/base.html' %}
+{% load static %}
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    
-    <!-- my css -->
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/epidemiology.css">
-    <link rel="stylesheet" href="css/header-footer.css">
+{% block css %}
+    <link rel="stylesheet" href="{% static 'articles/css/search-result.css' %}">
+    <link rel="stylesheet" href="{% static 'articles/css/header-footer.css' %}">
 
     <!-- font source Sans pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&display=swap" rel="stylesheet">
     <title>JPHI</title>
-
-  </head>
-
-  <body>
-
-      <!-- header 1 -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
-        <a class="navbar-brand" href="index.html">
-          <img src="img/logo/Group 12.png" alt="" srcset="">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">ABSTRACT <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">ANNOTATED BIBLIOGRAPHY </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><img src="img/Group 13.png" alt="" srcset=""></a>
-            </li>
-            <button type="button" class="btn btn-outline-secondary btn-sm">SUBMIT ANNOTATION</button>
-          </ul>
-          <form class="form-inline my-2 my-lg-0 w-50 ">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text "><i><img src="img/search-icon.svg" alt=""></i></div>
-              </div>
-              <input type="search" class="form-control "  placeholder="looking for something?">
-            </div>
-          </form>
-          <img class="img-profil" src="img/img-profil.jpg" alt="" srcset="">
-          <button type="button" class="btn btn-link btn-profil ">LOGIN</button>
-        </div>
-      </nav>
+{% endblock %}
       <!-- end header 1 -->
-    
-        <!-- header 2 -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">EPIDEMIOLOGY <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">BEOMEDICINE</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">HEALTH ECONOMIC</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">POLICY STUDY</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">SOCIAL-BEHAVOIRAL</a>
-              </li>
-             
-            </ul>
-            <ul class="navbar-nav ml-auto popular-search">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">POPULAR SEARCH <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Epidemiology</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Biomedicine</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Health Economic</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Policy Study</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Social-behavioral</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-        <!-- end header 2 -->
+{% block content %}
+    <!-- header 2 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">ABSTRACT <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'abstract-epidemology' %}">EPIDEMOLOGY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'abstract-biomedicine' %}">BIOMEDICINE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'abstract-health' %}">HEALTH ECONOMIC</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'abstract-policy' %}">POLICY STUDY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'abstract-social' %}">SOCIAL-BEHAVIORAL</a>
+          </li>
 
+        </ul>
+        <!--ul class="navbar-nav ml-auto popular-search">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">POPULAR SEARCH <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Epidemiology</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Biomedicine</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Health Economic</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Policy Study</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Social-behavioral</a>
+          </li>
+        </ul-->
+      </div>
+    </nav>
+    <!-- end header 2 -->
       <!-- TITLE -->
-      <section class="title-epidemiology">
+      <section class="title-searchResult">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                  <h5>ABSTRACT</h5>
-                    <h3>
-                      EPIDEMIOLOGY  
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu dolor sit amet.</p>
+                    <h2> SEARCH RESULT PAGE</h2>
+                    <h3>Hasil pencarian untuk {{query}}</h3>
                 </div>
             </div>
         </div>
@@ -187,11 +139,6 @@
     <!-- new entri -->
     <section>
       <div class="container new-entry">
-        <!-- <div class="d-flex justify-content-between">
-          <h3>New Entry</h3>
-          <button type="button" class="btn btn-danger btn-sm">9 Hasil ditampilkan</button>
-        </div> -->
-        <!-- <hr> -->
         <div class="row row-cols-md-3">
           <!-- <div class="col-md-3">
 
@@ -397,21 +344,4 @@
     </section>
     <!-- end pagination -->
 
-  <!-- footer -->
-  <footer>
-    <div class="container">
-      <hr>
-      <div class="row justify-content-md-center ">
-        <div class="col-md-auto align-items-center">
-          <h3>© JPHI.net All rights reserved.</h3>
-        </div>
-      </div>
-    </div>
-  </footer>
-<!-- end footer -->
-
-
-      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+ {% endblock %}

@@ -1,22 +1,78 @@
 {% extends 'articles/base.html' %}
 {% load static %}
 
+{% block css %}
+ <link rel="stylesheet" href="{% static 'articles/css/index.css' %}">
+{% endblock %}
 
 {% block content %}
+    <!-- header 2 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">ABSTRACT <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'abstract-epidemology' %}">EPIDEMOLOGY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'abstract-biomedicine' %}">BIOMEDICINE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'abstract-health' %}">HEALTH ECONOMIC</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'abstract-policy' %}">POLICY STUDY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'abstract-social' %}">SOCIAL-BEHAVIORAL</a>
+          </li>
+
+        </ul>
+        <!--ul class="navbar-nav ml-auto popular-search">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">POPULAR SEARCH <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Epidemiology</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Biomedicine</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Health Economic</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Policy Study</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Social-behavioral</a>
+          </li>
+        </ul-->
+      </div>
+    </nav>
+    <!-- end header 2 -->
+
     <!-- jumbotron -->
     <section class="landing">
       <div class="container-fluid">
-        <div class="jumbotron jumbotron-fluid"
-             style="background-image: url('{% static 'articles/img/bg.jpg' %}'); background-size: cover;">
+        <div class="jumbotron jumbotron-fluid" style="
+        background-image: url({% static 'articles/img/landing-index.png' %});
+        background-size: cover;
+        background-repeat: no-repeat;">
           <div class="container">
             <div class="row justify-content-md-center">
               <div class="col-md-2">
                 <div class="media">
                   <img src="{% static 'articles/img/epidemiology.png' %}" class="align-self-center mr-1" alt="...">
                   <div class="media-body">
-                    <h5 class="mt-0">epidemiology</h5>
+                    <h5 class="mt-0">EPIDEMIOLOGI</h5>
                     <h1>{{epidemoc}}</ph1>
-
                   </div>
                 </div>
               </div>
@@ -24,9 +80,8 @@
                 <div class="media">
                   <img src="{% static 'articles/img/biomedicine.png' %}" class="align-self-center mr-1" alt="...">
                   <div class="media-body">
-                    <h5 class="mt-0">biomedicine</h5>
+                    <h5 class="mt-0">BIOMEDICINE</h5>
                     <h1>{{biomedc}}</ph1>
-
                   </div>
                 </div>
               </div>
@@ -34,9 +89,8 @@
                 <div class="media">
                   <img src="{% static 'articles/img/health economic.png' %}" class="align-self-center mr-1" alt="...">
                   <div class="media-body">
-                    <h5 class="mt-0">health economic</h5>
+                    <h5 class="mt-0">HEALTH ECONOMIC</h5>
                     <h1>{{healecoc}}</ph1>
-
                   </div>
                 </div>
               </div>
@@ -44,9 +98,8 @@
                 <div class="media">
                   <img src="{% static 'articles/img/policy-study.png' %}" class="align-self-center mr-1" alt="...">
                   <div class="media-body">
-                    <h5>policy study</h5>
+                    <h5>POLICY STUDY</h5>
                     <h1>{{polstudc}}</ph1>
-
                   </div>
                 </div>
               </div>
@@ -54,31 +107,30 @@
                 <div class="media">
                   <img src="{% static 'articles/img/social-behavioral.png' %}" class="align-self-center mr-1" alt="...">
                   <div class="media-body">
-                    <h5 class="mt-0">social behavioral</h5>
+                    <h5 class="mt-0">SOCIAL BEHAVIORAL</h5>
                     <h1>{{socbehc}}</h1>
-                    
                   </div>
                 </div>
               </div>
             </div>
             <div class="row justify-content-md-center title">
               <div class="col-md-2">
-                <img src="{% static 'articles/img/logo/Landing-img.png' %}" alt="" srcset="">
+                <img src="{% static 'articles/img/logo/Logojphiv.png' %}" alt="" srcset="" style="height:50px">
               </div>
               <div class="col-md-6">
-                <h6 class="landing-title">JPHI mengindeks jurnal ilmiah, buku-buku, laporan penelitian, makalah kebijakan, makalah konferensi, dan data primer 
+                <h6 class="landing-title">JPHI mengindeks jurnal ilmiah, buku-buku, laporan penelitian, makalah kebijakan, makalah konferensi, dan data primer
                   dari universitas, badan penelitian, lembaga pemerintahan, dan penerbit yang berkaitan dengan HIV AIDS.</h6>
               </div>
             </div>
               <div class="row justify-content-md-center main-search">
                 <div class="col-md-8">
-                  <form action="">
+                  <form method="GET" class="search" action="/cari/>
                     <div class="input-group">
-  
                       <div class="input-group-prepend">
                         <div class="input-group-text"><i><img src="{% static 'articles/img/search-landing.svg' %}" alt=""></i></div>
+                        <input type="text" name="q" class="form-control"  placeholder="looking for something?">
                       </div>
-                      <input type="search" class="form-control"  placeholder="looking for something?">
+
                     </div>
                   </form>
                 </div>
@@ -96,6 +148,8 @@
       </div>
     </section>
     <!-- end jumbotron -->
+
+    <!-- new entri -->
     <section>
       <div class="container new-entry">
         <div class="d-flex justify-content-between">
@@ -104,36 +158,33 @@
         </div>
         <hr>
         <div class="row row-cols-md-3">
-
-
-          {% for abstract in abstracts %}
-                  <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                      <div class="card-body">
-                        <a href="abstract/{{abstract.judul | slugify}}/"><h5 class="card-title">{{abstract.judul}}</h5></a>
-                        <h6 class="autor"><i><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i>
-                          {% for tag in abstract.authors.all %}
-                            <a href="/author/{{ tag.name | slugify}}">  {{ tag.name }},</a>
-                            {% endfor %}
-                        </h6>
-                        <h6 class="date"><i><img src="{% static 'articles/img/date.svg' %}" alt=""></i>{{abstract.tgl}}</h6>
-                        <span class="card-text">{{abstract.abstrak | truncatechars:"200" |safe}}</span>
-                      </div>
-                      <div class="card-footer">
-                        <ul class="list-inline">
-                          <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i> Unduh</li>
-                          <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i> Bagikan</li>
-                        </ul>
-                        <hr>
-                      </div>
-                    </div>
-                  </div>
+        {% for abstract in abstracts %}
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <a href="abstract/{{abstract.judul | slugify}}/" class="card-title">{{abstract.judul}}</a>
+                <h6 class="autor"><i><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i>
+                  {% for tag in abstract.authors.all %}
+                    <a href="/author/{{ tag.name | slugify}}" style="font-size: x-small;">{{ tag.name }}</a>
+                  {% endfor %}
+                </h6>
+                <h6 class="date"><i><img src="{% static 'articles/img/date.svg' %}" alt=""></i>{{abstract.tgl}}</h6>
+                <p class="card-text">{{abstract.abstrak | truncatechars:"200" |safe}}</p>
+              </div>
+              <div class="card-footer">
+                <ul class="list-inline">
+                  <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i><a href="MEDIA/{{abstract.download}}">Unduh</a></li>
+                  <li class="list-inline-item"><i><img src="img/share.svg" alt=""></i><a href="">Bagikan</a></li>
+                </ul>
+                <hr>
+              </div>
+            </div>
+          </div>
           {% endfor %}
-
         </div>
       </div>
     </section>
-    <!-- end new entry -->
+
 
     <section class="new-anno-bibl new-entry">
       <div class="container">
@@ -142,35 +193,29 @@
             <h3>NEW ANNOTATED BIBLIOGRAPHY</h3>
             <hr>
             <div class="row row-cols-md-3">
-
-               {% for abstract in anotates %}
-                  <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                      <div class="card-body">
-                        <a href="anotated-bibliography/{{abstract.judul | slugify}}/"><h5 class="card-title">{{abstract.judul}}</h5></a>
-                        <h6 class="autor"><i><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i>
-                          anotated by : {{abstract.added_by.first_name}}
-                        </h6>
-                        <h6 class="date"><i><img src="{% static 'articles/img/date.svg' %}" alt=""></i>   {{abstract.tgl}}</h6>
-                        <span class="card-text">{{abstract.anotated | truncatechars:"200" |safe}}</span>
-                      </div>
-                      <div class="card-footer">
-                        <ul class="list-inline">
-                          <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i> Unduh</li>
-                          <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i> Bagikan</li>
-                        </ul>
-                        <hr>
-                      </div>
-                    </div>
+              {% for abstract in anotates %}
+              <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <a href="anotated-bibliography/{{abstract.judul | slugify}}/" class="card-title">{{abstract.judul}}</a>
+                    <h6 class="autor"><i><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i> anotated by : {{abstract.added_by.first_name}}</h6>
+                    <h6 class="date"><i><img src="{% static 'articles/img/date.svg' %}" alt=""></i>{{abstract.tgl}}</h6>
+                    <p class="card-text">{{abstract.anotated | truncatechars:"200" |safe}}</p>
                   </div>
-          {% endfor %}
-
+                  <div class="card-footer">
+                    <ul class="list-inline">
+                      <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i><a href="">Bagikan</a></li>
+                    </ul>
+                    <hr>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
             </div>
-
           </div>
         </div>
       </div>
     </section>
 
-
- {% endblock %}
+    <!-- footer -->
+   {% endblock %}
