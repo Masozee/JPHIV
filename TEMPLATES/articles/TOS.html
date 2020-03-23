@@ -1,0 +1,73 @@
+{{% extends 'articles/base.html' %}
+{% load class_name %}
+{% load static %}
+
+{% block css%}
+    <!-- my css -->
+    <link rel="stylesheet" href="{% static 'articles/css/overview.css' %}">
+{% endblock %}
+
+{% block content %}
+      <!-- header 2 -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'overview' %}">OVERVIEW </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'privacy' %}">PRIVACY POLICY</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'TOS' %}">TERMS OF SERVICE <span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  <!-- end header 2 -->
+
+    
+
+    <section>
+      <div class="container">
+        <div class="row overview">
+        <!-- overview -->
+          <div class="col-md-7">
+
+        <div class="row term-of-service">
+        <!-- term of service -->
+          <div class="col-md-11">
+            <h5>TERMS OF SERVICE</h5>
+            <ul>
+              <li>Pengguna tidak memerlukan akun JPHI untuk menggunakan fitur pencarian abstrak (publikasi)</li>
+              <li>Pengguna memerlukan akun JPHI untuk dapat mengunggah dan mengulas Annotated Bibliography</li><br>
+              <li>Langkah-langkah pembuatan akun</li>
+              <ol>
+                <li>Klik tombol Join Us pada laman utama situs</li>
+                <li>Isi Nama, Email, Institusi, serta No. Telepon (opsional) anda</li>
+                <li>Profil anda akan muncul pada laman Annotated Bibliography yang anda buat</li>
+              </ol><br>
+              <li>Langkah-langkah mengumpulkan Annotated Bibliography</li>
+              <ol>
+                <li>Log In JPHI</li>
+                <li>Klik menu Submit Annotation</li>
+                <li>Isi bagian bibliografi, anotasi, kategori (biomedis, epidemiologi, health economic, policy study, sosial-behavioral), dan sub-kategori (opsional)</li>
+                <li>Jika semua bagian sudah terisi, klik submit</li>
+                <li>JPHI akan memberikan notifikasi saat Annotated Bibliografi anda diterima</li>
+              </ol>
+            </ul>
+          </div>
+        <!-- end terms of service -->
+        </div>
+        <hr>
+         <img src="{% static 'articles/img/logo/JPHIV-INA_LOGO.svg' %}" alt="" srcset="">
+      </div>
+      </section>
+
+
+{% endblock %}

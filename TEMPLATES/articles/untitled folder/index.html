@@ -1,6 +1,13 @@
 {% extends 'articles/base.html' %}
 {% load static %}
 
+{% block css %}
+ <link rel="stylesheet" href="{% static 'articles/css/index.css' %}">
+{% endblock %}
+
+{% block title %}
+<title>Homepage</title>
+{%  endblock %}
 
 {% block content %}
     <!-- header 2 -->
@@ -13,6 +20,27 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#">ABSTRACT <span class="sr-only">(current)</span></a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="{% url 'abstract-epidemology' %}">EPIDEMOLOGY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'abstract-biomedicine' %}">BIOMEDICINE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'abstract-health' %}">HEALTH ECONOMIC</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'abstract-policy' %}">POLICY STUDY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'abstract-social' %}">SOCIAL-BEHAVIORAL</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto popular-search">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">POPULAR SEARCH <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'abstract-epidemology' %}">EPIDEMOLOGY</a>
@@ -29,28 +57,7 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'abstract-social' %}">SOCIAL-BEHAVIORAL</a>
           </li>
-         
         </ul>
-        <!--ul class="navbar-nav ml-auto popular-search">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">POPULAR SEARCH <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Epidemiology</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Biomedicine</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Health Economic</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Policy Study</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Social-behavioral</a>
-          </li>
-        </ul-->
       </div>
     </nav>
     <!-- end header 2 -->
@@ -106,10 +113,11 @@
                   </div>
                 </div>
               </div>
+              </div>
             </div>
             <div class="row justify-content-md-center title">
               <div class="col-md-2">
-                <img src="img/logo/Landing-img.png" alt="" srcset="">
+                <img src="{% static 'articles/img/logo/Logojphiv.png' %}" alt="" srcset="" style="height:50px">
               </div>
               <div class="col-md-6">
                 <h6 class="landing-title">JPHI mengindeks jurnal ilmiah, buku-buku, laporan penelitian, makalah kebijakan, makalah konferensi, dan data primer 
@@ -118,13 +126,12 @@
             </div>
               <div class="row justify-content-md-center main-search">
                 <div class="col-md-8">
-                  <form method="GET" class="search" action="/cari/>
+                  <form action="/cari/" method="GET">
                     <div class="input-group">
-  
                       <div class="input-group-prepend">
-                        <div class="input-group-text"><i><img src="img/search-landing.svg" alt=""></i></div>
+                        <div class="input-group-text"><i><img src="{% static 'articles/img/search-landing.svg' %}" alt=""></i></div>
                       </div>
-                      <input type="search" class="form-control" name="q" placeholder="looking for something?">
+                      <input type="search" class="form-control"  placeholder="looking for something?">
                     </div>
                   </form>
                 </div>
@@ -152,23 +159,23 @@
         </div>
         <hr>
         <div class="row row-cols-md-3">
-        {% for abstract in abstracts %}
+          {% for abstract in abstracts %}
           <div class="col-md-4 mb-4">
             <div class="card h-100">
               <div class="card-body">
                 <a href="abstract/{{abstract.judul | slugify}}/" class="card-title">{{abstract.judul}}</a>
                 <h6 class="autor"><i><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i>
-                  {% for tag in abstract.authors.all %}
-                    <a href="/author/{{ tag.name | slugify}}">{{ tag.name }}</a>
-                  {% endfor %}
+                {% for tag in abstract.authors.all %}
+                    <a href="/author/{{ tag.name | slugify}}" style="font-size: x-small;"><h6>{{ tag.name }}</h6></a>
+                {% endfor %}
                 </h6>
-                <h6 class="date"><i><img src="{% static 'articles/img/date.svg' %}" alt=""></i>{{abstract.tgl}}</h6>
+                <h6 class="date"><i><img src="{% static 'articles/img/date.svg' %}" alt=""></i> {{abstract.tgl}}</h6>
                 <p class="card-text">{{abstract.abstrak | truncatechars:"200" |safe}}</p>
               </div>
               <div class="card-footer">
                 <ul class="list-inline">
-                  <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i><a href="MEDIA/{{abstract.download}}">Unduh</a></li>
-                  <li class="list-inline-item"><i><img src="img/share.svg" alt=""></i><a href="">Bagikan</a></li>
+                  <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i><a href="/MEDIA/">Unduh</a></li>
+                  <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i><a href="">Bagikan</a></li>
                 </ul>
                 <hr>
               </div>
@@ -210,6 +217,4 @@
         </div>
       </div>
     </section>
-
-    <!-- footer -->
-   {% end block %}
+{% endblock %}

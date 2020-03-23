@@ -54,7 +54,7 @@ class abstractQuerySet(models.QuerySet):
         qs = self
         if query is not None:
             or_lookup = (Q(judul__icontains=query)
-                        )
+                         )
             qs = qs.filter(or_lookup)# distinct() is often necessary with Q lookups
         return qs
 

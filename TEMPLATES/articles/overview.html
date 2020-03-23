@@ -1,0 +1,58 @@
+{{% extends 'articles/base.html' %}
+{% load class_name %}
+{% load static %}
+
+{% block css%}
+    <!-- my css -->
+    <link rel="stylesheet" href="{% static 'articles/css/overview.css' %}">
+{% endblock %}
+
+{% block content %}
+      <!-- header 2 -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'overview' %}">OVERVIEW <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'privacy' %}">PRIVACY POLICY</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'TOS' %}">TERMS OF SERVICE</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  <!-- end header 2 -->
+
+    
+
+    <section>
+      <div class="container">
+        <div class="row overview">
+        <!-- overview -->
+          <div class="col-md-7">
+            <h5>OVERVIEW</h5>
+            <p>Jaringan Penelitian HIV dan AIDS Indonesia (JPHI) merupakan sebuah jaringan peneliti, praktisi, serta pegiat HIV-AIDS di Indonesia yang memiliki perhatian, ketertarikan dan kebutuhan untuk memperdalam pemahaman 
+              tentang permasalahan, program dan kebijakan HIV di Indonesia melalui interaksi satu dengan yang lain secara 
+              aktif dan terus menerus. <br> <br>
+              
+              Melalui platform online jphiv-ina.net, JPHI menyediakan wadah untuk berbagi publikasi ilmiah seperti artikel jurnal, review, dan laporan penelitian terkait HIV AIDS, serta sebagai tempat berjejaring melalui fitur <span>Annotated Bibliography </span> yang dapat diakses oleh anggota jaringan.</p>
+          
+          </div>
+        <!-- end overview -->  
+        </div>
+
+        <hr>
+        <img src="{% static 'articles/img/logo/JPHIV-INA_LOGO.svg' %}" alt="" srcset="">
+      </div>
+      </section>
+
+
+{% endblock %}

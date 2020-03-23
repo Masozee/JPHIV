@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'taggit',
     'crispy_forms',
     'USER',
+    'SEARCH'
 ]
 
 MIDDLEWARE = [
@@ -154,3 +155,8 @@ LOGOUT_REDIRECT_URL = 'homepage'
 #crispy form --------------------------------------------------------------------------------------------------------
 CRISPY_TEMPLATE_PACK ='bootstrap4'
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'nurojilukmansyah@gmail.com'
+EMAIL_HOST_PASSWORD = 'n6dy66m6liy6h'
+EMAIL_PORT = 587

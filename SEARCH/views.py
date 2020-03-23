@@ -1,16 +1,18 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from itertools import chain
+from django.shortcuts import render
 from django.views.generic import ListView
 from USER.decorators import staff_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 
-from ARTICLES.models import *
+from ARTICLES.models import AnotatedJPHIV, AbstractJPHIV
 
 
 
 class SearchView(ListView):
-    template_name = 'articles/search-result.html'
+    template_name = 'articles/result.html'
+    paginate_by = 9
     count = 0
 
     def get_context_data(self, *args, **kwargs):

@@ -1,7 +1,7 @@
-.navbar{
+/* .navbar{
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16) !important;
     margin-bottom: 3px;
-}
+} */
 
 .sub-nav{
     padding-left: 10%;
@@ -11,10 +11,10 @@
     display:none;
 }
 
-.container{
+/* .container{
 padding-left: 7%;
 padding-right: 7%;
-}
+} */
 
 /* #popular-search li{
     visibility: hidden;
@@ -73,5 +73,9 @@ padding-right: 7%;
 
 .filter-epidemiology .form-control-sm{
     height: 24px;
+}
+
+.filter-epidemiology .form-control{
+    background-color: #f5f6f7;
 }
 

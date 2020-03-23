@@ -15,7 +15,7 @@
 
     <!-- font source Sans pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&display=swap" rel="stylesheet">
-    <title>DETAIL</title>
+    <title>Annotated Detail</title>
  
 
   </head>
@@ -25,26 +25,44 @@
       <!-- header 1 -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
         <a class="navbar-brand" href="index.html">
-          <img src="img/logo/Group 12.png" alt="" srcset="">
+          <img src="img/logo//JPHIV-INA_LOGO.svg" alt="" srcset="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="#">ABSTRACT <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="Abstract.html">ABSTRACT <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">ANNOTATED BIBLIOGRAPHY </a>
+              <a class="nav-link" href="annotated.html">ANNOTATED BIBLIOGRAPHY </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><img src="img/Group 13.png" alt="" srcset=""></a>
+            <li class="nav-item"><div class="dropdown show dropdown-annotated">
+              <a class="nav-link dropdown-toggle" role="button" id="dropdownAnnotatedLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><img src="img/Group 13.png" alt="" srcset=""></a>
+              <div class="dropdown-menu" aria-labelledby="dropdownAnnotatedLink">
+                <a class="dropdown-item" href="overview.html">OVERVIEW</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">PRIVACY POLICY</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">TERMS OF SERVICE</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">FAQ</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="search-result-page.html">Search Result Page</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="search-result-tag.html">Search Tag Result Page</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="abstract-detail.html">Abstract Detail</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="annotated-detail.html">Annotated Detail</a>
+              </div>
+            </div>
             </li>
             <button type="button" class="btn btn-outline-secondary btn-sm">SUBMIT ANNOTATION</button>
           </ul>
-          <form class="form-inline my-2 my-lg-0 w-50 ">
+          <form class="form-inline my-2 my-lg-0 " id="search-main-nav">
             <div class="input-group">
               <div class="input-group-prepend">
                 <div class="input-group-text "><i><img src="img/search-icon.svg" alt=""></i></div>
@@ -52,63 +70,70 @@
               <input type="search" class="form-control "  placeholder="looking for something?">
             </div>
           </form>
-          <button type="button" class="btn btn-link ">LOGIN</button>
-          <button type="button" class="btn btn-danger btn-sm btn-join-us">JOIN US</button>
+          
+          <div class="dropdown show dropdown-img-profil">
+            <a class="nav-link dropdown-toggle" role="button" id="dropdownAnnotatedLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><img class="img-profil" src="img/img-profil.jpg" alt="" srcset=""></a>
+            <div class="dropdown-menu" aria-labelledby="dropdownAnnotatedLink">
+              <a class="dropdown-item" href="#">PROFILE</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">LOG OUT</a>
+            </div>
+          </div>
+          <button type="button" class="btn btn-link btn-profil ">JOHN DOE</button>
         </div>
       </nav>
       <!-- end header 1 -->
   
       <!-- header 2 -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">ABSTRACT <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Epidemiology.html">Epidemiology</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Biomedicine</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Health Economic</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Policy Study</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Social-behavioral</a>
-            </li>
-           
-          </ul>
-          <ul class="navbar-nav ml-auto popular-search">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">POPULAR SEARCH <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Epidemiology</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Biomedicine</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Health Economic</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Policy Study</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Social-behavioral</a>
-            </li>
-          </ul>
+        <div class="container">
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">EPIDEMIOLOGY <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">BEOMEDICINE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">HEALTH ECONOMIC</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">POLICY STUDY</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">SOCIAL-BEHAVOIRAL</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ml-auto popular-search">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">POPULAR SEARCH <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Epidemiology</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Biomedicine</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Health Economic</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Policy Study</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Social-behavioral</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
-      <!-- end header 2 -->
+  <!-- end header 2 -->
     
       <section class="artikel">
         <div class="container">

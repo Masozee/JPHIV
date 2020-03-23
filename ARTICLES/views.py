@@ -314,3 +314,12 @@ class BookCreateView(CreateView):
 
             return HttpResponseRedirect(reverse_lazy('homepage'))
         return render(request, 'articles/addanotated3.html', {'form': form})
+
+def Overview(request):
+    return render(request, 'articles/overview.html')
+
+def Privacy(request):
+    return render(request, 'articles/privacy.html')
+
+def TOS(request):
+    return render(request, 'articles/TOS.html')

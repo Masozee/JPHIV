@@ -13,6 +13,9 @@ admin.sites.AdminSite.index_title = 'Jaringan Penelitian HIV Indonesia'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('privacy-policy/', artviews.Privacy, name='privacy'),
+    path('terms-of-service/', artviews.TOS, name='TOS'),
+    path('overview/', artviews.Overview, name='overview'),
     path('', include('ARTICLES.url')),
     path('cari/', searchviews.SearchView.as_view(), name='cari' ),
     path('users/', include('django.contrib.auth.urls')),

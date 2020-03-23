@@ -1,6 +1,11 @@
 {% extends 'articles/base.html' %}
 {% load static %}
 
+{% block css %}
+    <link rel="stylesheet" href="{% static 'articles/css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'articles/css/epidemiology.css'%}">
+{% endblock %}
+    <title>JPHI</title>
 
 {% block content %}
  <!-- header 2 -->
