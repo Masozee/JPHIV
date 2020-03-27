@@ -138,7 +138,7 @@ class AnotatedJPHIV(models.Model):
     Author = TaggableManager(through=TaggedAuthor, related_name='+', verbose_name='Author')
     sumber = models.CharField(max_length=120, blank=True)
     volume = models.CharField(max_length=10, blank=True)
-    DOI_number = models.CharField(max_length=20, blank=True)
+    DOI_number = models.CharField(max_length=120, blank=True)
     DOI_URL = models.URLField(blank=True)
     doctype = models.CharField(max_length=4, blank=True)
     url = models.URLField(blank=True)

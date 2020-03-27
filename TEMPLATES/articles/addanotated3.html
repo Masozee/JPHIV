@@ -6,6 +6,9 @@
     <!-- my css -->
     <link rel="stylesheet" href="{% static 'articles/css/add-annotation.css' %}">
     <link rel="stylesheet" href="{% static 'articles/css/header-footer.css' %}">
+    <link href="{% static 'users/libs/air-datepicker/css/datepicker.min.css' %}" rel="stylesheet" type="text/css" />
+
+    <link href="{5 static 'users/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css' %}" rel="stylesheet" />
 {% endblock %}
 
 {% block content %}
@@ -28,8 +31,8 @@
           <div class="col-md-8 form-annotation">
             <form action="" method="POST">
               {% csrf_token %}
-                 <div class="col-sm-8">{{form|crispy }}</div>
-                 <div class="col-sm-8 offset-2">
+                 <div class="col-sm-11">{{form|crispy }}</div>
+                 <div class="col-sm-10">
                     <input class="btn btn-danger" type="submit" value="submit">
                  </div>
             </form>
@@ -39,4 +42,14 @@
     </section>
     <!-- end form annotation -->
 
+{% endblock %}
+{% block js%}
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+<script src="{% static 'users/libs/air-datepicker/js/datepicker.min.js' %}"></script>
+<script src="{% static 'users/libs/air-datepicker/js/i18n/datepicker.en.js' %}"></script>
+<script src="{% static 'users/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js' %}"></script>
+<script src="{% static 'users/libs/bootstrap-maxlength/bootstrap-maxlength.min.js' %}"></script>
+<script src="{% static 'users/js/pages/form-advanced.init.js' %}"></script>
 {% endblock %}

@@ -16,10 +16,10 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">ABSTRACT <span class="sr-only">(current)</span></a>
-          </li>
           <li class="nav-item">
+            <a class="nav-link" href="{% url 'anotated' %}">ANNOTATED BIBLIOGRAPHY<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
             <a class="nav-link" href="{% url 'anot-epidemology' %}">EPIDEMOLOGY</a>
           </li>
           <li class="nav-item">
@@ -150,12 +150,13 @@
                       <div class="card-body">
                         <a href="/anotated-bibliography/{{object.judul | slugify}}/"><h5 class="card-title">{{object.judul}}</h5></a>
                         <h6 class="autor"><i><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i>
-                          {% for tag in object.authors.all %}
+                          {% for tag in object.Author.all %}
                             <a href="/author/{{ tag.name | slugify}}" style="font-size: x-small;">{{ tag.name }}</a>
                           {% endfor %}
                         </h6>
-                        <h6 class="date"><i><img src="{% static 'articles/img/date.svg' %}" alt=""></i>{{object.tgl}}</h6>
-                        <p class="card-text">{{object.abstrak | truncatechars:"200" |safe}}</p>
+                        <h6 class="autor">Annotated by : {{object.added_by}}</h6>
+                        <h6 class="date"><i><img src="{% static 'articles/img/date.svg' %}" alt=""></i> {{object.tgl}}</h6>
+                        <p class="card-text">{{object.anotated | truncatechars:"200" |safe}}</p>
                       </div>
                       <div class="card-footer">
                         <ul class="list-inline">

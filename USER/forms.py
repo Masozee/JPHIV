@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import *
 from django.db import transaction
+from django.contrib.auth.models import User
 from django.forms.utils import ValidationError
 
 class StaffSignUpForm(UserCreationForm):
@@ -27,9 +28,10 @@ class VisitorSignUpForm(UserCreationForm):
         fields = ('username', 'first_name', 'last_name','Organisasi',
                   'email', 'password1', 'password2',)
 
-    @transaction.atomic
-    def save(self):
-        user = super().save(commit=False)
-        user.is_visitor = True
-        user.save()
-        return user
+
+class SignupForm(UserCreationForm):
+    email = forms.EmailField(max_length=200, help_text='Required')
+    class Meta:
+        model = CustomUser
+        fields = ('username', 'first_name', 'last_name','Organisasi',
+                  'email', 'password1', 'password2',)

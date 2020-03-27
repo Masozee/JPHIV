@@ -20,7 +20,7 @@ urlpatterns = [
     path('anotated-bibliography/policy-study/', artviews.anotatedpolicystudy, name='anot-policy'),
     path('anotated-bibliography/social-behavioral/', artviews.anotatedsocialbehavioral, name='anot-social'),
     re_path('anotated-bibliography/(?P<AnotatedJPHIV_slug>[\w-]+)/$', artviews.anotateDetail, name='anotate-detail'),
-    path('add/', artviews.BookCreateView.as_view(), name='add-anotated'),
+    path('add/anotated-bibliography/', artviews.BookCreateView.as_view(), name='add-anotated'),
     re_path('author/(?P<tag>[\w-]+)/$', artviews.authorlist.as_view(), name='author-tag'),
 
 

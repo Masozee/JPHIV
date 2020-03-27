@@ -7,8 +7,8 @@
         <meta charset="utf-8" />
         <title>Jaringan Penelitian HIV Indonesia</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="Themesdesign" name="author" />
+        <meta content="Jaringan Penelitian HIV Indonesia" name="description" />
+        <meta content="Themesdesign" name="Nuroji Lukmansyah & Rully Djatmiko" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="{% static 'users/images/favicon.ico">
 
@@ -31,7 +31,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="text-center mb-5">
-                            <a href="index.html" class="logo"><img src="{% static 'articles/img/logo/Group12.png' %}" height="24" alt="logo"></a>
+                            <a href="index.html" class="logo"><img src="{% static 'articles/img/logo/logo.svg' %}" height="24" alt="logo"></a>
                             <h5 class="font-size-16 text-white-50 mb-4">Jaringan Penelitian HIV Indonesia</h5>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="text-md-right mt-3 mt-md-0">
-                                                                    <a href="auth-recoverpw.html" class="text-muted"><i class="mdi mdi-lock"></i> Forgot your password?</a>
+                                                                    <a href="/accounts/password_reset/" class="text-muted"><i class="mdi mdi-lock"></i> Forgot your password?</a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -77,7 +77,7 @@
                                                             <button class="btn btn-success btn-block waves-effect waves-light" type="submit">Log In</button>
                                                         </div>
                                                         <div class="mt-4 text-center">
-                                                            <a href="auth-register.html" class="text-muted"><i class="mdi mdi-account-circle mr-1"></i> Create an account</a>
+                                                            <a href="{% url 'signup' %}" class="text-muted"><i class="mdi mdi-account-circle mr-1"></i> Create an account</a>
                                                         </div>
                                                     </div>
                                         </div>

@@ -3,6 +3,7 @@
 
 {% block css %}
     <link rel="stylesheet" href="{%  static 'articles/css/detail.css' %}">
+	<link rel="stylesheet" href="{%  static 'articles/css/index.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -13,7 +14,6 @@
 					<div class="row">
 						<div class="col-md-7 offset-md-1">
 							<hr>
-
 							<!-- Nav -->
 							<nav aria-label="breadcrumb">
 								<ol class="breadcrumb">
@@ -26,7 +26,7 @@
 							<h1>{{abstracts.judul}}</h1>
               <hr class="space-title">
               <div class="d-flex bd-highlight">
-                <div class="bd-highlight mr-5">
+                <div class="bd-highlight w-30">
                   <ul class="list-unstyled ">
                     <li class="list-item"><i><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i>
 						{% for tag in abstracts.authors.all %}
@@ -45,10 +45,14 @@
                   </ul>
                 </div>
               </div>
-				<a href="/MEDIA/abstract/{{abstracts.download}}"><button type="button" class="btn btn-danger btn-sm"><i><img src="{% static 'articles/img/download-light.svg' %}" alt="" srcset=""></i>Unduh</button></a>
-              	<button type="button" class="btn btn-outline-danger btn-sm">SALIN BIBLIOGRAPHY</button>
+				{% if abstracts.download == not empty %}
+				<a href="/MEDIA/{{abstracts.download}}"><button type="button" class="btn btn-danger btn-sm"><i><img src="{% static 'articles/img/download-light.svg' %}" alt="" srcset=""></i>Unduh</button></a>
+              	<button type="button" class=" btn btn-outline-danger btn-sm" data-clipboard-target="#bibliotext">SALIN BIBLIOGRAPHY</button>
+                 {% else %}
+                <button type="button" class=" btn btn-outline-danger btn-sm" data-clipboard-target="#bibliotext">SALIN BIBLIOGRAPHY</button>
+                 {% endif %}
               	<h6 class="biblio">BIBLIOGRAPHY</h6>
-              	<span class="p-biblio pl-4">
+              	<span class="p-biblio pl-4" id="bibliotext">
 					{{abstracts.bibliografi |safe}}
               	</span>
 				<h6 class="abstrak">ABSTRAK</h6>
@@ -113,4 +117,25 @@
       </section>
       
 
-   {% endblock %}
+{% endblock %}
+
+{% block js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript">
+    var clipboard = new ClipboardJS('.btn');
+
+    clipboard.on('success', function(e) {
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+
+        e.clearSelection();
+    });
+
+    clipboard.on('error', function(e) {
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+    });
+</script>
+{% endblock %}

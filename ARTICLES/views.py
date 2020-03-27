@@ -6,6 +6,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db import transaction
 from taggit.models import Tag, TaggedItem
 from django.views.generic import DetailView, ListView, TemplateView, CreateView
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from ARTICLES.models import *
 from django.db.models import F
 from .forms import *
@@ -300,17 +302,20 @@ class authorlist(ListView):
     def get_queryset(self):
         return AbstractJPHIV.objects.filter(authors__slug__in=[self.kwargs['tag']])
 
-class BookCreateView(CreateView):
+
+class BookCreateView(LoginRequiredMixin, CreateView):
     def get(self, request, *args, **kwargs):
         context = {'form': AnotForm()}
         return render(request, 'articles/addanotated3.html', context)
 
+    @transaction.atomic
     def post(self, request, *args, **kwargs):
         form = AnotForm(request.POST)
         if form.is_valid():
             instance = form.save(commit=False)
             instance.added_by = request.user
             instance.save()
+            form.save_m2m()
 
             return HttpResponseRedirect(reverse_lazy('homepage'))
         return render(request, 'articles/addanotated3.html', {'form': form})

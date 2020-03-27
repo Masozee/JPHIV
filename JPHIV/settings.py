@@ -25,7 +25,7 @@ SECRET_KEY = 'j$!mbh6i5w_svdw6uh^f-+9v$62oj(g(i_*#yx6bb-c8294fdc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'www.jphiv-ina.net', 'jphiv-ina.net', '127.0.0.1']
 
 
 # Application definition
@@ -155,8 +155,15 @@ LOGOUT_REDIRECT_URL = 'homepage'
 #crispy form --------------------------------------------------------------------------------------------------------
 CRISPY_TEMPLATE_PACK ='bootstrap4'
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'nurojilukmansyah@gmail.com'
-EMAIL_HOST_PASSWORD = 'n6dy66m6liy6h'
+#Email------------------------------------------------
+ACCOUNT_ACTIVATION_DAYS=7
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_USE_TLS=1
+EMAIL_PORT=587
+EMAIL_HOST_USER='jphiv.ina@gmail.com'
+EMAIL_HOST_PASSWORD='jaringanhiv2020'
 EMAIL_PORT = 587
+
+#setting tanggal---------------------------
+DATE_INPUT_FORMATS = ['%d-%m-%Y']
+
