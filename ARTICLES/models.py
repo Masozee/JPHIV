@@ -23,7 +23,7 @@ class Author(TagBase):
 class TaggedAuthor(GenericTaggedItemBase):
     tag = models.ForeignKey(
         Author,
-        on_delete=models.CASCADE,
+        on_delete=models.PROTECT,
         related_name="%(app_label)s_%(class)s_items",
     )
     class Meta:

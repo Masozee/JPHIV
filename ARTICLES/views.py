@@ -15,21 +15,21 @@ from .forms import *
 # Create your views here.
 
 def home(request):
-    Biomed = AbstractJPHIV.objects.filter(kategori__Kategori="biomedicine")
+    Biomed = AbstractJPHIV.objects.filter(kategori__Kategori="biomedicine").distinct()
     biomedC = Biomed.count()
-    healeco = AbstractJPHIV.objects.filter(kategori__Kategori="health-economic")
+    healeco = AbstractJPHIV.objects.filter(kategori__Kategori="health-economic").distinct()
     healecoC = healeco.count()
-    polstud = AbstractJPHIV.objects.filter(kategori__Kategori="policy-study")
+    polstud = AbstractJPHIV.objects.filter(kategori__Kategori="policy-study").distinct()
     polstudC = polstud.count()
-    socbeh = AbstractJPHIV.objects.filter(kategori__Kategori="social-behavioral")
+    socbeh = AbstractJPHIV.objects.filter(kategori__Kategori="social-behavioral").distinct()
     socbehC = socbeh.count()
-    epidemo = AbstractJPHIV.objects.filter(kategori__Kategori="epidemology")
+    epidemo = AbstractJPHIV.objects.filter(kategori__Kategori="epidemology").distinct()
     epidemoC = epidemo.count()
-    abstracts = AbstractJPHIV.objects.all().order_by('-tanggal')[:6]
-    abstractC = AbstractJPHIV.objects.all()
+    abstracts = AbstractJPHIV.objects.all().order_by('-tanggal').distinct()[:6]
+    abstractC = AbstractJPHIV.objects.all().distinct()
     countabs = abstractC.count()
-    anotates = AnotatedJPHIV.objects.all().order_by('-tanggal')[:3]
-    anotateC = AnotatedJPHIV.objects.all()
+    anotates = AnotatedJPHIV.objects.all().order_by('-tanggal').distinct()[:3]
+    anotateC = AnotatedJPHIV.objects.all().distinct()
     countanotate = anotateC.count()
 
 
@@ -145,7 +145,7 @@ def abstractsocialbehavioral(request):
 
     return render(request, "articles/abstract/socbeh.html", {"abstracts":socbeh})
 
-def anotated(request):
+def annotated(request):
     anot = AnotatedJPHIV.objects.all()
     paginator = Paginator(anot, 9)
     page = request.GET.get('page')
@@ -161,7 +161,7 @@ def anotated(request):
     }
     return render(request, 'articles/anotated.html', context )
 
-def anotatedartikel(request):
+def annotatedartikel(request):
     Epidem = AnotatedJPHIV.objects.filter(kategori__Kategori="artikel").order_by('-tanggal').distinct()
     paginator = Paginator(Epidem, 9)
     page = request.GET.get('page')
@@ -174,7 +174,7 @@ def anotatedartikel(request):
 
     return render(request, "articles/anotated.html", {"abstracts":Epidem})
 
-def anotatedepidem(request):
+def annotatedepidem(request):
     epidemo = AnotatedJPHIV.objects.filter(kategori__Kategori="epidemology").order_by('-tanggal').distinct()
     paginator = Paginator(epidemo, 9)
     page = request.GET.get('page')
@@ -190,7 +190,7 @@ def anotatedepidem(request):
     }
     return render(request, 'articles/anotated/Epidemology.html', context)
 
-def anotatedbiomedicine(request):
+def annotatedbiomedicine(request):
     Biomed = AnotatedJPHIV.objects.filter(kategori__Kategori="biomedicine").order_by('-tanggal').distinct()
     paginator = Paginator(Biomed, 9)
     page = request.GET.get('page')
@@ -202,7 +202,7 @@ def anotatedbiomedicine(request):
         Biomed = paginator.page(paginator.num_pages)
     return render(request, "articles/anotated/biomedic.html", {"abstracts":Biomed})
 
-def anotatedhealtheconomic(request):
+def annotatedhealtheconomic(request):
     healeco = AnotatedJPHIV.objects.filter(kategori__Kategori="health-economic").order_by('-tanggal').distinct()
     paginator = Paginator(healeco, 9)
     page = request.GET.get('page')
@@ -215,7 +215,7 @@ def anotatedhealtheconomic(request):
 
     return render(request, "articles/anotated/healthecon.html", {"abstracts":healeco})
 
-def anotatedpolicystudy(request):
+def annotatedpolicystudy(request):
     polstud = AnotatedJPHIV.objects.filter(kategori__Kategori="policy-study").order_by('-tanggal').distinct()
     paginator = Paginator(polstud, 9)
     page = request.GET.get('page')
@@ -228,7 +228,7 @@ def anotatedpolicystudy(request):
 
     return render(request, "articles/anotated/polstud.html", {"abstracts":polstud})
 
-def anotatedsocialbehavioral(request):
+def annotatedsocialbehavioral(request):
     socbeh = AnotatedJPHIV.objects.filter(kategori__Kategori="social-behavioral").order_by('-tanggal').distinct()
     paginator = Paginator(socbeh, 9)
     page = request.GET.get('page')
@@ -275,23 +275,6 @@ def abstractDetail(request, AbstractJPHIV_slug):
 
 def hasil(request):
     return render(request, "articles/search-result.html")
-
-@transaction.atomic
-def AnotatedAdd(request):
-
-    if request.method == 'POST':
-        form = AnotatedForm(request.POST)
-        if form.is_valid():
-            instance = form.save(commit=False)
-            instance.added_by = request.user.username
-            instance.save()
-            users = AnotatedJPHIV.objects.all()
-
-            return render(request, "articles/addanotated3.html", {'users': users})
-    else:
-        form = AnotatedForm
-
-    return render(request, "articles/addanotated3.html", {'form': form})
 
 class authorlist(ListView):
     queryset = AbstractJPHIV.objects.all()

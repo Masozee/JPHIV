@@ -13,14 +13,14 @@ urlpatterns = [
     path('abstract/social-behavioral/', artviews.abstractsocialbehavioral, name='abstract-social'),
     re_path('abstract/(?P<AbstractJPHIV_slug>[\w-]+)/$', artviews.abstractDetail, name='abstract-detail'),
 
-    path('anotated-bibliography/', artviews.anotated, name='anotated'),
-    path('anotated-bibliography/epidemology/', artviews.anotatedepidem, name='anot-epidemology'),
-    path('anotated-bibliography/biomedicine/', artviews.anotatedbiomedicine, name='anot-biomedicine'),
-    path('anotated-bibliography/health-economic/', artviews.anotatedhealtheconomic, name='anot-health'),
-    path('anotated-bibliography/policy-study/', artviews.anotatedpolicystudy, name='anot-policy'),
-    path('anotated-bibliography/social-behavioral/', artviews.anotatedsocialbehavioral, name='anot-social'),
-    re_path('anotated-bibliography/(?P<AnotatedJPHIV_slug>[\w-]+)/$', artviews.anotateDetail, name='anotate-detail'),
-    path('add/anotated-bibliography/', artviews.BookCreateView.as_view(), name='add-anotated'),
+    path('annotated-bibliography/', artviews.annotated, name='anotated'),
+    path('annotated-bibliography/epidemology/', artviews.annotatedepidem, name='anot-epidemology'),
+    path('annotated-bibliography/biomedicine/', artviews.annotatedbiomedicine, name='anot-biomedicine'),
+    path('annotated-bibliography/health-economic/', artviews.annotatedhealtheconomic, name='anot-health'),
+    path('annotated-bibliography/policy-study/', artviews.annotatedpolicystudy, name='anot-policy'),
+    path('annotated-bibliography/social-behavioral/', artviews.annotatedsocialbehavioral, name='anot-social'),
+    re_path('annotated-bibliography/(?P<AnotatedJPHIV_slug>[\w-]+)/$', artviews.anotateDetail, name='anotate-detail'),
+    path('add/annotated-bibliography/', artviews.BookCreateView.as_view(), name='add-anotated'),
     re_path('author/(?P<tag>[\w-]+)/$', artviews.authorlist.as_view(), name='author-tag'),
 
 

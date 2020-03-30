@@ -1,6 +1,14 @@
 {% extends 'articles/base.html' %}
 {% load static %}
 
+{% block meta %}
+<meta property="og:title" content="{{abstracts.judul}} ">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:site_name" content="Jaringan Penelitian HIV Indonesia">
+<meta property="og:image" content="">
+<meta property="og:description" content="{{ abstracts.bibliography | safe }}">
+{% endblock %}
+
 {% block css %}
     <link rel="stylesheet" href="{%  static 'articles/css/detail.css' %}">
 	<link rel="stylesheet" href="{%  static 'articles/css/index.css' %}">
@@ -8,7 +16,6 @@
 
 {% block content %}
 
-    
     <section class="artikel">
         <div class="container">
 					<div class="row">

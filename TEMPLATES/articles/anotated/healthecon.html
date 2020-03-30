@@ -68,7 +68,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                  <h5>ANOTATED BIBLIOGRAPHY</h5>
+                  <h5>ANNOTATED BIBLIOGRAPHY</h5>
                     <h3>
                       HEALTH ECONOMY
                     </h3>
@@ -148,7 +148,7 @@
                   <div class="col-md-4 mb-4">
                     <div class="card h-100">
                       <div class="card-body">
-                        <a href="/anotated-bibliography/{{object.judul | slugify}}/"><h5 class="card-title">{{object.judul}}</h5></a>
+                        <a href="/annotated-bibliography/{{object.judul | slugify}}/"><h5 class="card-title">{{object.judul}}</h5></a>
                         <h6 class="autor"><i><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i>
                           {% for tag in object.Author.all %}
                             <a href="/author/{{ tag.name | slugify}}" style="font-size: x-small;">{{ tag.name }}</a>

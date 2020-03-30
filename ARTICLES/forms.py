@@ -8,7 +8,7 @@ class AnotForm(forms.ModelForm):
     judul = forms.CharField(max_length=300, widget=forms.TextInput(
             attrs={
                 'class': 'form-control form-control-sm',
-                'placeholder': 'Tulis Judul Anotated Bibliography'
+                'placeholder': 'Tulis Judul Annotated Bibliography'
             }
         ))
     tanggal = forms.DateField(
@@ -63,7 +63,7 @@ class AnotForm(forms.ModelForm):
     tags = forms.CharField(widget=forms.TextInput(
         attrs={
             'class': 'form-control form-control-sm',
-            'placeholder': '"HIV AIDS", "obat-obatan", '
+            'placeholder': '"HIV AIDS", "obat-obatan" '
         }
     ), )
 
