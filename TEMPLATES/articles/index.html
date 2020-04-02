@@ -120,7 +120,7 @@
             </div>
             <div class="row justify-content-md-center title">
               <div class="col-md-2">
-                <img src="{% static 'articles/img/logo/Logojphiv.png' %}" alt="" srcset="" style="height:50px">
+                <img src="{% static 'articles/img/logo/Logohome.png' %}" alt="" srcset="" style="height:50px">
               </div>
               <div class="col-md-6">
                 <h6 class="landing-title">JPHI mengindeks jurnal ilmiah, buku-buku, laporan penelitian, makalah kebijakan, makalah konferensi, dan data primer
@@ -158,7 +158,7 @@
       <div class="container new-entry">
         <div class="d-flex justify-content-between">
           <h3>NEW ABSTRACT</h3>
-          <button type="button" class="btn btn-danger btn-sm">{{ abstractC }} jumlah abstrak</button>
+          <a href="{% url 'abstract' %}"><button type="button" class="btn btn-danger btn-sm">{{ abstractC }} jumlah abstrak</button></a>
         </div>
         <hr>
         <div class="row row-cols-md-3">
@@ -177,8 +177,12 @@
               </div>
               <div class="card-footer">
                 <ul class="list-inline">
-                  <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i><a href="/MEDIA/">Unduh</a></li>
-                  <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i><a href="">Bagikan</a></li>
+                  {% if object.download == not empty %}
+                  <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i><a href="/MEDIA/{{object.download}}">Unduh</a></li>
+                  <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i><a href="http://www.facebook.com/share.php?u=http://jphiv-ina.net/annotated-bibliography/{{ object.judul | slugify | lower }}">Bagikan</a></li>
+                  {% else %}
+                  <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i><a href="http://www.facebook.com/share.php?u=http://jphiv-ina.net/annotated-bibliography/{{ object.judul | slugify | lower }}">Bagikan</a></li>
+                  {% endif %}
                 </ul>
                 <hr>
               </div>
@@ -213,7 +217,12 @@
                   </div>
                   <div class="card-footer">
                     <ul class="list-inline">
-                      <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i><a href="">Bagikan</a></li>
+                      {% if abstract.download == not empty %}
+                        <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i><a href="/MEDIA/{{abstract.download}}">Unduh</a></li>
+                        <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i><a href="http://www.facebook.com/share.php?u={{ request.build_absolute_uri }}">Bagikan</a></li>
+                      {% else %}
+                        <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i><a href="http://www.facebook.com/share.php?u={{ request.build_absolute_uri }}">Bagikan</a></li>
+                      {% endif %}
                     </ul>
                     <hr>
                   </div>

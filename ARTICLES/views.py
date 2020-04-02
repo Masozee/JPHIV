@@ -311,3 +311,9 @@ def Privacy(request):
 
 def TOS(request):
     return render(request, 'articles/TOS.html')
+
+
+#_________________HANDLER 404___________________
+
+def handler404(request, exception):
+    return render(request, 'errors/404.html', locals())

@@ -73,7 +73,7 @@
                   <ul class="list-unstyled ">
                     <li class="list-item"><i><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i>
 						{% for tag in abstracts.Author.all %}
-                            <a href="/author/{{ tag.name | slugify}}">  {{ tag.name }},</a>
+                            <a href="/author/{{ tag.name | slugify}}" class="autor">  {{ tag.name }},</a>
 						{% endfor %}
 					</li>
 						<li class="list-item"><i><img src="{% static 'articles/img/majalah.svg' %}" alt="" srcset=""></i>{{ abstracts.sumber }}</li>
@@ -108,42 +108,6 @@
               	</span>
 				<h6 class="abstrak">ABSTRAK</h6>
 				<span>{{abstracts.anotated |safe}}</span>
-              <!--section id="user-review">
-                <h4 class="user-review-title">USER REVIEW</h4>
-                 <div class="user-review">
-                   <ul class="list-unstyled list-inline">
-                     <li class="user list-inline-item">John Doe</li>
-                     <li class="date list-inline-item">16 Januari 2020</li>
-                   </ul>
-                   <p>We recommend this for you! <br>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                    voluptate velit esse cillum dolore eu fugiat nulla pariatu.</p>
-                    <hr>
-                 </div>
-                 <div class="user-review">
-                  <ul class="list-unstyled list-inline">
-                    <li class="user list-inline-item">John Doe</li>
-                    <li class="date list-inline-item">16 Januari 2020</li>
-                  </ul>
-                  <p>We recommend this for you! <br>
-                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                   minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                   voluptate velit esse cillum dolore eu fugiat nulla pariatu.</p>
-                   <hr>
-                </div>
-                <div class="user-review">
-                  <ul class="list-unstyled list-inline">
-                    <li class="user list-inline-item">John Doe</li>
-                    <li class="date list-inline-item">16 Januari 2020</li>
-                  </ul>
-                  <p>We recommend this for you! <br>
-                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                   minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                   voluptate velit esse cillum dolore eu fugiat nulla pariatu.</p>
-                   <hr>
-                </div>
-              </section-->
             </div>
 
 
@@ -174,7 +138,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
 <script type="text/javascript">
-    var clipboard = new ClipboardJS('.btn');
+var clipboard = new ClipboardJS('.btn');
 
     clipboard.on('success', function(e) {
         console.info('Action:', e.action);
@@ -188,5 +152,6 @@
         console.error('Action:', e.action);
         console.error('Trigger:', e.trigger);
     });
+
 </script>
 {% endblock %}

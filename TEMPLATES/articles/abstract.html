@@ -152,9 +152,12 @@
                       </div>
                       <div class="card-footer">
                         <ul class="list-inline">
-                          <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i>
-                            <a href="/MEDIA/{{abstract.download}}">Unduh</a></li>
-                          <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i> Bagikan</li>
+                          {% if object.download == not empty %}
+                            <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i><a href="/MEDIA/{{object.download}}">Unduh</a></li>
+                            <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i><a href="http://www.facebook.com/share.php?u=http://jphiv-ina.net/abstract/{{ object.judul | slugify | lower }}">Bagikan</a></li>
+                            {% else %}
+                            <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i><a href="http://www.facebook.com/share.php?u=http://jphiv-ina.net/abstract/{{ object.judul | slugify | lower }}">Bagikan</a></li>
+                            {% endif %}
                         </ul>
                         <hr>
                       </div>

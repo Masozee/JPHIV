@@ -30,6 +30,21 @@ class TaggedAuthor(GenericTaggedItemBase):
         verbose_name = _("Author")
         verbose_name_plural = _("Author")
 
+class TagAnotated(TagBase):
+    class Meta:
+        verbose_name = _("Annotated Tags")
+        verbose_name_plural = _("Annotated Tags")
+
+class TaggedAnnotated(GenericTaggedItemBase):
+    tag = models.ForeignKey(
+        TagAnotated,
+        on_delete=models.PROTECT,
+        related_name="%(app_label)s_%(class)s_items",
+    )
+    class Meta:
+        verbose_name = _("Annotate Tags")
+        verbose_name_plural = _("Annotate Tags")
+
 class kategori(models.Model):
     KATEGORI_CHOICES = (
         ('epidemology', 'epidemology'),
@@ -147,7 +162,7 @@ class AnotatedJPHIV(models.Model):
     anotated = RichTextField(blank=True)
     visit_num = models.PositiveIntegerField(default=0)
 
-    tags = TaggableManager()
+    tags = TaggableManager(through=TaggedAnnotated, related_name='tagannotated', verbose_name='Annotated Tags')
 
     objects = anotatedManager()
 

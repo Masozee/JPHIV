@@ -154,15 +154,18 @@
                             <a href="/author/{{ tag.name | slugify}}" style="font-size: x-small;">{{ tag.name }}</a>
                           {% endfor %}
                         </h6>
-                        <h6 class="autor">Annotated by : {{object.added_by}}</h6>
                         <h6 class="date"><i><img src="{% static 'articles/img/date.svg' %}" alt=""></i> {{object.tgl}}</h6>
+                        <h6 class="autor">Annotated by : {{object.added_by}}</h6>
                         <p class="card-text">{{object.anotated | truncatechars:"200" |safe}}</p>
                       </div>
                       <div class="card-footer">
                         <ul class="list-inline">
-                          <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i>
-                            <a href="/MEDIA/{{abstract.download}}">Unduh</a></li>
-                          <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i> Bagikan</li>
+                          {% if object.download == not empty %}
+                            <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i><a href="/MEDIA/{{object.download}}">Unduh</a></li>
+                            <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i><a href="http://www.facebook.com/share.php?u=http://jphiv-ina.net/annotated-bibliography/{{ object.judul | slugify | lower }}">Bagikan</a></li>
+                            {% else %}
+                            <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i><a href="http://www.facebook.com/share.php?u=http://jphiv-ina.net/annotated-bibliography/{{ object.judul | slugify | lower }}">Bagikan</a></li>
+                            {% endif %}
                         </ul>
                         <hr>
                       </div>
