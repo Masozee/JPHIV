@@ -79,3 +79,98 @@ padding-right: 7%;
     background-color: #f5f6f7;
 }
 
+/* breakpoint mobile responsive */
+
+@media(max-width:576px){
+
+    
+    .filter-epidemiology .justify-content-end{
+        justify-content: flex-start !important;
+        z-index: 0;
+    }
+    
+    .title-epidemiology p{
+        margin-bottom: 40px;
+    }
+    
+    .title-epidemiology p{
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.38;
+        letter-spacing: normal;
+        text-align: left;
+        color: #353d5f;
+    }
+    
+    .filter-epidemiology button{
+        font-size: 16px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.31;
+        letter-spacing: normal;
+        text-align: left;
+        color: #ffffff;
+    }
+    
+    .filter-epidemiology label{
+        font-size: 14px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.36;
+        letter-spacing: normal;
+        text-align: left;
+        color: #ef494b;
+    }
+    
+    .new-entry .card-title{
+        font-size: 24px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.33;
+        letter-spacing: normal;
+        text-align: left;
+        color: #111c4a;
+    }
+    
+    .new-entry .autor ,.new-entry .date{
+        font-size: 20px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.4;
+        letter-spacing: normal;
+        text-align: left;
+        color: #434343;
+    }
+    
+    .new-entry p{
+        font-size: 20px;
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.4;
+        letter-spacing: normal;
+        text-align: left;
+        color: #2c2b2b;
+    }
+    
+    .new-entry ul li{
+        font-size: 18px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.33;
+        letter-spacing: normal;
+        text-align: left;
+        color: #353d5f;
+    }
+    
+    .pagination{
+        display: none;
+    }
+}

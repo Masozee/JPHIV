@@ -8,27 +8,28 @@
     <link rel="shortcut icon" href="{% static 'articles/favicon.ico' %}">
     {% block meta %}
     {% endblock %}
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <!-- my css -->
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+
     {% block css %}
     {% endblock %}
     <link rel="stylesheet" href="{% static 'articles/css/header-footer.css'%}">
 
+
     <!-- font source Sans pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&display=swap" rel="stylesheet">
-
-    {% block title %}
-    {% endblock %}
-
+    <title>Jaringan Penelitian HIV Indonesia</title>
 
   </head>
   <body>
     <!-- header 1 -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
+    <!--nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
       <a class="navbar-brand" href="{% url 'homepage' %}">
-        <img src="{% static 'articles/img/logo/Logojphiv.png' %}" alt="" srcset="" style="height:50px;">
+        <img src="{% static 'articles/img/logo/Logojphiv.png' %}" alt="" srcset="">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -37,34 +38,34 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="{% url 'abstract' %}">ABSTRACT <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{% url 'abstract' %}">ABSTRAK<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'anotated' %}">ANNOTATED BIBLIOGRAPHY </a>
           </li>
           <li class="nav-item">
             <div class="dropdown show dropdown-annotated">
-              <a class="nav-link dropdown-toggle" role="button" id="dropdownAnnotatedLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">ABOUT</a>
+              <a class="nav-link dropdown-toggle" role="button" id="dropdownAnnotatedLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">TENTANG KAMI<i style="padding-left:3px"><img src="{% static 'articles/img/drop-down-arrow.svg' %}" alt="" srcset="" style="width:10px"></i></a>
               <div class="dropdown-menu" aria-labelledby="dropdownAnnotatedLink">
-                <a class="dropdown-item" href="{% url 'overview' %}">OVERVIEW</a>
+                <a class="dropdown-item" href="{% url 'overview' %}">GAMBARAN</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{% url 'privacy' %}">PRIVACY POLICY</a>
+                <a class="dropdown-item" href="{% url 'privacy' %}">KEBIJAKAN PRIVASI</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{% url 'TOS' %}">TERMS OF SERVICE</a>
+                <a class="dropdown-item" href="{% url 'TOS' %}">KETENTUAN LAYANAN</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">FAQ</a>
               </div>
             </div>
           </div>
           </li>
-      <a href="{% url 'add-anotated' %}"><button type="button" class="btn btn-outline-secondary btn-sm">SUBMIT ANNOTATION</button></a>
+      <a href="{% url 'add-anotated' %}"><button type="button" class="btn btn-outline-secondary btn-sm">KUMPULKAN ANOTASI</button></a>
         </ul>
-        <form class="form-inline my-2 my-lg-0" action="/cari/" method="GET"  >
+        <form class="form-inline my-2 my-lg-0 " action="/cari/" method="GET" >
           <div class="input-group">
             <div class="input-group-prepend">
               <div class="input-group-text "><i><img src="{% static 'articles/img/search-icon.svg'%}" alt=""></i></div>
             </div>
-            <input type="search" name="q" class="form-control "  placeholder="looking for something?">
+            <input type="search" name="q" class="form-control "  placeholder="mencari sesuatu ?">
           </div>
         </form>
         {% if user.is_authenticated %}
@@ -72,10 +73,10 @@
           {% if user.avatar == not empty %}
           <a class="nav-link dropdown-toggle" role="button" id="dropdownAnnotatedLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><img class="img-profil" src="/MEDIA/{{user.avatar}}" alt="" srcset=""></a>
           {% else %}
-          <a class="nav-link dropdown-toggle" role="button" id="dropdownAnnotatedLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><img class="img-profil" src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></a>
+          <a class="nav-link dropdown-toggle" role="button" id="dropdownAnnotatedLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><img class="img-profil" src="{% static 'articles/img/profil.png' %}" alt="" srcset="" style="img-size:10px;"></a>
           {% endif %}
             <div class="dropdown-menu" aria-labelledby="dropdownAnnotatedLink">
-              <a class="dropdown-item" href="#">PROFILE</a>
+              <a class="dropdown-item" href="#">PROFIL</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="{% url 'logout' %}">LOG OUT</a>
             </div>
@@ -83,12 +84,104 @@
         <button type="button" class="btn btn-link btn-profil ">{{user.username}}</button>
         {% else%}
         <a href="{% url 'login' %}"><button type="button" class="btn btn-link ">LOGIN</button></a>
-        <a href="{% url 'signup' %}"><button type="button" class="btn btn-danger btn-sm btn-join-us">JOIN US</button></a>
+        <a href="{% url 'signup' %}" type="button" class="btn btn-danger btn-sm btn-join-us">BERGABUNG</a>
+        {% endif %}
+        < <a href="">
+          <button type="button" class="btn btn-danger btn-sm btn-join-us">JOIN US</button>
+        </a>>
+      </div>
+    </nav-->
+    <!-- end header 1 -->
+        <!-- header 1 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
+      <a class="navbar-brand" href="{% url 'homepage' %}">
+        <img src="{% static 'articles/img/logo/Logojphiv.png' %}" alt="" srcset="">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item active ">
+            <a class="nav-link " href="{% url 'abstract' %}">ABSTRAK</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'anotated' %}">ANNOTATED BIBLIOGRAPHY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"role="button" id="dropdownAboutLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">TENTANG KAMI<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+            <div class="dropdown show ">
+              <div class="dropdown-menu nav-about" aria-labelledby="dropdownAboutLink">
+                <a class="dropdown-item" href="#">GAMBARAN</a>
+                <a class="dropdown-item" href="#">KEBIJAKAN PRIVASI</a>
+                <a class="dropdown-item" href="{% url 'TOS' %}">KETENTUAN LAYANAN</a>
+                <a class="dropdown-item" href="#">FAQ</a>
+              </div>
+            </div>
+          </li>
+          <br>
+          <a class="btn-sm" href="{% url 'add-anotated' %}"><button type="button" class="btn btn-outline-secondary btn-sm">KUMPULKAN ANOTASI </button></a>
+        </ul>
+        <form class="form-inline my-2 my-lg-0 " action="/cari/" method="GET" >
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text "><i><img src="{% static 'articles/img/search-icon.svg'%}" alt=""></i></div>
+            </div>
+            <input type="search" name="q" class="form-control "  placeholder="mencari sesuatu ?">
+          </div>
+        </form>
+        {% if user.is_authenticated %}
+        <div class="dropdown show dropdown-img-profil">
+          {% if user.avatar == not empty %}
+          <a class="nav-link dropdown-toggle" role="button" id="dropdownAnnotatedLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><img class="img-profil" src="/MEDIA/{{user.avatar}}" alt="" srcset=""></a>
+          {% else %}
+          <a class="nav-link dropdown-toggle" role="button" id="dropdownAnnotatedLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><img class="img-profil" src="{% static 'articles/img/profil.png' %}" alt="" srcset="" style="img-size:10px;"></a>
+          {% endif %}
+            <div class="dropdown-menu" aria-labelledby="dropdownAnnotatedLink">
+              <a class="dropdown-item" href="#">PROFIL</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'logout' %}">LOG OUT</a>
+            </div>
+        </div>
+        <button type="button" class="btn btn-link btn-profil ">{{user.username}}</button>
+        {% else%}
+        <a href="{% url 'login' %}"><button type="button" class="btn btn-link ">LOGIN</button></a>
+        <a href="{% url 'signup' %}" type="button" class="btn btn-danger btn-sm btn-join-us">BERGABUNG</a>
         {% endif %}
       </div>
     </nav>
     <!-- end header 1 -->
 
+    <!-- header 2 -->
+    <!--nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav">
+      < <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="abstrak">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">ABSTRACT <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Epidemiology.html">Epidemiology</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Biomedicine</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Health Economic</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Policy Study</a>
+          </li>
+        </ul>
+
+
+      </div>
+    </nav>
+    <!-- end header 2 -->
         <!-- end header 1 -->
     {% block header %}
     {% endblock %}

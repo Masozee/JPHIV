@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="237" height="279" viewBox="0 0 237 279">
+  <defs>
+    <filter id="Rectangle_106" x="14" y="68" width="219" height="197" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_1912" data-name="Group 1912" transform="translate(-414 -1654)">
+    <rect id="Rectangle_110" data-name="Rectangle 110" width="237" height="279" rx="10" transform="translate(414 1654)" fill="#fff"/>
+    <text id="_2._Isi_Formulir_yang_tersedia" data-name="2. Isi Formulir yang tersedia" transform="translate(441.5 1686.5)" fill="#7b7b7b" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">2. </tspan><tspan y="0" fill="#707070">Isi Formulir yang tersedia</tspan></text>
+    <g id="Group_1057" data-name="Group 1057" transform="translate(27 21)">
+      <g transform="matrix(1, 0, 0, 1, 387, 1633)" filter="url(#Rectangle_106)">
+        <rect id="Rectangle_106-2" data-name="Rectangle 106" width="189" height="167" rx="10" transform="translate(26 80)" fill="#fcfcfc"/>
+      </g>
+      <text id="Username" transform="translate(432 1729)" fill="#707070" font-size="12" font-family="SegoeUI, Segoe UI"><tspan x="0" y="13">Usernam</tspan></text>
+      <text id="Password" transform="translate(432 1782)" fill="#707070" font-size="12" font-family="SegoeUI, Segoe UI"><tspan x="0" y="13">Password</tspan></text>
+      <g id="Rectangle_107" data-name="Rectangle 107" transform="translate(432 1750)" fill="#fff" stroke="#edebeb" stroke-width="1">
+        <rect width="147" height="20" rx="3" stroke="none"/>
+        <rect x="0.5" y="0.5" width="146" height="19" rx="2.5" fill="none"/>
+      </g>
+      <g id="Rectangle_108" data-name="Rectangle 108" transform="translate(432 1803)" fill="#fff" stroke="#edebeb" stroke-width="1">
+        <rect width="147" height="20" rx="3" stroke="none"/>
+        <rect x="0.5" y="0.5" width="146" height="19" rx="2.5" fill="none"/>
+      </g>
+      <g id="Group_1056" data-name="Group 1056" transform="translate(-763.5 1816.771)">
+        <rect id="Rectangle_66" data-name="Rectangle 66" width="94" height="22" rx="2" transform="translate(1195.5 25.229)" fill="#72cb6b"/>
+        <text id="SIGN_UP" data-name="SIGN UP" transform="translate(1223.5 39.229)" fill="#fff" font-size="10" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.06em"><tspan x="0" y="0">SIGN UP</tspan></text>
+      </g>
+      <g id="Group_1055" data-name="Group 1055" transform="translate(178.901 677.221)">
+        <path id="Path_927" data-name="Path 927" d="M462.477,1287.937l-10.982-9.437a.567.567,0,0,0-.936.429l-.019,14.407a.566.566,0,0,0,.914.448l2.986-2.316,2.946,6.52a.567.567,0,0,0,.749.283l2.87-1.3a.567.567,0,0,0,.283-.749l-2.948-6.526,3.879-.776a.566.566,0,0,0,.258-.985Z" transform="translate(-114.587 -105.106)" fill="#353d5f"/>
+        <path id="Path_928" data-name="Path 928" d="M533.253,1238.891a.569.569,0,0,0,.236-.052l1.881-.862a.566.566,0,1,0-.472-1.03l-1.881.862a.566.566,0,0,0,.236,1.081Z" transform="translate(-192.705 -65.672)" fill="#353d5f"/>
+        <path id="Path_929" data-name="Path 929" d="M484.676,1170.872a.573.573,0,0,0,.2.036.567.567,0,0,0,.531-.368l.724-1.938a.566.566,0,1,0-1.061-.4l-.724,1.938A.567.567,0,0,0,484.676,1170.872Z" transform="translate(-146.698 0)" fill="#353d5f"/>
+        <path id="Path_930" data-name="Path 930" d="M400.434,1170.054a.566.566,0,0,0-1.031.468l.855,1.884a.567.567,0,0,0,.516.332.559.559,0,0,0,.233-.051.567.567,0,0,0,.282-.75Z" transform="translate(-65.909 -1.792)" fill="#353d5f"/>
+        <path id="Path_931" data-name="Path 931" d="M333.81,1323.92l-1.887.848a.566.566,0,1,0,.465,1.033l1.887-.848a.566.566,0,1,0-.465-1.033Z" transform="translate(-1.47 -148.381)" fill="#353d5f"/>
+        <path id="Path_932" data-name="Path 932" d="M330.411,1242.541l1.935.731a.578.578,0,0,0,.2.036.566.566,0,0,0,.2-1.1l-1.935-.731a.567.567,0,0,0-.4,1.06Z" transform="translate(0 -69.997)" fill="#353d5f"/>
+      </g>
+    </g>
+  </g>
+</svg>

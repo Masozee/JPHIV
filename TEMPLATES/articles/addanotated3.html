@@ -2,6 +2,20 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+
+{% block meta %}
+<meta property="og:title" content="Jaringan Penelitian HIV Indonesia">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:site_name" content="Jaringan Penelitian HIV Indonesia">
+<meta property="og:image" content="https://jphiv-ina.net/STATIC/articles/img/logo/share.png">
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:height" content="300" />
+<meta property="og:image:alt" content="Logo Jaringan penelitian HIV Indonesia" />
+<meta property="og:description" content="JPHI mengindeks jurnal ilmiah, buku-buku, laporan penelitian, makalah kebijakan, makalah konferensi, dan data primer
+                  dari universitas, badan penelitian, lembaga pemerintahan, dan penerbit yang berkaitan dengan HIV AIDS.">
+{% endblock %}
+
 {% block css %}
     <!-- my css -->
     <link rel="stylesheet" href="{% static 'articles/css/add-annotation.css' %}">
@@ -24,7 +38,7 @@
       <div class="container-fluid">
         <div class="row justify-content-md-center">
           <div class="col-md-8">
-            <h3>ADD ANNOTATION</h3>
+            <h3>TAMBAH ANNOTATION</h3>
           </div>
         </div>
         <div class="row justify-content-md-center">
@@ -33,7 +47,7 @@
               {% csrf_token %}
                  <div class="col-sm-11">{{form|crispy }}</div>
                  <div class="col-sm-10">
-                    <input class="btn btn-danger" type="submit" value="submit">
+                    <input class="btn btn-danger" type="submit" value="kumpulkan">
                  </div>
             </form>
           </div>

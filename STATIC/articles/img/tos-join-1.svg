@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="237" height="279" viewBox="0 0 237 279">
+  <defs>
+    <filter id="Rectangle_66" x="65" y="97" width="143" height="48" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_1911" data-name="Group 1911" transform="translate(-148 -1654)">
+    <rect id="Rectangle_111" data-name="Rectangle 111" width="237" height="279" rx="10" transform="translate(148 1654)" fill="#fff"/>
+    <text id="_1._Klik_tombol_JOIN_US" data-name="1. Klik tombol JOIN US" transform="translate(186.5 1688.5)" fill="#7b7b7b" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">1. </tspan><tspan y="0" fill="#707070">Klik tombol</tspan><tspan y="0"> </tspan><tspan y="0" fill="#ef494b" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600">JOIN US</tspan></text>
+    <g id="Group_1737" data-name="Group 1737" transform="translate(71.674 1716.411)">
+      <g id="Group_1731" data-name="Group 1731" transform="translate(108.56 53.675)">
+        <rect id="Rectangle_113" data-name="Rectangle 113" width="146.523" height="123.176" fill="#fafafa"/>
+      </g>
+      <g id="Group_1733" data-name="Group 1733" transform="translate(108.843 62.052)">
+        <g id="Group_1732" data-name="Group 1732">
+          <path id="Path_1224" data-name="Path 1224" d="M109.138,70.9c0-.071,32.676-.127,72.974-.127s72.982.057,72.982.127-32.669.127-72.982.127S109.138,70.967,109.138,70.9Z" transform="translate(-109.138 -70.769)" fill="#e0e0e0"/>
+        </g>
+      </g>
+      <g id="Group_1734" data-name="Group 1734" transform="translate(111.737 56.201)">
+        <circle id="Ellipse_10" data-name="Ellipse 10" cx="1.566" cy="1.566" r="1.566" transform="translate(0 0)" fill="#e0e0e0"/>
+      </g>
+      <g id="Group_1735" data-name="Group 1735" transform="translate(116.095 56.201)">
+        <circle id="Ellipse_11" data-name="Ellipse 11" cx="1.566" cy="1.566" r="1.566" transform="translate(0 0)" fill="#e0e0e0"/>
+      </g>
+      <g id="Group_1736" data-name="Group 1736" transform="translate(120.93 56.201)">
+        <circle id="Ellipse_12" data-name="Ellipse 12" cx="1.566" cy="1.566" r="1.566" fill="#e0e0e0"/>
+      </g>
+    </g>
+    <g id="Group_1053" data-name="Group 1053" transform="translate(31 34)">
+      <g id="Group_292" data-name="Group 292" transform="translate(-1004 1698)">
+        <g transform="matrix(1, 0, 0, 1, 1121, -78)" filter="url(#Rectangle_66)">
+          <rect id="Rectangle_66-2" data-name="Rectangle 66" width="125" height="30" rx="5" transform="translate(74 103)" fill="#fc695a"/>
+        </g>
+        <text id="JOIN_US" data-name="JOIN US" transform="translate(1230 45)" fill="#fff" font-size="15" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.06em"><tspan x="0" y="0">JOIN US</tspan></text>
+      </g>
+      <g id="Group_293" data-name="Group 293" transform="translate(-39.951 562.584)">
+        <path id="Path_927" data-name="Path 927" d="M471.542,1295.208l-19.323-16.6a1,1,0,0,0-1.646.755l-.033,25.348a1,1,0,0,0,1.607.789l5.254-4.076,5.183,11.472a1,1,0,0,0,1.318.5l5.05-2.281a1,1,0,0,0,.5-1.318l-5.187-11.483,6.825-1.366a1,1,0,0,0,.454-1.733Z" transform="translate(-110.099 -100.99)" fill="#353d5f"/>
+        <path id="Path_928" data-name="Path 928" d="M533.683,1240.406a1,1,0,0,0,.415-.091l3.309-1.516a1,1,0,1,0-.83-1.812l-3.309,1.516a1,1,0,0,0,.415,1.9Z" transform="translate(-185.158 -63.1)" fill="#353d5f"/>
+        <path id="Path_929" data-name="Path 929" d="M484.956,1173.178a1.01,1.01,0,0,0,.349.063,1,1,0,0,0,.934-.648l1.274-3.41a1,1,0,1,0-1.867-.7l-1.274,3.409A1,1,0,0,0,484.956,1173.178Z" transform="translate(-140.953 0)" fill="#353d5f"/>
+        <path id="Path_930" data-name="Path 930" d="M401.256,1170.307a1,1,0,0,0-1.815.824l1.5,3.314a1,1,0,0,0,.909.585.984.984,0,0,0,.411-.09,1,1,0,0,0,.5-1.319Z" transform="translate(-63.328 -1.722)" fill="#353d5f"/>
+        <path id="Path_931" data-name="Path 931" d="M335.5,1323.958l-3.319,1.493a1,1,0,1,0,.818,1.818l3.319-1.493a1,1,0,1,0-.818-1.818Z" transform="translate(-1.412 -142.569)" fill="#353d5f"/>
+        <path id="Path_932" data-name="Path 932" d="M330.689,1243.374l3.4,1.286a1.014,1.014,0,0,0,.352.064,1,1,0,0,0,.352-1.929l-3.4-1.286a1,1,0,0,0-.7,1.865Z" transform="translate(0 -67.256)" fill="#353d5f"/>
+      </g>
+    </g>
+  </g>
+</svg>

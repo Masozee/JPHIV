@@ -1,0 +1,313 @@
+.sub-nav{
+    padding-left: 10%;
+}
+
+
+.popular-search {
+    display:none;
+}
+
+
+.artikel .container{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.artikel .breadcrumb{
+    background-color: transparent !important;
+    padding-left: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.artikel .breadcrumb-item{
+    font-family: 'Source Sans Pro';  
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.42;
+    letter-spacing: 0.24px;
+    text-align: left;
+    color: #707070;
+}
+.artikel a  {
+    color: #2b2a2a;
+}
+
+.artikel a:hover {
+    color: #EF494B;
+}
+
+
+.artikel h1{
+    font-family: 'Source Sans Pro';
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #353D5F;
+}
+
+.artikel .space-title{
+    width: 420px;
+    margin-left: 0;
+}
+
+.artikel li{
+    font-family: 'Source Sans Pro';
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.43;
+    color: #2b2a2a;
+}
+
+.artikel li{
+    padding-top: 4px;
+}
+
+.artikel a:hover{
+    color: #EF494B;
+}
+
+.artikel .w-30{
+    width: 33%;
+}
+
+.artikel #autor{
+    padding-top: 0;
+}
+
+.artikel li i{
+    padding-right: 6.8px;
+}
+
+.artikel .btn-danger, .artikel .btn-outline-danger{
+    width: 200px;
+    margin-right: 15px;
+    margin-top: 27px;
+}
+
+.artikel button img{
+    padding-right: 6.4px;
+}
+
+.artikel h6{
+    font-family: 'Source Sans Pro';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: left;
+    color: #2b2a2a;
+}
+
+.artikel #annotated{
+    margin-top: 44px;
+}
+
+.artikel .p-biblio{
+    font-family: 'Source Sans Pro';
+    font-size: 16px;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: 1.63;
+    letter-spacing: normal;
+    text-align: left;
+    color: #353D5F;
+    margin-bottom: 0;
+}
+
+.artikel p{
+    font-family: 'Source Sans Pro';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.63;
+    color: #353D5F;
+    margin-bottom: 50px;
+}
+
+.artikel .biblio{
+    margin-top: 30px;
+}
+
+.artikel .abstrak{
+    margin-top: 12px;
+}
+
+.artikel ul{
+    margin-bottom: 0;
+}
+
+.artikel ul .annotated{
+    font-family: 'Source Sans Pro';
+    font-size: 16px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    text-align: right;
+    color: #434343;
+}
+
+.artikel ul .user{
+    font-family: 'Source Sans Pro';
+    font-size: 16px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    text-align: right;
+    color: #e42c1a;
+}
+
+.artikel ul .institusi{
+    font-family: 'Source Sans Pro';
+    font-size: 16px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: 1.38;
+    letter-spacing: normal;
+    text-align: right;
+    color: #2b2a2a;
+}
+
+.matrik{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.matrik h5{
+    font-family: 'Source Sans Pro';
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #EF494B;
+}
+
+.matrik h3{
+    font-family: 'Source Sans Pro';
+    font-size: 34px;
+    font-weight: 300;
+    line-height: 1.44;
+    color: #707070;  
+}
+
+.matrik .abstrak{
+    margin-bottom: 16px;
+}
+
+.matrik h6{
+    font-family: 'Source Sans Pro';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #707070;
+    padding-right: 10%;
+    margin-bottom: 23px;
+    margin-top: 0;
+}
+
+.matrik h6:hover{
+    color: #EF494B;
+}
+
+#user-review{
+    margin-bottom: 60px;
+}
+
+.user-review h4{
+    font-family: 'Source Sans Pro';
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2b2a2a;
+}
+
+.user-review {
+    background-color: #ffffff;
+    /* padding: 21px; */
+    /* border-top: 1px solid #707070; */
+    /* border-bottom: 1px solid #707070; */
+}
+
+.user-review-title{
+    font-family: 'Source Sans Pro';
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2b2a2a;
+}
+
+.user-review .user{
+    font-family: 'Source Sans Pro';
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #e42c1a;
+}
+
+.user-review .date{
+    font-family: 'Source Sans Pro';
+    font-size: 12px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.42;
+    letter-spacing: normal;
+    text-align: left;
+    color: #434343;
+}
+
+.user-review p{
+    font-family: 'Source Sans Pro';
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    text-align: left;
+    color: #8b8b8b;
+    margin-bottom: 0;
+    padding-bottom: 21px;
+}
+
+.user-review p,  .user-review .user{
+    padding-left: 21px;
+    padding-right: 21px;
+}
+
+.user-review p span {
+    font-family: 'Source Sans Pro';
+    font-size: 12px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    text-align: left;
+    color: #353d5f;
+}
+
+.user-review ul{
+   padding-top: 16px;
+}
+
+.user-review hr{
+    margin: 0;
+}
+

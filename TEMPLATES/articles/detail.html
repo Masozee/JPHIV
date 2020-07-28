@@ -5,8 +5,12 @@
 <meta property="og:title" content="{{abstracts.judul}} ">
 <meta property="og:url" content="{{ request.build_absolute_uri }}">
 <meta property="og:site_name" content="Jaringan Penelitian HIV Indonesia">
-<meta property="og:image" content="">
-<meta property="og:description" content="{{ abstracts.bibliography | safe }}">
+<meta property="og:image" content="https://jphiv-ina.net/STATIC/articles/img/logo/share.png">
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:height" content="300" />
+<meta property="og:image:alt" content="Logo Jaringan penelitian HIV Indonesia" />
+<meta property="og:description" content="{{ abstracts.abstrak | truncatechars:'200'  | safe }}">
 {% endblock %}
 
 {% block css %}
@@ -16,54 +20,107 @@
 
 {% block content %}
 
+ <!-- header 2 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav" style="border-bottom: 1px solid #E1E1E1">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'abstract' %}">ABSTRAK <span class="sr-only">(current)</span></a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="{% url 'abstract-epidemology' %}">EPIDEMIOLOGI</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'abstract-biomedicine' %}">BIOMEDIS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'abstract-health' %}">EKONOMI KESEHATAN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'abstract-policy' %}">STUDI KEBIJAKAN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'abstract-social' %}">SOSIAL-PERILAKU</a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+    <!-- end header 2 -->
     <section class="artikel">
         <div class="container">
 					<div class="row">
 						<div class="col-md-7 offset-md-1">
 							<hr>
 							<!-- Nav -->
-							<nav aria-label="breadcrumb">
-								<ol class="breadcrumb">
-									<li class="breadcrumb-item">ABSTRACT</li>
-									<li class="breadcrumb-item active" aria-current="page">{{abstracts.kategori.Kategori |upper}}</li>
-								</ol>
-							</nav>
-							<!-- END NAV -->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                           <li class="breadcrumb-item"> <a href="{% url 'homepage' %}" style="color">HOME</a></li>
+                            <li class="breadcrumb-item"><a href="{% url 'abstract' %}" style="color">ABSTRACT</a></li>
+                            <li class="breadcrumb-item" aria-current="page"><a href="/abstract/{{abstracts.kategori.Kategori |slugify}}">{{abstracts.kategori.Kategori |upper}}</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{abstracts.kategori.Subkategori |upper}}</li>
+                        </ol>
+                    </nav>
+                    <!-- END NAV -->
 
-							<h1>{{abstracts.judul}}</h1>
-              <hr class="space-title">
-              <div class="d-flex bd-highlight">
-                <div class="bd-highlight w-30">
-                  <ul class="list-unstyled ">
-                    <li class="list-item"><i><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i>
-						{% for tag in abstracts.authors.all %}
-                            <a href="/author/{{ tag.name | slugify}}">  {{ tag.name }},</a>
-						{% endfor %}</li>
-                    <li class="list-item"><i><img src="{% static 'articles/img/majalah.svg' %}" alt="" srcset=""></i>{{ abstracts.sumber }}</li>
-                    <li class="list-item"><i><img src="{% static 'articles/img/newspaper.svg' %}" alt="" srcset=""></i>{{ abstracts.volume }}</li>
-                    <li class="list-item"><i><img src="{% static 'articles/img/website.svg' %}" alt="" srcset=""></i>{{ abstracts.url }}</li>
-                  </ul>
-                </div>
-                <div class="bd-highlight">
-                  <ul class="list-unstyled">
-                    <li class="list-item"><i><img src="{% static 'articles/img/date.svg' %}" alt="" srcset=""></i>{{ abstracts.tgl }}</li>
-                    <li class="list-item"><i><img src="{% static 'articles/img/id-card.svg' %}" alt="" srcset=""></i><a href="{{ abstracts.DOI_URL }}">{{ abstracts.DOI_number }}</a></li>
-                    <li class="list-item"><i><img src="{% static 'articles/img/document.svg' %}" alt="" srcset=""></i>{{ abstracts.doctype }}</li>
-                  </ul>
-                </div>
-              </div>
-				{% if abstracts.download == not empty %}
-				<a href="/MEDIA/{{abstracts.download}}"><button type="button" class="btn btn-danger btn-sm"><i><img src="{% static 'articles/img/download-light.svg' %}" alt="" srcset=""></i>Unduh</button></a>
-              	<button type="button" class=" btn btn-outline-danger btn-sm" data-clipboard-target="#bibliotext">SALIN BIBLIOGRAPHY</button>
-                 {% else %}
-                <button type="button" class=" btn btn-outline-danger btn-sm" data-clipboard-target="#bibliotext">SALIN BIBLIOGRAPHY</button>
-                 {% endif %}
-              	<h6 class="biblio">BIBLIOGRAPHY</h6>
-              	<span class="p-biblio pl-4" id="bibliotext">
-					{{abstracts.bibliografi |safe}}
-              	</span>
-				<h6 class="abstrak">ABSTRAK</h6>
-				<span>{{abstracts.abstrak |safe}}</span>
+                    <h1>{{abstracts.judul}}</h1>
+                      <hr class="space-title">
+                      <div class="d-flex bd-highlight">
+                        <div class="bd-highlight w-100">
+                          <ul class="list-unstyled ">
+                            <li class="list-item"><i><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset="" style="width:14px"></i>
+                                {% for tag in abstracts.authors.all %}
+                                    <a href="/author/{{ tag.name | slugify}}">{{ tag.name }}</a>,
+                                {% endfor %}
+                            </li>{% if abstracts.sumber %}
+                            <li class="list-item"><i><img src="{% static 'articles/img/majalah.svg' %}" alt="" srcset="" style="width:14px"></i>{{ abstracts.sumber }}</li>
+                              {% else %}
+                                {{empty}}
+                              {% endif %}
+                              {% if abstracts.volume %}
+                            <li class="list-item"><i><img src="{% static 'articles/img/newspaper.svg' %}" alt="" srcset="" style="width:14px"></i>{{ abstracts.volume }}</li>
+                              {% else %}
+                                {{empty}}
+                              {% endif %}
+                            {% if abstracts.url %}
+                            <li class="list-item"><i><img src="{% static 'articles/img/website.svg' %}" alt="" srcset="" style="width:14px"></i><a href="{{ abstracts.url }}">{{ abstracts.url }}</a></li>
+                            {% else %}
+                                {{empty}}
+                            {% endif %}
+                            {% if abstracts.tgl %}
+                            <li class="list-item"><i><img src="{% static 'articles/img/date.svg' %}" alt="" srcset="" style="width:14px"></i>{{ abstracts.tgl }}</li>
+                            {% else %}
+                                {{empty}}
+                            {% endif %}
+                            {% if abstracts.DOI %}
+                            <li class="list-item"><i><img src="{% static 'articles/img/id-card.svg' %}" alt="" srcset="" style="width:14px"></i>{{ abstracts.DOI }}</li>
+                            {% else %}
+                                {{empty}}
+                            {% endif %}
+                            {% if abstracts.doctype %}
+                            <li class="list-item"><i><img src="{% static 'articles/img/document.svg' %}" alt="" srcset="" style="width:14px"></i>{{ abstracts.doctype }}</li>
+                              {% else %}
+                                {{empty}}
+                            {% endif %}
+                          </ul>
+                        </div>
+                      </div>
+                        {% if abstracts.download %}
+                        <a href="/MEDIA/{{abstracts.download}}"><button type="button" class="btn btn-danger btn-sm"><i><img src="{% static 'articles/img/download-light.svg' %}" alt="" srcset=""></i>Unduh</button></a>
+                        <button type="button" class=" btn btn-outline-danger btn-sm" data-clipboard-target="#bibliotext">SALIN BIBLIOGRAPHY</button>
+                         {% else %}
+                        <button type="button" class=" btn btn-outline-danger btn-sm" data-clipboard-target="#bibliotext">SALIN BIBLIOGRAPHY</button>
+                         {% endif %}
+                        <h6 class="biblio">BIBLIOGRAPHY</h6>
+                        <span class="p-biblio pl-4" id="bibliotext">
+                            {{abstracts.bibliografi |safe}}
+                        </span>
+                        <h6 class="abstrak">ABSTRAK</h6>
+                        <span>{{abstracts.abstrak |safe}}</span>
               <!--section id="user-review">
                 <h4 class="user-review-title">USER REVIEW</h4>
                  <div class="user-review">
@@ -106,12 +163,12 @@
 						<!-- MATRIK -->
 						<div class="col-md-2 offset-md-1 matrik">
 							<hr>
-							<h5 >MATRIX</h5>
+							<!--h5 >MATRIX</h5>
 							<i><img src="{% static 'articles/img/download-matrik.svg' %}" alt="" srcset=""></i>
 							<h3>{{abstracts.pk}} kali</h3>
 							<i><img src="{% static 'articles/img/eye.svg' %}" alt=""srcset=""></i>
 							<h3>1.043 kali</h3>
-							<hr>
+							<hr-->
 							<h5 class="abstrak">ABSTRAK YANG BERHUBUNGAN</h5>
 							{% for a in related %}
 							<a href="/abstract/{{a.judul | slugify | lower}}"><h6>{{a.judul}}
@@ -144,5 +201,6 @@
         console.error('Action:', e.action);
         console.error('Trigger:', e.trigger);
     });
+
 </script>
 {% endblock %}

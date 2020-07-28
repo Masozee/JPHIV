@@ -17,8 +17,11 @@ class Author(TagBase):
     ket = models.TextField(blank=True)
 
     class Meta:
-        verbose_name = _("Author")
-        verbose_name_plural = _("Author")
+        verbose_name = _("Peneliti")
+        verbose_name_plural = _("Peneliti")
+
+    def __str__(self):
+        return self.Name
 
 class TaggedAuthor(GenericTaggedItemBase):
     tag = models.ForeignKey(
@@ -47,11 +50,11 @@ class TaggedAnnotated(GenericTaggedItemBase):
 
 class kategori(models.Model):
     KATEGORI_CHOICES = (
-        ('epidemology', 'epidemology'),
-        ('biomedicine', 'biomedicine'),
-        ('health-economic', 'health-economic'),
-        ('policy-study', 'policy-study'),
-        ('social-behavioral', 'social-behavioral')
+        ('epidemiologi', 'epidemiologi'),
+        ('biomedis', 'biomedis'),
+        ('ekonomi-kesehatan', 'ekonomi-kesehatan'),
+        ('studi-kebijakan', 'studi-kebijakan'),
+        ('sosial-perilaku', 'sosial-perilaku')
     )
     Kategori = models.CharField(max_length=20, choices=KATEGORI_CHOICES)
     Subkategori = models.CharField(max_length=150, blank=True)
@@ -195,3 +198,16 @@ class AnotatedJPHIV(models.Model):
     def tgl(self):
         return self.tanggal.strftime('%d %B %Y')
 
+class Comment(models.Model):
+    post = models.ForeignKey(AnotatedJPHIV, on_delete=models.CASCADE, related_name='comments')
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL)
+    text = models.TextField()
+    created_date = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=False)
+
+    def approve(self):
+        self.approved_comment = True
+        self.save()
+
+    def __str__(self):
+        return str(self.post)

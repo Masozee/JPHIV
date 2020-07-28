@@ -65,16 +65,23 @@ body{
     color: #ffffff !important ;
 }
 
+.imghome{
+    height:100px;
+    padding: 50px 0px 0px 0px;
+}
+
 .landing .landing-title{
     font-family: 'Source Sans Pro';
-    font-size: 16px;
-    line-height: 1.33;
+    font-size: 14px;
+    line-height: 1.5;
     text-align: left;
     color: #ffffff !important;
+    padding-top: 20px;
+    padding-left: 20px;
 }
 
 .landing .title{
-    margin-top: 84px;
+    margin-top: 50px;
 }
 
 .landing .media h1 {
@@ -95,8 +102,8 @@ body{
 
 .landing .read-more h6{
     font-family: 'Source Sans Pro';
-    margin-top: 90px;
-    font-size: 10px;
+    margin-top: 75px;
+    font-size: 14px;
     font-weight: 600;
     line-height: 1.3;
     color: #edebeb !important;
@@ -105,7 +112,7 @@ body{
 
 .landing .read-more h6 span{
     font-family: 'Source Sans Pro';
-    font-size: 10px;
+    font-size: 14px;
     font-weight: normal;
     line-height: 1.3;
     color: #edebeb !important;
@@ -153,9 +160,9 @@ body{
 }
 
 .new-entry button{
-    height: 24px;
+    height: 30px;
     font-family: 'Source Sans Pro';
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1.6;
     text-align: left;
     color: #ffffff !important;
@@ -167,7 +174,7 @@ body{
     font-size: 20px;
     font-weight: 600;
     line-height: 1.25;
-    color: #707070 !important;
+    color: #353D5F !important;
     margin-bottom: 12px;
 }
 
@@ -184,13 +191,13 @@ body{
     font-size: 20px;
     font-weight: 600;
     line-height: 1.25;
-    color: #707070 !important;
+    color: #2c2b2b !important;
     margin-bottom: 12px;
 }
 
 .new-entry .card-footer a:hover{
     font-family: 'Source Sans Pro';
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
@@ -222,29 +229,29 @@ body{
 }
 
 .new-entry .autor{
-    margin-bottom: 0;
+    margin-bottom: 2px;
 }
 
 .new-entry .autor ,.new-entry .date{
     font-family: 'Source Sans Pro';
-    font-size: 12px;
-    font-weight: 300;
+    font-size: 16px;
+    font-weight: 400;
     line-height: 1.42;
     text-align: left;
-    color: #707070 !important;
+    color: #2C2B2B !important;
 }
 
 .new-entry p{
     font-family: 'Source Sans Pro';
-    font-size: 14px;
-    font-weight: 300;
+    font-size: 16px;
+    font-weight: 400;
     line-height: 1.43;
-    color: #707070 !important;
+    color: #2C2B2B !important;
 }
 
 .new-entry .list-inline{
     font-family: 'Source Sans Pro';
-    font-size: 10px;
+    font-size: 16px;
     font-weight: 600;
     line-height: 1.3;
     color: #707070 !important;
@@ -290,3 +297,96 @@ footer hr{
     padding-top: 0;
 }
 /* END FOOTER */
+
+/* breakpoint mobile responsive */
+
+@media (max-width:576px){
+    .imghome {
+        padding: 10px 0px 0px 15px;
+    }
+    
+    .landing .media-body h5{
+        font-size: 12px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.33;
+        letter-spacing: normal;
+        text-align: left;
+        color: #68b4d0;
+    }
+    
+    .landing .media-body h1{
+        font-size: 40px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.33;
+        letter-spacing: normal;
+        text-align: left;
+        color: #ffffff;
+    }
+    
+    .landing-title {
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        text-align: left;
+        color: #ffffff;
+        margin-top: 23px;
+    }
+    
+    .jumbotron{
+        background-image: url(/img/landing-index.png);
+        height: 700px;
+    }
+    
+    .d-flex h6{
+        text-align: center;
+        width: 100%;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.33;
+        letter-spacing: normal;
+        color: #edebeb;
+    }
+    
+    .d-flex h6 span{
+        font-weight: 600;
+    }
+    
+    .new-entry button{
+        display: none;
+    }
+    
+    .new-entry h3{
+        font-size: 32px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.34;
+        letter-spacing: normal;
+        text-align: left;
+        color: #32a4ce;
+    }
+    
+    .new-entry a{
+        font-size: 24px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.33;
+        letter-spacing: normal;
+        text-align: left;
+        color: #111c4a;
+    }
+
+    .read-more .align-items-end{
+        width: 100%;
+    }
+}

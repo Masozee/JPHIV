@@ -20,14 +20,14 @@ body{
 }
 
 .main-nav .form-inline{
-    width: 40%;
-    padding-left: 3%;
-    padding-right: 3%;
+    width: 27%;
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
 #search-main-nav{
     margin-right: 4.2% !important;
-    width: 40%; 
+    width: 20%;
 }
 
 .main-nav img{
@@ -52,7 +52,7 @@ body{
 
 .main-nav .dropdown-annotated .dropdown-item{
     font-family: 'Source Sans Pro';
-    font-size: 13px;
+    font-size: 14px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -64,7 +64,7 @@ body{
 
 .main-nav .dropdown-img-profil .dropdown-item{
     font-family: 'Source Sans Pro';
-    font-size: 13px;
+    font-size: 14px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -96,14 +96,14 @@ body{
 /* ################### HEADER ################# */
 .sub-nav .navbar-nav .active>.nav-link{
     font-family: 'Source Sans Pro';
-    font-size: 11px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.3;
     letter-spacing: normal;
     text-align: left;
-    color: #7b7b7b !important;
+    color: #c82333 !important;
     border-bottom: 3px solid #ef494b;
 }
 
@@ -118,15 +118,17 @@ body{
 
 .main-nav .nav-link{
     font-family: 'Source Sans Pro';
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 600;
     line-height: 1.3;
-    color: #7b7b7b !important;
+    color: #353D5F !important;
+    padding-right: 0.4rem;
+    padding-left: .4rem;
   }
 
 .main-nav .btn-link{
     font-family: 'Source Sans Pro';
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
     line-height: 1.42;
     letter-spacing: 0.24px;
@@ -135,13 +137,13 @@ body{
 }
 
 .main-nav .img-profil{
-    width: 50px;
+    width: 30px;
     border-radius: 50%;
 }
 
 .main-nav .btn-profil{
     font-family: 'Source Sans Pro';
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -153,13 +155,12 @@ body{
 
 .main-nav .btn-join-us{
     font-family: 'Source Sans Pro';
-    font-size: 11px;
+    font-size: 14px;
     font-weight: bold;
     line-height: 1.4;
     letter-spacing: 0.6px;
     text-align: left;
     color: #ffffff;
-    margin-right: 2%;
 }
 
 
@@ -167,7 +168,7 @@ body{
     padding-right: 23px;
     padding-left: 23px;
     font-family: 'Source Sans Pro';
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 600;
     line-height: 1.3;
     letter-spacing: 0.2px;
@@ -176,13 +177,18 @@ body{
     margin-left: 18px;
  }
 
+ .main-nav .btn-outline-secondary:hover{
+     background-color: #32a4ce;
+     color: white !important;
+ }
+
  .main-nav .input-group{
      width: 100%;
  }
 
  .main-nav input , .main-nav .input-group-text{
     font-family: 'Source Sans Pro';
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.4;
     color: #7b7b7b !important;
     background-color: #edebeb;
@@ -193,11 +199,11 @@ body{
 
  .sub-nav .nav-link{
     font-family: 'Source Sans Pro';
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.4;
     letter-spacing: 0.2px;
     text-align: left;
-    color: #9b9b9b !important;
+    color: #353D5F !important;
     
 }
 
@@ -210,6 +216,20 @@ body{
 
 
 /* ###################### END HEADER ################################## */
+
+/* share dropdown */
+.dropdown-menu .fab, .dropdown-menu .fas{
+    margin-right: 3px;
+}
+
+.dropdown.share .dropdown-menu{
+    min-width: 0;
+}
+
+.dropdown.share a{
+    margin-bottom: 0;
+}
+/* end share dropdown */
 
 .page-link{
     background-color: #f5f6f7 !important;
@@ -227,8 +247,158 @@ footer h3{
     font-family: 'Source Sans Pro';
     font-size: 16px;
     font-weight: 300;
-    text-align: left;
+    text-align: center;
     color: #ffffff !important;
     margin-top: 45px;
 }
 /* END FOOTER */
+
+/* Breakppint mobile responsive */
+@media(max-width:576px){
+    
+    .footer hr{
+        width: 100%;
+    }
+
+    .sub-nav {
+        display: none;
+    }
+
+    .sub-nav .abstrak{
+        display: none;
+    }
+
+
+    .navbar-collapse{
+        padding-top: 30px;
+        padding-bottom: 30px;
+        width: 300px;
+        /* opacity: 0.95; */
+        box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.17);
+        background-color: #434343;
+        border-radius: 5px;
+    }
+
+    .navbar-nav .nav-link{
+        font-size: 14px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.36;
+        letter-spacing: normal;
+        text-align: left;
+        color: #fafafa !important;
+        padding-left: 30px;
+      }
+
+      .main-nav .btn-outline-secondary{
+        border-radius: 5px !important;
+        border: solid 1px #ffffff !important;
+        color: #ffffff !important;
+        font-size: 14px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.36;
+        letter-spacing: 0.28px;
+        color: #fafafa;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 60px;
+      }
+
+      .main-nav .form-inline{
+          width: 100%;
+          padding-left: 30px;
+          padding-right: 30px;
+          margin-bottom: 30px !important;
+      }
+
+      .main-nav .input-group-text{
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.33;
+        letter-spacing: normal;
+        text-align: center;
+        color: #707070;
+      }
+
+      .main-nav .btn-link{
+        padding-left: 30px;
+        font-size: 15px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.33;
+        letter-spacing: 0.3px;
+        text-align: left;
+        color: #fafafa;
+      }
+
+      .main-nav .btn-join-us{
+        font-size: 15px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.33;
+        letter-spacing: 0.3px;
+        color: #fafafa;
+      }
+
+      .nav-absrtak, .nav-annotated, .nav-about{
+          margin-top: 0;
+          padding-top: 0;
+          padding-bottom: 0;
+          border: 0;
+          background-color: transparent;
+      }
+
+      .nav-absrtak .dropdown-item,.nav-annotated .dropdown-item, .nav-about .dropdown-item{
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.33;
+        letter-spacing: 0.36px;
+        text-align: left;
+        color: #ffffff;
+        padding-left: 30px;
+      }
+
+
+      .dropdown-annotated .dropdown-divider{
+          display: none;          
+      }
+
+      .dropdown-annotated .dropdown-menu{
+          box-shadow: none !important;
+          border: 0;
+          background-color: transparent !important;
+      }
+
+      #search-main-nav{
+          width: 100%;
+      }
+
+      .main-nav .img-profil{
+          margin-left:20px;
+      }
+
+      .nav-profil img{
+        width: 50px;
+      }
+
+      .main-nav .navbar-brand img{
+          margin-right: 55px !important;
+      }
+
+      .navbar-toggler{
+          border: 0 !important;
+      }
+
+    
+
+
+}

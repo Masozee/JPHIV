@@ -2,6 +2,19 @@
 {% load class_name %}
 {% load static %}
 
+{% block meta %}
+<meta property="og:title" content="Terms of services">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:site_name" content="Jaringan Penelitian HIV Indonesia">
+<meta property="og:image" content="https://jphiv-ina.net/STATIC/articles/img/logo/share.png">
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:height" content="300" />
+<meta property="og:image:alt" content="Logo Jaringan penelitian HIV Indonesia" />
+<meta property="og:description" content="JPHI mengindeks jurnal ilmiah, buku-buku, laporan penelitian, makalah kebijakan, makalah konferensi, dan data primer
+                  dari universitas, badan penelitian, lembaga pemerintahan, dan penerbit yang berkaitan dengan HIV AIDS.">
+{% endblock %}
+
 {% block css%}
     <!-- my css -->
     <link rel="stylesheet" href="{% static 'articles/css/overview.css' %}">
@@ -9,7 +22,7 @@
 
 {% block content %}
       <!-- header 2 -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav" style="border-bottom: 1px solid #E1E1E1">
         <div class="container">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -43,10 +56,10 @@
         <!-- term of service -->
           <div class="col-md-11">
             <h5>TERMS OF SERVICE</h5>
-            <ul>
-              <li>Pengguna tidak memerlukan akun JPHI untuk menggunakan fitur pencarian abstrak (publikasi)</li>
-              <li>Pengguna memerlukan akun JPHI untuk dapat mengunggah dan mengulas Annotated Bibliography</li><br>
-              <li>Langkah-langkah pembuatan akun</li>
+            <ul class="privpol">
+              <li>Pengguna tidak memerlukan akun untuk menggunakan fitur pencarian Abstrak ataupun melihat Annotated Bibliography</li>
+              <li>Pengguna memerlukan akun untuk dapat mengunggah Annotated Bibliography</li><br>
+              <li>Langkah-langkah pembuatan akun JPHIV-INA</li>
               <ol>
                 <li>Klik tombol Join Us pada laman utama situs</li>
                 <li>Isi Nama, Email, Institusi, serta No. Telepon (opsional) anda</li>
@@ -54,11 +67,12 @@
               </ol><br>
               <li>Langkah-langkah mengumpulkan Annotated Bibliography</li>
               <ol>
-                <li>Log In JPHI</li>
-                <li>Klik menu Submit Annotation</li>
-                <li>Isi bagian bibliografi, anotasi, kategori (biomedis, epidemiologi, health economic, policy study, sosial-behavioral), dan sub-kategori (opsional)</li>
-                <li>Jika semua bagian sudah terisi, klik submit</li>
-                <li>JPHI akan memberikan notifikasi saat Annotated Bibliografi anda diterima</li>
+                <li>Anda perlu memiliki akun terlebih dahulu untuk dapat mengumpulkan Annotated Bibliography.</li>
+                <li>Jika sudah memiliki akun, Log In pada situs www.jphiv-ina.net. </li>
+                <li>Klik menu Submit Annotation.</li>
+                <li>Isi informasi yang dibutuhkan pada kotak-kotak kosong yang ada pada laman Submit Annotation.</li>
+                <li>Jika semua bagian sudah terisi, klik Submit.</li>
+                <li>JPHIV-INA akan memberikan notifikasi saat Annotated Bibliografi anda diterima.</li>
               </ol>
             </ul>
           </div>

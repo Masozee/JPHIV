@@ -5,6 +5,19 @@
  <link rel="stylesheet" href="{% static 'articles/css/index.css' %}">
 {% endblock %}
 
+{% block meta %}
+<meta property="og:title" content="Jaringan Penelitian HIV Indonesia">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:site_name" content="Jaringan Penelitian HIV Indonesia">
+<meta property="og:image" content="https://jphiv-ina.net/STATIC/articles/img/logo/share.png">
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:height" content="300" />
+<meta property="og:image:alt" content="Logo Jaringan penelitian HIV Indonesia" />
+<meta property="og:description" content="JPHI mengindeks jurnal ilmiah, buku-buku, laporan penelitian, makalah kebijakan, makalah konferensi, dan data primer
+                  dari universitas, badan penelitian, lembaga pemerintahan, dan penerbit yang berkaitan dengan HIV AIDS.">
+{% endblock %}
+
 {% block title %}
 <title>JPHIV Indonesia</title>
 {%  endblock %}
@@ -19,43 +32,22 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">ABSTRACT <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">ABSTRAK <span class="sr-only">(current)</span></a>
           </li>
          <li class="nav-item">
-            <a class="nav-link" href="{% url 'abstract-epidemology' %}">EPIDEMOLOGY</a>
+            <a class="nav-link" href="{% url 'abstract-epidemology' %}">EPIDEMIOLOGI</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'abstract-biomedicine' %}">BIOMEDICINE</a>
+            <a class="nav-link" href="{% url 'abstract-biomedicine' %}">BIOMEDIS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'abstract-health' %}">HEALTH ECONOMIC</a>
+            <a class="nav-link" href="{% url 'abstract-health' %}">EKONOMI KESEHATAN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'abstract-policy' %}">POLICY STUDY</a>
+            <a class="nav-link" href="{% url 'abstract-policy' %}">STUDI KEBIJAKAN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'abstract-social' %}">SOCIAL-BEHAVIORAL</a>
-          </li>
-        </ul>
-
-        <ul class="navbar-nav ml-auto popular-search">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">POPULAR SEARCH <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'abstract-epidemology' %}">EPIDEMOLOGY</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'abstract-biomedicine' %}">BIOMEDICINE</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'abstract-health' %}">HEALTH ECONOMIC</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'abstract-policy' %}">POLICY STUDY</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'abstract-social' %}">SOCIAL-BEHAVIORAL</a>
+            <a class="nav-link" href="{% url 'abstract-social' %}">SOSIAL-PERILAKU</a>
           </li>
         </ul>
       </div>
@@ -63,7 +55,7 @@
     <!-- end header 2 -->
 
     <!-- jumbotron -->
-    <section class="landing">
+    <!--section class="landing">
       <div class="container-fluid">
         <div class="jumbotron jumbotron-fluid" style="
         background-image: url({% static 'articles/img/landing-index.png' %});
@@ -84,16 +76,16 @@
                 <div class="media">
                   <img src="{% static 'articles/img/biomedicine.png' %}" class="align-self-center mr-1" alt="...">
                   <div class="media-body">
-                    <h5 class="mt-0">BIOMEDICINE</h5>
+                    <h5 class="mt-0">BIOMEDIS</h5>
                     <h1>{{biomedc}}</ph1>
                   </div>
                 </div>
               </div>
               <div class="col-md-2">
                 <div class="media">
-                  <img src="{% static 'articles/img/health economic.png' %}" class="align-self-center mr-1" alt="...">
+                  <img src="{% static 'articles/img/healtheconomic.png' %}" class="align-self-center mr-1" alt="...">
                   <div class="media-body">
-                    <h5 class="mt-0">HEALTH ECONOMIC</h5>
+                    <h5 class="mt-0">EKONOMI KESEHATAN</h5>
                     <h1>{{healecoc}}</ph1>
                   </div>
                 </div>
@@ -102,7 +94,7 @@
                 <div class="media">
                   <img src="{% static 'articles/img/policy-study.png' %}" class="align-self-center mr-1" alt="...">
                   <div class="media-body">
-                    <h5>POLICY STUDY</h5>
+                    <h5>STUDI KEBIJAKAN</h5>
                     <h1>{{polstudc}}</ph1>
                   </div>
                 </div>
@@ -111,7 +103,7 @@
                 <div class="media">
                   <img src="{% static 'articles/img/social-behavioral.png' %}" class="align-self-center mr-1" alt="...">
                   <div class="media-body">
-                    <h5 class="mt-0">SOCIAL BEHAVIORAL</h5>
+                    <h5 class="mt-0">SOSIAL-PERILAKU</h5>
                     <h1>{{socbehc}}</h1>
                   </div>
                 </div>
@@ -119,11 +111,11 @@
               </div>
             </div>
             <div class="row justify-content-md-center title">
-              <div class="col-md-2">
-                <img src="{% static 'articles/img/logo/Logohome.png' %}" alt="" srcset="" style="height:50px">
+              <div class="col-md-2" style="padding: 10px 0px 1px 10px;">
+                <img src="{% static 'articles/img/JPHILogo.png' %}" alt="" srcset="" style="height:80px; padding: 10px 0px 0px 30px;">
               </div>
               <div class="col-md-6">
-                <h6 class="landing-title">JPHI mengindeks jurnal ilmiah, buku-buku, laporan penelitian, makalah kebijakan, makalah konferensi, dan data primer
+                <h6 class="landing-title" style="font-size: 16px!important; font-weight:400; line-height:1.5;" >JPHIV-INA.net mengindeks jurnal ilmiah, buku-buku, laporan penelitian, makalah kebijakan, makalah konferensi, dan data primer
                   dari universitas, badan penelitian, lembaga pemerintahan, dan penerbit yang berkaitan dengan HIV AIDS.</h6>
               </div>
             </div>
@@ -134,7 +126,93 @@
                       <div class="input-group-prepend">
                         <div class="input-group-text"><i><img src="{% static 'articles/img/search-landing.svg' %}" alt=""></i></div>
                       </div>
-                      <input type="search" name="q" class="form-control"  placeholder="looking for something?">
+                      <input type="search" name="q" class="form-control"  placeholder="mencari sesuatu ?">
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="row justify-content-md-center read-more" style="padding-bottom:10px;">
+                  <h6>Baca lebih lanjut tentang <span><a href="{% url 'overview' %}" style="color: #32a4ce;">JPHIV-INA</a> syarat dan ketentuan</span> </h6>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section-->
+    <!-- end jumbotron -->
+
+      <!-- jumbotron -->
+    <section class="landing">
+      <div class="container-fluid">
+        <div class="jumbotron jumbotron-fluid" style="
+        background-image: url({% static 'articles/img/landing-index.png' %});
+        background-size: cover;
+        background-repeat: no-repeat;">
+          <div class="container">
+            <div class="row justify-content-md-center row-cols-2">
+              <div class="col-md-2 ">
+                <div class="media">
+                  <img src="{% static 'articles/img/epidemiology.png' %}" class="align-self-center mr-1" alt="...">
+                  <div class="media-body">
+                    <h5 class="mt-0">EPIDEMIOLOGI</h5>
+                    <h1>{{epidemoc}}</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2 ">
+                <div class="media">
+                  <img src="{% static 'articles/img/biomedicine.png' %}" class="align-self-center mr-1" alt="...">
+                  <div class="media-body">
+                    <h5 class="mt-0">BIOMEDIS</h5>
+                    <h1>{{biomedc}}<h1>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2 ">
+                <div class="media">
+                  <img src="{% static 'articles/img/healtheconomic.png' %}" class="align-self-center mr-1" alt="...">
+                  <div class="media-body">
+                    <h5 class="mt-0">EKONOMI KESEHATAN</h5>
+                    <h1>{{healecoc}}<h1>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2 ">
+                <div class="media">
+                  <img src="{% static 'articles/img/policy-study.png' %}" class="align-self-center mr-1" alt="...">
+                  <div class="media-body">
+                    <h5>STUDI KEBIJAKAN</h5>
+                    <h1>{{polstudc}}<h1>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2 ">
+                <div class="media">
+                  <img src="{% static 'articles/img/social-behavioral.png' %}" class="align-self-center mr-1" alt="...">
+                  <div class="media-body">
+                    <h5 class="mt-0">SOSIAL-PERILAKU</h5>
+                    <h1>{{socbehc}}</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-md-center title">
+              <div class="col-md-2">
+                <img class="imghome" src="{% static 'articles/img/JPHILogo.png' %}">
+              </div>
+              <div class="col-md-6">
+                <h6 class="landing-title" style="font-size: 16px!important; font-weight:400; line-height:1.5;" >JPHIV-INA.net mengindeks jurnal ilmiah, buku-buku, laporan penelitian, makalah kebijakan, makalah konferensi, dan data primer
+                  dari universitas, badan penelitian, lembaga pemerintahan, dan penerbit yang berkaitan dengan HIV AIDS.</h6>
+              </div>
+            </div>
+              <div class="row justify-content-md-center main-search">
+                <div class="col-md-8">
+                  <form action="/cari/" method="GET">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text"><i><img src="{% static 'articles/img/search-landing.svg' %}" alt=""></i></div>
+                      </div>
+                      <input type="search" name="q" class="form-control"  placeholder="mencari sesuatu ?">
                     </div>
                   </form>
                 </div>
@@ -157,37 +235,50 @@
     <section>
       <div class="container new-entry">
         <div class="d-flex justify-content-between">
-          <h3>NEW ABSTRACT</h3>
-          <a href="{% url 'abstract' %}"><button type="button" class="btn btn-danger btn-sm">{{ abstractC }} jumlah abstrak</button></a>
+          <h3>ABSTRAK BARU</h3>
+          <a href="{% url 'abstract' %}"><button type="button" class="btn btn-danger btn-sm" style="padding: .25rem 1.5rem; margin-bottom: .4rem; margin-top: .5rem;">{{ abstractC }} Abstrak</button></a>
         </div>
         <hr>
         <div class="row row-cols-md-3">
           {% for abstract in abstracts %}
-          <div class="col-md-4 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <a href="abstract/{{abstract.judul | slugify}}/" class="card-title">{{abstract.judul}}</a>
-                <h6 class="autor"><i><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i>
-                {% for tag in abstract.authors.all %}
-                    <a href="/author/{{ tag.name | slugify}}" style="font-size: x-small;">{{ tag.name }}</a>
-                {% endfor %}
-                </h6>
-                <h6 class="date"><i><img src="{% static 'articles/img/date.svg' %}" alt=""></i> {{abstract.tgl}}</h6>
-                <p class="card-text">{{abstract.abstrak | truncatechars:"200" |safe}}</p>
-              </div>
-              <div class="card-footer">
-                <ul class="list-inline">
-                  {% if object.download == not empty %}
-                  <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i><a href="/MEDIA/{{object.download}}">Unduh</a></li>
-                  <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i><a href="http://www.facebook.com/share.php?u=http://jphiv-ina.net/annotated-bibliography/{{ object.judul | slugify | lower }}">Bagikan</a></li>
-                  {% else %}
-                  <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i><a href="http://www.facebook.com/share.php?u=http://jphiv-ina.net/annotated-bibliography/{{ object.judul | slugify | lower }}">Bagikan</a></li>
-                  {% endif %}
-                </ul>
-                <hr>
-              </div>
-            </div>
-          </div>
+            <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <a href="/abstract/{{abstract.judul | slugify}}/" class="card-title">{{abstract.judul}}</a>
+                        <br><br>
+                        <h6 class="autor"><i style="padding-right:6px;"><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i>
+                        {% for tag in abstract.authors.all %}
+                               <a href="/author/{{ tag.name | slugify}}" class="tagauthor" style="font-size: 14px; font-weight:400;"> {{ tag.name }},</a>
+                        {% endfor %}
+                        </h6>
+                        <h6 class="date"><i style="padding-right:6px; "><img src="{% static 'articles/img/date.svg' %}" alt="" style="width:12px; padding-top:0px"></i> {{abstract.tgl}}</h6>
+                        <p class="card-text">{{abstract.abstrak | truncatechars:"200" |safe}}</p>
+                      </div>
+                      <div class="card-footer" style="color:#353D5F !important;">
+                        <ul class="list-inline">
+                          {% if abstract.download %}
+                          <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i><a href="/MEDIA/{{abstract.download}}">Unduh</a></li>
+                          {% else %}
+                          {{empty}}
+                          {% endif %}
+                          <li class="list-inline-item">
+                            <div class="dropdown share">
+                              <i><img src="{% static 'articles/img/share.svg' %}" alt=""></i>
+                              <a class="dropdown-togle" href="" role="button" id="dropdown-share" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color : #353d5f !important;">Bagikan</a>
+
+                              <div class="dropdown-menu" aria-labelledby="dropdown-share">
+                                <a class="dropdown-item" href="https://www.facebook.com/sharer.php?u=https://jphiv-ina.net/abstract/{{abstract.judul | slugify |lower}}"><i class="fab fa-facebook-square"></i>Facebook</a>
+                                <a class="dropdown-item" href="https://twitter.com/intent/tweet?url=https://jphiv-ina.net/abstract/{{abstract.judul | slugify |lower}}&text={{abstract.judul}}&hashtags=JPHIV"><i class="fab fa-twitter-square"></i>Twitter</a>
+                                <a class="dropdown-item" href="https://www.linkedin.com/shareArticle?mini=true&url=https://jphiv-ina.net/abstract/{{abstract.judul | slugify |lower}}&title={{abstract.judul}}&summary={{abstract.abstrak| truncatechars:'200' |safe }}&source=JPHIV"><i class="fab fa-linkedin"></i>LinkedIn</a>
+                                <a class="dropdown-item copy_text" href="https://jphiv-ina.net/abstract/{{abstract.judul | slugify |lower}}" data-toggle="tooltip" title="Copy to Clipboard"><i class="fas fa-copy"></i>Copy URL </a>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                        <hr>
+                      </div>
+                    </div>
+                  </div>
           {% endfor %}
         </div>
       </div>
@@ -198,40 +289,72 @@
       <div class="container">
         <div class="row">
           <div class="col-md">
-            <h3>NEW ANNOTATED BIBLIOGRAPHY</h3>
+            <h3>ANNOTATED BIBLIOGRAPHY</h3>
             <hr>
             <div class="row row-cols-md-3">
               {% for abstract in anotates %}
               <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <a href="annotated-bibliography/{{abstract.judul | slugify}}/" class="card-title">{{abstract.judul}}</a>
-                    <h6 class="autor"><i><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i>
-                    {% for tag in abstract.Author.all %}
-                      <a href="/author/{{ tag.name | slugify}}" style="font-size: x-small;">{{ tag.name }}</a>
-                    {% endfor %}
-                    </h6>
-                    <h6 class="date"><i><img src="{% static 'articles/img/date.svg' %}" alt=""></i>    {{abstract.tgl}}</h6>
-                    <h6 class="autor">Annotated by : {{abstract.added_by.first_name}}</h6>
-                    <p class="card-text">{{abstract.anotated | truncatechars:"200" |safe}}</p>
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <a href="/annotated-bibliography/{{abstract.judul | slugify}}/" class="card-title">{{abstract.judul}}</a>
+                        <br><br>
+                        <h6 class="autor"><i style="padding-right:5px;"><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i>
+                        {% for tag in abstract.Author.all %}
+                               <a href="/author/annotated/{{ tag.name | slugify}}" class="tagauthor" style="font-size: 14px; font-weight:400;"> {{ tag.name }},</a>
+                        {% endfor %}
+                        </h6>
+                        <h6 class="date"><i style="padding-right:5px;"><img src="{% static 'articles/img/date.svg' %}" alt=""></i> {{abstract.tgl}}</h6>
+                        <p class="card-text">{{abstract.anotated | truncatechars:"200" |safe}}</p>
+                      </div>
+                      <div class="card-footer">
+                        <ul class="list-inline">
+                          {% if abstract.download %}
+                          <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i><a href="/MEDIA/{{abstract.download}}">Unduh</a></li>
+                          {% else %}
+                          {{empty}}
+                          {% endif %}
+                          <li class="list-inline-item">
+                            <div class="dropdown share" style="color:#353D5F !important;">
+                              <i><img src="{% static 'articles/img/share.svg' %}" alt=""></i>
+                              <a class="dropdown-togle" href="" role="button" id="dropdown-share" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bagikan</a>
+
+                              <div class="dropdown-menu" aria-labelledby="dropdown-share">
+                                <a class="dropdown-item" href="https://www.facebook.com/sharer.php?u=https://jphiv-ina.net/annotated-bibliography/{{abstract.judul | slugify |lower}}"><i class="fab fa-facebook-square"></i>Facebook</a>
+                                <a class="dropdown-item" href="https://twitter.com/intent/tweet?url=https://jphiv-ina.net/annotated-bibliography/{{abstract.judul | slugify |lower}}&text={{abstract.judul}}&hashtags=JPHIV"><i class="fab fa-twitter-square"></i>Twitter</a>
+                                <a class="dropdown-item" href="https://www.linkedin.com/shareArticle?mini=true&url=https://jphiv-ina.net/annotated-bibliography/{{abstract.judul | slugify |lower}}&title={{abstract.judul}}&summary={{abstract.abstrak| truncatechars:'200' |safe }}&source=JPHIV"><i class="fab fa-linkedin"></i>LinkedIn</a>
+                                <a class="dropdown-item copy_text" href="https://jphiv-ina.net/annotated-bibliography/{{abstract.judul | slugify |lower}}" data-toggle="tooltip" title="Copy to Clipboard"><i class="fas fa-copy"></i>Copy URL </a>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                        <hr>
+                      </div>
+                    </div>
                   </div>
-                  <div class="card-footer">
-                    <ul class="list-inline">
-                      {% if abstract.download == not empty %}
-                        <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i><a href="/MEDIA/{{abstract.download}}">Unduh</a></li>
-                        <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i><a href="http://www.facebook.com/share.php?u={{ request.build_absolute_uri }}">Bagikan</a></li>
-                      {% else %}
-                        <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i><a href="http://www.facebook.com/share.php?u={{ request.build_absolute_uri }}">Bagikan</a></li>
-                      {% endif %}
-                    </ul>
-                    <hr>
-                  </div>
-                </div>
-              </div>
               {% endfor %}
             </div>
           </div>
         </div>
       </div>
     </section>
+{% endblock %}
+
+{% block js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    $('.copy_text').click(function (e) {
+        e.preventDefault();
+        var copyText = $(this).attr('href');
+
+        document.addEventListener('copy', function(e) {
+            e.clipboardData.setData('text/plain', copyText);
+            e.preventDefault();
+        }, true);
+
+        document.execCommand('copy');
+        console.log('copied text : ', copyText);
+        alert('copied text: ' + copyText);
+    });
+</script>
 {% endblock %}

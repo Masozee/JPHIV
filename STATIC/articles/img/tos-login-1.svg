@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="175" height="206" viewBox="0 0 175 206">
+  <defs>
+    <filter id="Rectangle_66" x="35" y="70" width="110" height="40" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_1916" data-name="Group 1916" transform="translate(-148 -2261)">
+    <rect id="Rectangle_114" data-name="Rectangle 114" width="175" height="206" rx="10" transform="translate(148 2261)" fill="#fff"/>
+    <text id="_1._Klik_tombol_LOGIN" data-name="1. Klik tombol LOGIN" transform="translate(185.311 2293.057)" fill="#7b7b7b" font-size="12" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">1. </tspan><tspan y="0" fill="#707070">Klik tombol</tspan><tspan y="0"> </tspan><tspan y="0" fill="#ef494b" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600">LOGIN</tspan></text>
+    <g id="Group_1739" data-name="Group 1739" transform="translate(171.815 2346.769)">
+      <g id="Group_1731" data-name="Group 1731" transform="translate(0 0)">
+        <rect id="Rectangle_113" data-name="Rectangle 113" width="108.257" height="91.007" fill="#fafafa"/>
+      </g>
+      <g id="Group_1733" data-name="Group 1733" transform="translate(0.209 6.189)">
+        <g id="Group_1732" data-name="Group 1732">
+          <path id="Path_1224" data-name="Path 1224" d="M109.138,70.863c0-.052,24.142-.094,53.916-.094s53.922.042,53.922.094-24.137.094-53.922.094S109.138,70.915,109.138,70.863Z" transform="translate(-109.138 -70.769)" fill="#e0e0e0"/>
+        </g>
+      </g>
+      <g id="Group_1734" data-name="Group 1734" transform="translate(2.348 1.866)">
+        <circle id="Ellipse_10" data-name="Ellipse 10" cx="1.157" cy="1.157" r="1.157" transform="translate(0 0)" fill="#e0e0e0"/>
+      </g>
+      <g id="Group_1735" data-name="Group 1735" transform="translate(5.567 1.866)">
+        <circle id="Ellipse_11" data-name="Ellipse 11" cx="1.157" cy="1.157" r="1.157" transform="translate(0 0)" fill="#e0e0e0"/>
+      </g>
+      <g id="Group_1736" data-name="Group 1736" transform="translate(9.139 1.866)">
+        <circle id="Ellipse_12" data-name="Ellipse 12" cx="1.157" cy="1.157" r="1.157" fill="#e0e0e0"/>
+      </g>
+    </g>
+    <g id="Group_1740" data-name="Group 1740" transform="translate(191.591 2337.1)">
+      <g id="Group_292" data-name="Group 292">
+        <g transform="matrix(1, 0, 0, 1, -43.59, -76.1)" filter="url(#Rectangle_66)">
+          <rect id="Rectangle_66-2" data-name="Rectangle 66" width="92" height="22" rx="5" transform="translate(44 76)" fill="#fc695a"/>
+        </g>
+        <text id="login" transform="translate(28.409 14.9)" fill="#fff" font-size="11" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.06em"><tspan x="0" y="0">LOGIN</tspan></text>
+      </g>
+      <g id="Group_293" data-name="Group 293" transform="translate(73.214 5.483)">
+        <path id="Path_927" data-name="Path 927" d="M466.057,1290.809l-14.277-12.268a.736.736,0,0,0-1.216.558l-.024,18.728a.736.736,0,0,0,1.188.583l3.882-3.011,3.829,8.476a.737.737,0,0,0,.974.368l3.731-1.686a.737.737,0,0,0,.368-.974l-3.833-8.484,5.043-1.009a.736.736,0,0,0,.335-1.281Z" transform="translate(-442.858 -1271.318)" fill="#353d5f"/>
+        <path id="Path_928" data-name="Path 928" d="M533.423,1239.489a.741.741,0,0,0,.307-.067l2.445-1.12a.736.736,0,1,0-.613-1.339l-2.445,1.12a.736.736,0,0,0,.307,1.406Z" transform="translate(-519.768 -1232.494)" fill="#353d5f"/>
+        <path id="Path_929" data-name="Path 929" d="M484.786,1171.783a.748.748,0,0,0,.258.047.737.737,0,0,0,.69-.479l.941-2.519a.736.736,0,1,0-1.38-.515l-.941,2.519A.737.737,0,0,0,484.786,1171.783Z" transform="translate(-474.473 -1167.837)" fill="#353d5f"/>
+        <path id="Path_930" data-name="Path 930" d="M400.759,1170.154a.736.736,0,1,0-1.341.609l1.111,2.449a.737.737,0,0,0,.671.432.728.728,0,0,0,.3-.066.737.737,0,0,0,.367-.975Z" transform="translate(-394.934 -1169.602)" fill="#353d5f"/>
+        <path id="Path_931" data-name="Path 931" d="M334.476,1323.935l-2.452,1.1a.736.736,0,1,0,.6,1.343l2.452-1.1a.736.736,0,1,0-.6-1.343Z" transform="translate(-331.491 -1313.923)" fill="#353d5f"/>
+        <path id="Path_932" data-name="Path 932" d="M330.521,1242.87l2.516.95a.748.748,0,0,0,.26.047.736.736,0,0,0,.26-1.425l-2.516-.95a.737.737,0,0,0-.52,1.378Z" transform="translate(-330.044 -1236.751)" fill="#353d5f"/>
+      </g>
+    </g>
+  </g>
+</svg>

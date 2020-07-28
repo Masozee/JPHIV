@@ -1,0 +1,258 @@
+body{
+    background-color: #F5F6F7;
+}
+
+.main-nav {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16) !important;
+    margin-bottom: 3px;
+}
+
+.main-nav .navbar-brand {
+    padding-left: 2%;
+}
+
+.main-nav .navbar-brand img{
+    width: 173.5px;
+}
+
+.main-nav ul {
+    margin-right: auto;
+}
+
+.main-nav .form-inline{
+    width: 27%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+#search-main-nav{
+    margin-right: 4.2% !important;
+    width: 20%;
+}
+
+.main-nav img{
+    margin-right: 1.5%;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.main-nav .dropdown-annotated .dropdown-menu{
+    /* opacity: 0.95; */
+    box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.17);
+    background-color: #353d5f;
+}
+
+.main-nav .dropdown-img-profil .dropdown-menu{
+    opacity: 0.75;
+    box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.12);
+    background-color: #fafafa;
+}
+
+.main-nav .dropdown-annotated .dropdown-item{
+    font-family: 'Source Sans Pro';
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.42;
+    letter-spacing: 0.36px;
+    text-align: left;
+    color: #ffffff;
+}
+
+.main-nav .dropdown-img-profil .dropdown-item{
+    font-family: 'Source Sans Pro';
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.42;
+    letter-spacing: 0.36px;
+    text-align: left;
+    color: #353d5f;
+}
+
+.main-nav .dropdown-annotated .dropdown-divider{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.main-nav .dropdown-img-profil .dropdown-divider{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.main-nav .dropdown-annotated .dropdown-item:hover{
+    color: black;
+}
+
+
+.sub-nav {
+    box-shadow: none;
+}
+
+/* ################### HEADER ################# */
+.sub-nav .navbar-nav .active>.nav-link{
+    font-family: 'Source Sans Pro';
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: normal;
+    text-align: left;
+    color: #c82333 !important;
+    border-bottom: 3px solid #ef494b;
+}
+
+.sub-nav{
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+/* .navbar a img{
+    padding-right: 14%;
+} */
+
+.main-nav .nav-link{
+    font-family: 'Source Sans Pro';
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #353D5F !important;
+    padding-right: 0.4rem;
+    padding-left: .4rem;
+  }
+
+.main-nav .btn-link{
+    font-family: 'Source Sans Pro';
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.42;
+    letter-spacing: 0.24px;
+    text-align: left;
+    color: #707070;
+}
+
+.main-nav .img-profil{
+    width: 30px;
+    border-radius: 50%;
+}
+
+.main-nav .btn-profil{
+    font-family: 'Source Sans Pro';
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.42;
+    letter-spacing: 0.24px;
+    text-align: left;
+    color: #707070;
+}
+
+.main-nav .btn-join-us{
+    font-family: 'Source Sans Pro';
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.4;
+    letter-spacing: 0.6px;
+    text-align: left;
+    color: #ffffff;
+}
+
+
+ .main-nav .btn-outline-secondary{
+    padding-right: 23px;
+    padding-left: 23px;
+    font-family: 'Source Sans Pro';
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0.2px;
+    color: #32a4ce !important;
+    border-color: #32a4ce !important;
+    margin-left: 18px;
+ }
+
+ .main-nav .btn-outline-secondary:hover{
+     background-color: #32a4ce !important ;
+     color: white !important;
+ }
+
+ .main-nav .input-group{
+     width: 100%;
+ }
+
+ .main-nav input , .main-nav .input-group-text{
+    font-family: 'Source Sans Pro';
+    font-size: 12px;
+    line-height: 1.4;
+    color: #7b7b7b !important;
+    background-color: #edebeb;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-color: #edebeb; ;
+ }
+
+ .sub-nav .nav-link{
+    font-family: 'Source Sans Pro';
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: 0.2px;
+    text-align: left;
+    color: #353D5F !important;
+    
+}
+
+.main-nav .form-control{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+
+
+/* ###################### END HEADER ################################## */
+
+/* share dropdown */
+.dropdown-menu .fab, .dropdown-menu .fas{
+    margin-right: 3px;
+}
+
+.dropdown.share .dropdown-menu{
+    min-width: 0;
+}
+
+.dropdown.share a{
+    margin-bottom: 0;
+}
+/* end share dropdown */
+
+.page-link{
+    background-color: #f5f6f7 !important;
+}
+
+/* FOOTER */
+footer{
+    background-color: #353d5f;
+    height: 110px;
+}
+
+footer h3{
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    font-family: 'Source Sans Pro';
+    font-size: 16px;
+    font-weight: 300;
+    text-align: left;
+    color: #ffffff !important;
+    margin-top: 45px;
+}
+/* END FOOTER */
+
+/* RETINA */
+
+

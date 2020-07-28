@@ -2,6 +2,19 @@
 {% load class_name %}
 {% load static %}
 
+{% block meta %}
+<meta property="og:title" content="Privacy Policy">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:site_name" content="Jaringan Penelitian HIV Indonesia">
+<meta property="og:image" content="https://jphiv-ina.net/STATIC/articles/img/logo/share.png">
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:height" content="300" />
+<meta property="og:image:alt" content="Logo Jaringan penelitian HIV Indonesia" />
+<meta property="og:description" content="JPHI mengindeks jurnal ilmiah, buku-buku, laporan penelitian, makalah kebijakan, makalah konferensi, dan data primer
+                  dari universitas, badan penelitian, lembaga pemerintahan, dan penerbit yang berkaitan dengan HIV AIDS.">
+{% endblock %}
+
 {% block css%}
     <!-- my css -->
     <link rel="stylesheet" href="{% static 'articles/css/overview.css' %}">
@@ -9,7 +22,7 @@
 
 {% block content %}
       <!-- header 2 -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav" style="border-bottom: 1px solid #E1E1E1">
         <div class="container">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,19 +53,43 @@
         <!-- privacy policy -->
           <div class="col-md-7">
             <h5>PRIVACY POLICY</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu.
-              
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem 
-              aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo 
-              enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos 
-              qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, 
-              consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam 
-              aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit 
-              laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate 
-              velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? Sed ut 
-              perspiciatis unde omnis iste natus error sit voluptatem.</p>
+            <h6>Kewajiban JPHIV-INA</h6>
+                <ul class="privpol">
+                  <li>Jaringan Penelitian HIV dan AIDS Indonesia (JPHIV-INA) HANYA menyediakan abstrak, bibliografi, dan Annotated Bibliography dari berbagai macam publikasi terkait HIV dan AIDS di Indonesia pada situs www.jphiv-ina.net.</li>
+                  <li>JPHIV-INA tidak bertanggung jawab atas keakuratan, kelengkapan, dan keserbagunaan publikasi yang ada di www.jphiv-ina.net. JPHIV-INA hanya menyediakan narasi berupa Abstrak dan Annotated Bibliography (yang juga bisa ditambahkan oleh anggota) beserta tautan ke dokumen asli publikasi pada situs www.jphiv-ina.net. </li>
+                  <li>Admin JPHIV-INA berhak mengulas isi dari Annotated Bibliography yang yang dikumpulkan pada situs www.jphiv-ina.net.</li>
+                </ul>
+            <h6>Endorsement</h6>
+                <ul class="privpol">
+                  <li>JPHIV-INA tidak melakukan endorsement terhadap produk maupun layanan komersil apapun. Karya yang dihasilkan penulis publikasi yang ada di situs www.jphiv-ina.net tidak mewakili JPHIV-INA.</li>
+                </ul>
+            <h6>Tautan Eksternal</h6>
+              <ul class="privpol">
+                <li>www.jphiv-ina.net menyediakan tautan menuju situs internet lain pada beberapa publikasi untuk kenyamanan pengunjung dalam mencari artikel asli. </li>
+                <li>JPHIV-INA tidak bertanggung jawab atas ketersediaan serta konten yang ada pada situs eksternal tersebut.</li>
+              </ul>
+            <h6>Penggunaan Situs </h6>
+              <ul class="privpol">
+                <li>Situs www.jphiv-ina.net saat ini dikelola oleh Pusat Penelitian HIV/AIDS (PPH) Universitas Katolik Indonesia Atma Jaya. Untuk tujuan keamanan, JPHIV-INA menggunakan program untuk mengawasi lalu lintas situs dan untuk mengidentifikasi upaya-upaya di luar izin administrator situs.</li>
+              </ul>
+            <h6>Status Hak Cipta</h6>
+              <ul class="privpol">
+                <li>Situs www.jphiv-ina.net memuat narasi berupa abstrak publikasi yang sepenuhnya dimiliki oleh penulis / pembuat publikasi. JPHIV-INA tidak menyediakan dokumen artikel asli di dalam situs www.jphiv-ina.net, tautan menuju situs yang menyediakan artikel asli tersedia pada beberapa Abstrak dan Annotated Bibliography yang ada. </li>
+                <li>Pengunjung, pengguna, dan anggota JPHIV-INA yang ingin mendistribusikan ataupun menggunakan artikel-artikel tersebut perlu mematuhi syarat dan ketentuan situs terkait yang menyediakan dokumen artikel asli.</li>
+                <li>Penelitian dan studi yang dilakukan pada publikasi yang ada pada situs terkait tidak ada sangkut pautnya dengan JPHIV-INA.</li>
+              </ul>
+            <h6>Penggunaan Web Browser</h6>
+              <ul class="privpol">
+                <li>Situs www.jphiv-ina.net dapat dibuka menggunakan semua Browser internet (Google Chrome, Mozilla Firefox, Safari, dll).</li>
+              </ul>
+            <h6>Privasi Data Pengguna</h6>
+              <ul class="privpol">
+                <li>JPHIV-INA menyediakan situs www.jphiv-ina.net sebagai community of practice. Informasi personal (nama, email, dan lembaga) hanya dikumpulkan saat pengunjung memilih untuk mendaftar sebagai anggota JPHIV-INA dan memiliki akun pada situs www.jphiv-ina.net.</li>
+                <li>Setiap orang yang mendaftar pada situs www.jphiv-ina.net akan menjadi anggota dari JPHIV-INA dan dapat mengakses fitur Submit Annotation untuk mengumpulkan Annotated Bibliography.</li>
+                <li>Pengguna yang mendaftar pada situs www.jphiv-ina.net akan diminta untuk mengisi profil diri yang meliputi Nama, Organisasi/Lembaga, dan alamat E-mail.</li>
+                <li>Profil pengguna yang mendaftar sebagai anggota JPHIV-INA akan tertera pada laman Annotated Bibliography saat berhasil mengumpulkan Annotated Bibliography pada situs www.jphiv-ina.net.</li>
+                <li>Data pribadi pengguna yang dimasukkan saat mendaftar sebagai anggota JPHIV-INA akan disimpan sebagai arsip  dan tidak akan disebarluaskan tanpa seizin anggota.</li>
+              </ul>
           </div>
         <!-- end privacy policy -->
         </div>

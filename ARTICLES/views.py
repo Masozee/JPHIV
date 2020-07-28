@@ -95,7 +95,7 @@ def abstractartikel(request):
 
 def abstractbiomedicine(request):
     Biomed = AbstractJPHIV.objects.filter(kategori__Kategori="biomedicine").order_by('-tanggal').distinct()
-    paginator = Paginator(Biomed, 1)
+    paginator = Paginator(Biomed, 9)
     page = request.GET.get('page')
     try:
         Biomed = paginator.page(page)
@@ -278,12 +278,21 @@ def hasil(request):
 
 class authorlist(ListView):
     queryset = AbstractJPHIV.objects.all()
-    template_name = "articles/tag-result.html"
+    template_name = "articles/authortag.html"
     paginate_by = 9
     context = "authorlist"
 
     def get_queryset(self):
         return AbstractJPHIV.objects.filter(authors__slug__in=[self.kwargs['tag']])
+
+class annotatedlist(ListView):
+    queryset = AnotatedJPHIV.objects.all()
+    template_name = "articles/tag-result.html"
+    paginate_by = 9
+    context = "authorlist"
+
+    def get_queryset(self):
+        return AnotatedJPHIV.objects.filter(Author__slug__in=[self.kwargs['tag']])
 
 
 class BookCreateView(LoginRequiredMixin, CreateView):

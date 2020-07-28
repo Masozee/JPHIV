@@ -22,7 +22,7 @@ urlpatterns = [
     re_path('annotated-bibliography/(?P<AnotatedJPHIV_slug>[\w-]+)/$', artviews.anotateDetail, name='anotate-detail'),
     path('add/annotated-bibliography/', artviews.BookCreateView.as_view(), name='add-anotated'),
     re_path('author/(?P<tag>[\w-]+)/$', artviews.authorlist.as_view(), name='author-tag'),
-
+    re_path('author/annotated/(?P<tag>[\w-]+)/$', artviews.annotatedlist.as_view(), name='annotated-tag'),
 
     path('hasil/', artviews.hasil, name='hasil-detail'),
 

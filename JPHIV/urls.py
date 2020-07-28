@@ -6,6 +6,24 @@ from SEARCH import views as searchviews
 from  USER.views import StaffSignUpView, VisitorSignUpView
 from ARTICLES import views as artviews
 from  USER import views as userviews
+from django.urls import path, include, re_path
+from USER.models import CustomUser
+from rest_framework import routers, serializers, viewsets
+
+# Serializers define the API representation.
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = ['url', 'username', 'email', 'is_staff']
+
+# ViewSets define the view behavior.
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserSerializer
+
+# Routers provide an easy way of automatically determining the URL conf.
+router = routers.DefaultRouter()
+router.register(r'users', UserViewSet)
 
 admin.sites.AdminSite.site_header = 'Jaringan Penelitian HIV Indonesia'
 admin.sites.AdminSite.site_title = 'Jaringan Penelitian HIV Indonesia'
@@ -17,6 +35,9 @@ urlpatterns = [
     path('terms-of-service/', artviews.TOS, name='TOS'),
     path('overview/', artviews.Overview, name='overview'),
     path('', include('ARTICLES.url')),
+    path('api/v2', include(router.urls)),
+    path('api/', include('API.url')),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('cari/', searchviews.SearchView.as_view(), name='cari' ),
     path('users/', include('django.contrib.auth.urls')),
     path('accounts/', include('django.contrib.auth.urls')),

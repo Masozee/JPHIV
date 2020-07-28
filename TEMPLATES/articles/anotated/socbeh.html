@@ -9,7 +9,7 @@
 
 {% block content %}
     <!-- header 2 -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav" style="border-bottom: 1px solid #E1E1E1">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -17,24 +17,23 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item ">
-            <a class="nav-link" href="{% url 'anotated' %}">ANNOTATED BIBLIOGRAPHY<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{% url 'anotated' %}">ANNOTATED BIBLIOGRAPHY <span class="sr-only">(current)</span></a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="{% url 'anot-epidemology' %}">EPIDEMIOLOGI</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'anot-epidemology' %}">EPIDEMOLOGY</a>
+            <a class="nav-link" href="{% url 'anot-biomedicine' %}">BIOMEDIS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'anot-biomedicine' %}">BIOMEDICINE</a>
+            <a class="nav-link" href="{% url 'anot-health' %}">EKONOMI KESEHATAN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'anot-health' %}">HEALTH ECONOMIC</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'anot-policy' %}">POLICY STUDY</a>
+            <a class="nav-link" href="{% url 'anot-policy' %}">STUDI KEBIJAKAN</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="{% url 'anot-social' %}">SOCIAL-BEHAVIORAL</a>
+            <a class="nav-link" href="{% url 'anot-social' %}">SOSIAL-PERILAKU</a>
           </li>
-
         </ul>
         <!--ul class="navbar-nav ml-auto popular-search">
           <li class="nav-item active">
@@ -68,13 +67,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                  <h5>ANOTATED BIBLIOGRAPHY</h5>
+                  <h5><a href="{% url 'homepage' %}" style="color:#c82333">HOME</a> / <a href="{% url 'anotated' %}" style="color:#c82333">ANNOTATED BIBLIOGRAPHY</a></h5>
                     <h3>
-                      SOCIAL BEHAVIORAL
+                      SOSIAL-PERILAKU
                     </h3>
                     <p>Penelitian sosial perilaku menelaah tentang bagaimana dan mengapa orang berperilaku seperti yang mereka lakukan pada situasi tertentu serta bagaimana hal tersebut bisa mempengaruhi kesehatan.</p>
                 </div>
             </div>
+            <hr>
         </div>
       </section>
       <!-- END TITLE -->
@@ -82,16 +82,15 @@
 
 
       <!-- FILTER -->
-      <section class="filter-epidemiology " >
+      <!--section class="filter-epidemiology " >
         <div class="container ">
-          <!-- FILTER COLLAPSE -->
+
           <div class="d-flex justify-content-end">
             <button class="btn btn-danger btn-sm d-flex justify-content-end" type="button" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseExample">
               <i> <img src="{% static 'articles/img/filter.svg' %}" alt=""></i> FILTER
             </button>
           </div>
 
-          <!-- END FILTER COLLAPSE -->
           <hr>
             <div class="row collapse"  id="collapseFilter">
               <div class="col-md">
@@ -144,33 +143,45 @@
     <section>
       <div class="container new-entry">
         <div class="row row-cols-md-3">
-               {% for object in abstracts %}
-                  <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                      <div class="card-body">
-                        <a href="/anotated-bibliography/{{object.judul | slugify}}/"><h5 class="card-title">{{object.judul}}</h5></a>
-                          <h6 class="autor"><i><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i>
-                          {% for tag in object.Author.all %}
-                            <a href="/author/{{ tag.name | slugify}}" style="font-size: x-small;">{{ tag.name }}</a>
-                          {% endfor %}
-                        </h6>
-                        <h6 class="date"><i><img src="{% static 'articles/img/date.svg' %}" alt=""></i> {{object.tgl}}</h6>
-                        <h6 class="autor">Annotated by : {{object.added_by}}</h6>
-                        <p class="card-text">{{object.anotated | truncatechars:"200" |safe}}</p>
-                      </div>
-                      <div class="card-footer">
-                        <ul class="list-inline">
-                          {% if object.download == not empty %}
-                            <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i><a href="/MEDIA/{{object.download}}">Unduh</a></li>
-                            <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i><a href="http://www.facebook.com/share.php?u=http://jphiv-ina.net/annotated-bibliography/{{ object.judul | slugify | lower }}">Bagikan</a></li>
-                            {% else %}
-                            <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i><a href="http://www.facebook.com/share.php?u=http://jphiv-ina.net/annotated-bibliography/{{ object.judul | slugify | lower }}">Bagikan</a></li>
-                            {% endif %}
-                        </ul>
-                        <hr>
-                      </div>
-                    </div>
+               {% for abstract in abstracts %}
+               <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <a href="/annotated-bibliography/{{abstract.judul | slugify}}/" class="card-title">{{abstract.judul}}</a>
+                    <br><br>
+                    <h6 class="autor"><i style="padding-right:5px;"><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i>
+                    {% for tag in abstract.Author.all %}
+                           <a href="/author/annotated/{{ tag.name | slugify}}" class="tagauthor" style="font-size: 14px; font-weight:400;"> {{ tag.name }},</a>
+                    {% endfor %}
+                    </h6>
+                    <h6 class="date"><i style="padding-right:5px;"><img src="{% static 'articles/img/date.svg' %}" alt=""></i> {{abstract.tgl}}</h6>
+                    <p class="card-text">{{abstract.anotated | truncatechars:"200" |safe}}</p>
                   </div>
+                  <div class="card-footer">
+                    <ul class="list-inline">
+                      {% if abstract.download %}
+                      <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i><a href="/MEDIA/{{abstract.download}}">Unduh</a></li>
+                      {% else %}
+                      {{empty}}
+                      {% endif %}
+                      <li class="list-inline-item">
+                        <div class="dropdown share" style="color:#353D5F !important;">
+                          <i><img src="{% static 'articles/img/share.svg' %}" alt=""></i>
+                          <a class="dropdown-togle" href="" role="button" id="dropdown-share" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bagikan</a>
+
+                          <div class="dropdown-menu" aria-labelledby="dropdown-share">
+                            <a class="dropdown-item" href="https://www.facebook.com/sharer.php?u=https://jphiv-ina.net/annotated-bibliography/{{abstract.judul | slugify |lower}}"><i class="fab fa-facebook-square"></i>Facebook</a>
+                            <a class="dropdown-item" href="https://twitter.com/intent/tweet?url=https://jphiv-ina.net/annotated-bibliography/{{abstract.judul | slugify |lower}}&text={{abstract.judul}}&hashtags=JPHIV"><i class="fab fa-twitter-square"></i>Twitter</a>
+                            <a class="dropdown-item" href="https://www.linkedin.com/shareArticle?mini=true&url=https://jphiv-ina.net/annotated-bibliography/{{abstract.judul | slugify |lower}}&title={{abstract.judul}}&summary={{abstract.abstrak| truncatechars:'200' |safe }}&source=JPHIV"><i class="fab fa-linkedin"></i>LinkedIn</a>
+                            <a class="dropdown-item copy_text" href="https://jphiv-ina.net/annotated-bibliography/{{abstract.judul | slugify |lower}}" data-toggle="tooltip" title="Copy to Clipboard"><i class="fas fa-copy"></i>Copy URL </a>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <hr>
+                  </div>
+                </div>
+              </div>
                 {% endfor %}
         </div>
       </div>
@@ -219,3 +230,22 @@
     <!-- end pagination -->
 {% endblock %}
 
+{% block js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    $('.copy_text').click(function (e) {
+        e.preventDefault();
+        var copyText = $(this).attr('href');
+
+        document.addEventListener('copy', function(e) {
+            e.clipboardData.setData('text/plain', copyText);
+            e.preventDefault();
+        }, true);
+
+        document.execCommand('copy');
+        console.log('copied text : ', copyText);
+        alert('copied text: ' + copyText);
+    });
+</script>
+{% endblock %}

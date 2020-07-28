@@ -2,6 +2,19 @@
 {% load class_name %}
 {% load static %}
 
+{% block meta %}
+<meta property="og:title" content="Jaringan Penelitian HIV Indonesia">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:site_name" content="Jaringan Penelitian HIV Indonesia">
+<meta property="og:image" content="https://jphiv-ina.net/STATIC/articles/img/logo/share.png">
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:height" content="300" />
+<meta property="og:image:alt" content="Logo Jaringan penelitian HIV Indonesia" />
+<meta property="og:description" content="JPHI mengindeks jurnal ilmiah, buku-buku, laporan penelitian, makalah kebijakan, makalah konferensi, dan data primer
+                  dari universitas, badan penelitian, lembaga pemerintahan, dan penerbit yang berkaitan dengan HIV AIDS.">
+{% endblock %}
+
 {% block css%}
     <!-- my css -->
     <link rel="stylesheet" href="{% static 'articles/css/overview.css' %}">
@@ -9,7 +22,7 @@
 
 {% block content %}
       <!-- header 2 -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav" style="border-bottom: 1px solid #E1E1E1">
         <div class="container">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -39,12 +52,10 @@
         <!-- overview -->
           <div class="col-md-7">
             <h5>OVERVIEW</h5>
-            <p>Jaringan Penelitian HIV dan AIDS Indonesia (JPHI) merupakan sebuah jaringan peneliti, praktisi, serta pegiat HIV-AIDS di Indonesia yang memiliki perhatian, ketertarikan dan kebutuhan untuk memperdalam pemahaman 
-              tentang permasalahan, program dan kebijakan HIV di Indonesia melalui interaksi satu dengan yang lain secara 
-              aktif dan terus menerus. <br> <br>
-              
-              Melalui platform online jphiv-ina.net, JPHI menyediakan wadah untuk berbagi publikasi ilmiah seperti artikel jurnal, review, dan laporan penelitian terkait HIV AIDS, serta sebagai tempat berjejaring melalui fitur <span>Annotated Bibliography </span> yang dapat diakses oleh anggota jaringan.</p>
-          
+            <ul class="privpol">
+              <li>Jaringan Penelitian HIV dan AIDS (JPHIV) Indonesia yang selanjutnya akan disebut sebagai JPHIV-INA merupakan sebuah jaringan peneliti, praktisi, serta penggiat HIV-AIDS di Indonesia dengan perhatian, ketertarikan dan kebutuhan untuk memperdalam pemahaman tentang permasalahan, program dan kebijakan HIV di Indonesia melalui interaksi satu dengan yang lain secara aktif dan terus menerus.</li>
+              <li>Melalui platform online www.jphiv-ina.net, JPHIV-INA menyediakan berbagai publikasi ilmiah seperti artikel jurnal, review, dan laporan penelitian terkait HIV-AIDS dari tahun 2014 hingga yang terbaru. Situs ini juga dapat menjadi wadah berjejaring melalui fitur Annotated Bibliography yang dapat diakses oleh anggota jaringan.</li>
+            </ul>
           </div>
         <!-- end overview -->  
         </div>

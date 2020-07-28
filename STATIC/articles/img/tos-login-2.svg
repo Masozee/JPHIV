@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="175" height="206" viewBox="0 0 175 206">
+  <g id="Group_1917" data-name="Group 1917" transform="translate(-345 -2261)">
+    <rect id="Rectangle_115" data-name="Rectangle 115" width="175" height="206" rx="10" transform="translate(345 2261)" fill="#fff"/>
+    <text id="_2._Klik_Submit_Annotation" data-name="2. Klik Submit Annotation" transform="translate(370.021 2291.579)" fill="#7b7b7b" font-size="12" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">2. </tspan><tspan y="0" fill="#707070">Klik </tspan><tspan y="0" fill="#32a4ce">Submit Annotation</tspan></text>
+    <g id="Rectangle_66" data-name="Rectangle 66" transform="translate(358 2337)" fill="none" stroke="#32a4ce" stroke-width="2">
+      <rect width="150" height="22" rx="5" stroke="none"/>
+      <rect x="1" y="1" width="148" height="20" rx="4" fill="none"/>
+    </g>
+    <text id="SUBMIT_ANNOTATION" data-name="SUBMIT ANNOTATION" transform="translate(385 2352)" fill="#32a4ce" font-size="11" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600" letter-spacing="0.02em"><tspan x="0" y="0">SUBMIT ANNOTATION</tspan></text>
+  </g>
+</svg>

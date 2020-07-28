@@ -2,6 +2,19 @@
 {% load class_name %}
 {% load static %}
 
+{% block meta %}
+<meta property="og:title" content="Jaringan Penelitian HIV Indonesia">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:site_name" content="Jaringan Penelitian HIV Indonesia">
+<meta property="og:image" content="https://jphiv-ina.net/STATIC/articles/img/logo/share.png">
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:height" content="300" />
+<meta property="og:image:alt" content="Logo Jaringan penelitian HIV Indonesia" />
+<meta property="og:description" content="JPHI mengindeks jurnal ilmiah, buku-buku, laporan penelitian, makalah kebijakan, makalah konferensi, dan data primer
+                  dari universitas, badan penelitian, lembaga pemerintahan, dan penerbit yang berkaitan dengan HIV AIDS.">
+{% endblock %}
+
 {% block css%}
     <!-- my css -->
     <link rel="stylesheet" href="{% static 'articles/css/index.css' %}">
@@ -12,51 +25,51 @@
 {% block content %}
 
     <!-- header 2 -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sub-nav" style="border-bottom: 1px solid #E1E1E1">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">ABSTRACT <span class="sr-only">(current)</span></a>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'abstract' %}">ABSTRAK <span class="sr-only">(current)</span></a>
           </li>
          <li class="nav-item">
-            <a class="nav-link" href="{% url 'abstract-epidemology' %}">EPIDEMOLOGY</a>
+            <a class="nav-link" href="{% url 'abstract-epidemology' %}">EPIDEMIOLOGI</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'abstract-biomedicine' %}">BIOMEDIS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'abstract-biomedicine' %}">BIOMEDICINE</a>
+            <a class="nav-link" href="{% url 'abstract-health' %}">EKONOMI KESEHATAN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'abstract-health' %}">HEALTH ECONOMIC</a>
+            <a class="nav-link" href="{% url 'abstract-policy' %}">STUDI KEBIJAKAN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'abstract-policy' %}">POLICY STUDY</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'abstract-social' %}">SOCIAL-BEHAVIORAL</a>
+            <a class="nav-link" href="{% url 'abstract-social' %}">SOSIAL-PERILAKU</a>
           </li>
         </ul>
 
         <ul class="navbar-nav ml-auto popular-search">
           <li class="nav-item active">
-            <a class="nav-link" href="#">POPULAR SEARCH <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="{% url 'abstract-epidemology' %}">EPIDEMIOLOGI</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'abstract-biomedicine' %}">BIOMEDIS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'abstract-epidemology' %}">EPIDEMOLOGY</a>
+            <a class="nav-link" href="{% url 'abstract-health' %}">EKONOMI KESEHATAN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'abstract-biomedicine' %}">BIOMEDICINE</a>
+            <a class="nav-link" href="{% url 'abstract-policy' %}">STUDI KEBIJAKAN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'abstract-health' %}">HEALTH ECONOMIC</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'abstract-policy' %}">POLICY STUDY</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'abstract-social' %}">SOCIAL-BEHAVIORAL</a>
+            <a class="nav-link" href="{% url 'abstract-social' %}">SOSIAL-PERILAKU</a>
           </li>
         </ul>
       </div>
@@ -69,27 +82,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
-                    <h2> SEARCH RESULT PAGE</h2>
+                    <h2>HASIL PENCARIAN</h2>
                     <h3>{{count}} hasil pencarian untuk kata kunci “{{query | upper}}”</h3>
                 </div>
             </div>
+            <hr>
         </div>
       </section>
       <!-- END TITLE -->
 
 
 
-      <!-- FILTER -->
+      <!-- FILTER>
       <section class="filter-epidemiology " >
         <div class="container ">
-          <!-- FILTER COLLAPSE -->
+
           <div class="d-flex justify-content-end">
             <button class="btn btn-danger btn-sm d-flex justify-content-end" type="button" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseExample">
               <i> <img src="img/filter.svg" alt=""></i> FILTER
             </button>
           </div>
 
-          <!-- END FILTER COLLAPSE -->
           <hr>
             <div class="row collapse"  id="collapseFilter">
               <div class="col-md">
@@ -144,27 +157,41 @@
         <div class="row row-cols-md-3">
             {% for object in object_list %}
               {% with object|class_name as klass %}
-
                 {% if klass == 'AbstractJPHIV' %}
-                  <div class="col-md-4 mb-4">
+
+               <div class="col-md-4 mb-4">
                     <div class="card h-100">
                       <div class="card-body">
-                        <a href="/abstract/{{object.judul | slugify | lower}}"><h5 class="card-title">{{ object.judul }}</h5></a>
-                        <h6 class="autor"><i><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i>
-                          {% for tag in object.authors.all %}
-                            <a href="/author/{{ tag.name | slugify}}" style="font-size: x-small;">{{ tag.name }}</a>
-                          {% endfor %}</h6>
-                        <h6 class="date"><i><img src="{% static 'articles/img/date.svg' %}" alt=""></i>{{object.tgl}}</h6>
-                        <span class="card-text">{{object.abstrak | truncatechars:"200" |safe}}</span>
+                        <a href="/abstract/{{object.judul | slugify}}/" class="card-title">{{object.judul}}</a>
+                        <br><br>
+                        <h6 class="autor"><i style="padding-right:6px;"><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i>
+                        {% for tag in object.authors.all %}
+                               <a href="/author/{{ tag.name | slugify}}" class="tagauthor" style="font-size: 14px; font-weight:400;"> {{ tag.name }},</a>
+                        {% endfor %}
+                        </h6>
+                        <h6 class="date"><i style="padding-right:6px; "><img src="{% static 'articles/img/date.svg' %}" alt="" style="width:12px; padding-top:0px"></i> {{object.tgl}}</h6>
+                        <p class="card-text">{{object.abstrak | truncatechars:"200" |safe}}</p>
                       </div>
-                      <div class="card-footer">
+                      <div class="card-footer" style="color:#353D5F !important;">
                         <ul class="list-inline">
-                         {% if object.download == not empty %}
-                            <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i><a href="/MEDIA/{{object.download}}">Unduh</a></li>
-                            <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i><a href="http://www.facebook.com/share.php?u=http://jphiv-ina.net/annotated-bibliography/{{ object.judul | slugify | lower }}">Bagikan</a></li>
-                            {% else %}
-                            <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i><a href="http://www.facebook.com/share.php?u=http://jphiv-ina.net/annotated-bibliography/{{ object.judul | slugify | lower }}">Bagikan</a></li>
-                            {% endif %}
+                          {% if object.download %}
+                          <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i><a href="/MEDIA/{{object.download}}">Unduh</a></li>
+                          {% else %}
+                          {{empty}}
+                          {% endif %}
+                          <li class="list-inline-item">
+                            <div class="dropdown share">
+                              <i><img src="{% static 'articles/img/share.svg' %}" alt=""></i>
+                              <a class="dropdown-togle" href="" role="button" id="dropdown-share" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color : #353d5f !important;">Bagikan</a>
+
+                              <div class="dropdown-menu" aria-labelledby="dropdown-share">
+                                <a class="dropdown-item" href="https://www.facebook.com/sharer.php?u=https://jphiv-ina.net/abstract/{{object.judul | slugify |lower}}"><i class="fab fa-facebook-square"></i>Facebook</a>
+                                <a class="dropdown-item" href="https://twitter.com/intent/tweet?url=https://jphiv-ina.net/abstract/{{object.judul | slugify |lower}}&text={{object.judul}}&hashtags=JPHIV"><i class="fab fa-twitter-square"></i>Twitter</a>
+                                <a class="dropdown-item" href="https://www.linkedin.com/shareArticle?mini=true&url=https://jphiv-ina.net/abstract/{{object.judul | slugify |lower}}&title={{object.judul}}&summary={{object.abstrak| truncatechars:'200' |safe }}&source=JPHIV"><i class="fab fa-linkedin"></i>LinkedIn</a>
+                                <a class="dropdown-item copy_text" href="https://jphiv-ina.net/abstract/{{object.judul | slugify |lower}}" data-toggle="tooltip" title="Copy to Clipboard"><i class="fas fa-copy"></i>Copy URL </a>
+                              </div>
+                            </div>
+                          </li>
                         </ul>
                         <hr>
                       </div>
@@ -174,20 +201,37 @@
                   <div class="col-md-4 mb-4">
                     <div class="card h-100">
                       <div class="card-body">
-                        <a href="/annotated-bibliography/{{object.judul|slugify|lower}}"><h5 class="card-title">{{ object.judul }}</h5></a>
-                        <h6 class="autor"><i><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i>
-                          annotated by: {{object.added_by.first_name}}
-                        <h6 class="date"><i><img src="{% static 'articles/img/date.svg' %}" alt=""></i>{{object.tgl}}</h6>
-                        <span class="card-text">{{object.anotated | truncatechars:"200" |safe}}</span>
+                        <a href="/annotated-bibliography/{{object.judul | slugify}}/" class="card-title">{{object.judul}}</a>
+                        <br><br>
+                        <h6 class="autor">Annotated by: {{object.added_by}} </h6>
+                        <h6 class="autor"><i style="padding-right:5px;"><img src="{% static 'articles/img/autor.svg' %}" alt="" srcset=""></i>
+                        {% for tag in object.Author.all %}
+                               <a href="/author/annotated/{{ tag.name | slugify}}" class="tagauthor" style="font-size: 14px; font-weight:400;"> {{ tag.name }},</a>
+                        {% endfor %}
+                        </h6>
+                        <h6 class="date"><i style="padding-right:5px;"><img src="{% static 'articles/img/date.svg' %}" alt=""></i> {{object.tgl}}</h6>
+                        <p class="card-text">{{object.anotated | truncatechars:"200" |safe}}</p>
                       </div>
                       <div class="card-footer">
                         <ul class="list-inline">
-                          {% if object.download == not empty %}
-                            <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i><a href="/MEDIA/{{object.download}}">Unduh</a></li>
-                            <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i><a href="http://www.facebook.com/share.php?u=http://jphiv-ina.net/annotated-bibliography/{{ object.judul | slugify | lower }}">Bagikan</a></li>
-                            {% else %}
-                            <li class="list-inline-item"><i><img src="{% static 'articles/img/share.svg' %}" alt=""></i><a href="http://www.facebook.com/share.php?u=http://jphiv-ina.net/annotated-bibliography/{{ object.judul | slugify | lower }}">Bagikan</a></li>
-                            {% endif %}
+                          {% if object.download %}
+                          <li class="list-inline-item"><i><img src="{% static 'articles/img/download.svg' %}" alt=""></i><a href="/MEDIA/{{object.download}}">Unduh</a></li>
+                          {% else %}
+                          {{empty}}
+                          {% endif %}
+                          <li class="list-inline-item">
+                            <div class="dropdown share" style="color:#353D5F !important;">
+                              <i><img src="{% static 'articles/img/share.svg' %}" alt=""></i>
+                              <a class="dropdown-togle" href="" role="button" id="dropdown-share" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bagikan</a>
+
+                              <div class="dropdown-menu" aria-labelledby="dropdown-share">
+                                <a class="dropdown-item" href="https://www.facebook.com/sharer.php?u=https://jphiv-ina.net/annotated-bibliography/{{object.judul | slugify |lower}}"><i class="fab fa-facebook-square"></i>Facebook</a>
+                                <a class="dropdown-item" href="https://twitter.com/intent/tweet?url=https://jphiv-ina.net/annotated-bibliography/{{object.judul | slugify |lower}}&text={{object.judul}}&hashtags=JPHIV"><i class="fab fa-twitter-square"></i>Twitter</a>
+                                <a class="dropdown-item" href="https://www.linkedin.com/shareArticle?mini=true&url=https://jphiv-ina.net/annotated-bibliography/{{object.judul | slugify |lower}}&title={{object.judul}}&summary={{object.abstrak| truncatechars:'200' |safe }}&source=JPHIV"><i class="fab fa-linkedin"></i>LinkedIn</a>
+                                <a class="dropdown-item copy_text" href="https://jphiv-ina.net/annotated-bibliography/{{object.judul | slugify |lower}}" data-toggle="tooltip" title="Copy to Clipboard"><i class="fas fa-copy"></i>Copy URL </a>
+                              </div>
+                            </div>
+                          </li>
                         </ul>
                         <hr>
                       </div>
@@ -195,13 +239,13 @@
                   </div>
                 {% endif %}
               {% endwith %}
-            {% endfor %}
+        {% endfor %}
         </div>
       </div>
     </section>
     <!-- end new entry -->
 
-{% if is_paginated %}
+    {% if is_paginated %}
    <section class="pagination mt-3">
       <div class="container">
        <div class="row justify-content-md-center">
@@ -210,24 +254,24 @@
               <ul class="pagination">
                 {% if page_obj.has_previous %}
                 <li class="page-item">
-                  <a class="page-link" href="?page=1&q={{request.GET.q}}" aria-label="Previous">
+                  <a class="page-link" href="?page=1" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                     <span class="sr-only">Previous</span>
                   </a>
                 </li>
                 {% endif %}
-                {% for n in page_obj.paginator.page_range %}
+                {% for n in paginator.page_range %}
                     {% if page_obj.number == n %}
                       <li class="page-item">
                         <span class="page-link">{{ n }}<span class="sr-only">(current)</span></span>
                       </li>
                     {% elif n > page_obj.number|add:'-2' and n < page_obj.number|add:'2' %}
-                      <li class="page-item"><a class="page-link" href="?page={{ n }}&q={{request.GET.q}}">{{ n }}</a></li>
+                      <li class="page-item"><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>
                     {% endif %}
                 {% endfor %}
                 {% if page_obj.has_next %}
                   <li class="page-item">
-                    <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}&q={{request.GET.q}}" aria-label="Next">
+                    <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Next">
                       <span aria-hidden="true">&raquo;</span>
                       <span class="sr-only">Next</span>
                     </a>
@@ -239,5 +283,26 @@
         </div>
       </div>
     </section>
-{% endif %}
-  {% endblock %}
+    {% endif %}
+  <!-- footer -->
+ {% endblock %}
+
+{% block js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    $('.copy_text').click(function (e) {
+        e.preventDefault();
+        var copyText = $(this).attr('href');
+
+        document.addEventListener('copy', function(e) {
+            e.clipboardData.setData('text/plain', copyText);
+            e.preventDefault();
+        }, true);
+
+        document.execCommand('copy');
+        console.log('copied text : ', copyText);
+        alert('copied text: ' + copyText);
+    });
+</script>
+{% endblock %}

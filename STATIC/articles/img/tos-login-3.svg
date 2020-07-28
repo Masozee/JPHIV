@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="176" height="209" viewBox="0 0 176 209">
+  <defs>
+    <filter id="Rectangle_106" x="6" y="55" width="170" height="154" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_1918" data-name="Group 1918" transform="translate(-540 -2261)">
+    <rect id="Rectangle_116" data-name="Rectangle 116" width="175" height="206" rx="10" transform="translate(540 2261)" fill="#fff"/>
+    <text id="_3._Isi_Form_secara_lengkap_dan_klik_Submit." data-name="3. Isi Form secara lengkap 
+     dan klik Submit." transform="translate(563.596 2291.579)" fill="#7b7b7b" font-size="12" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">3. </tspan><tspan y="0" fill="#707070">Isi Form secara lengkap </tspan><tspan fill="#707070"><tspan x="0" y="15" xml:space="preserve">     dan klik </tspan><tspan y="15" fill="#ef494b">Submit</tspan><tspan y="15">.</tspan></tspan></text>
+    <g id="Group_1744" data-name="Group 1744" transform="translate(558.055 2328.234)">
+      <g transform="matrix(1, 0, 0, 1, -18.05, -67.23)" filter="url(#Rectangle_106)">
+        <rect id="Rectangle_106-2" data-name="Rectangle 106" width="140" height="124" rx="10" transform="translate(18 67)" fill="#fcfcfc"/>
+      </g>
+      <text id="Judul" transform="translate(13.945 10.766)" fill="#ef494b" font-size="10" font-family="SegoeUI, Segoe UI"><tspan x="0" y="11">Judul</tspan></text>
+      <text id="Kategori" transform="translate(13.945 49.766)" fill="#ef494b" font-size="10" font-family="SegoeUI, Segoe UI"><tspan x="0" y="11">Kategori</tspan></text>
+      <g id="Rectangle_107" data-name="Rectangle 107" transform="translate(13.945 27.766)" fill="#fff" stroke="#edebeb" stroke-width="1">
+        <rect width="109" height="14" rx="3" stroke="none"/>
+        <rect x="0.5" y="0.5" width="108" height="13" rx="2.5" fill="none"/>
+      </g>
+      <g id="Rectangle_108" data-name="Rectangle 108" transform="translate(13.945 66.766)" fill="#fff" stroke="#edebeb" stroke-width="1">
+        <rect width="109" height="15" rx="3" stroke="none"/>
+        <rect x="0.5" y="0.5" width="108" height="14" rx="2.5" fill="none"/>
+      </g>
+      <g id="Group_1056" data-name="Group 1056" transform="translate(14.038 95.31)">
+        <rect id="Rectangle_66" data-name="Rectangle 66" width="70" height="16" rx="2" transform="translate(-0.093 0.456)" fill="#ef494b"/>
+        <text id="SUBMIT" transform="translate(20.907 9.456)" fill="#fff" font-size="7" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.06em"><tspan x="0" y="0">SUBMIT</tspan></text>
+      </g>
+      <g id="Group_1055" data-name="Group 1055" transform="translate(70.888 97.569)">
+        <path id="Path_927" data-name="Path 927" d="M459.359,1285.437l-8.114-6.972a.419.419,0,0,0-.691.317l-.014,10.644a.418.418,0,0,0,.675.331l2.206-1.711,2.176,4.817a.419.419,0,0,0,.554.209l2.121-.958a.419.419,0,0,0,.209-.554l-2.178-4.822,2.866-.573a.419.419,0,0,0,.191-.728Z" transform="translate(-446.174 -1274.359)" fill="#353d5f"/>
+        <path id="Path_928" data-name="Path 928" d="M533.1,1238.37a.422.422,0,0,0,.174-.038l1.39-.637a.418.418,0,1,0-.349-.761l-1.389.637a.418.418,0,0,0,.174.8Z" transform="translate(-525.344 -1234.394)" fill="#353d5f"/>
+        <path id="Path_929" data-name="Path 929" d="M484.579,1170.08a.418.418,0,0,0,.538-.246l.535-1.432a.418.418,0,1,0-.784-.293l-.535,1.432A.419.419,0,0,0,484.579,1170.08Z" transform="translate(-478.718 -1167.837)" fill="#353d5f"/>
+        <path id="Path_930" data-name="Path 930" d="M400.152,1169.968a.418.418,0,1,0-.762.346l.632,1.392a.419.419,0,0,0,.762-.346Z" transform="translate(-396.841 -1169.654)" fill="#353d5f"/>
+        <path id="Path_931" data-name="Path 931" d="M333.23,1323.906l-1.394.627a.419.419,0,1,0,.343.763l1.394-.627a.419.419,0,1,0-.344-.763Z" transform="translate(-331.533 -1318.216)" fill="#353d5f"/>
+        <path id="Path_932" data-name="Path 932" d="M330.315,1242.254l1.43.54a.426.426,0,0,0,.148.027.419.419,0,0,0,.148-.81l-1.43-.54a.419.419,0,1,0-.3.783Z" transform="translate(-330.044 -1238.777)" fill="#353d5f"/>
+      </g>
+    </g>
+  </g>
+</svg>
