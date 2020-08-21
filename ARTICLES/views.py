@@ -325,4 +325,4 @@ def TOS(request):
 #_________________HANDLER 404___________________
 
 def handler404(request, exception):
-    return render(request, 'errors/404.html', locals())
+    return render(request, '404.html', locals())
